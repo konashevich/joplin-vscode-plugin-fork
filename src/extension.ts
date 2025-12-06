@@ -223,7 +223,12 @@ export async function activate(context: vscode.ExtensionContext) {
   //region register markdown support
 
   return {
+    // Standard VS Code markdown preview API
     extendMarkdownIt(md: MarkdownIt) {
+      return md.use(useJoplinLink())
+    },
+    // markdown-preview-enhanced API
+    extendMarkdownItConfig(md: MarkdownIt) {
       return md.use(useJoplinLink())
     },
   }

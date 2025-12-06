@@ -107,11 +107,13 @@ export class MDDocumentLinkProvider implements DocumentLinkProvider {
 
     // Try resource
     try {
-      const res = await resourceApi.get(id, ['id'])
+      const res = await resourceApi.get(id, ['id', 'file_extension', 'mime', 'title'])
       if (res) {
-        // For images in markdown and for resource clicks, go through VFS so no programProfilePath is required
-        const uri = vscode.Uri.parse(`${JOPLIN_SCHEME}:/_resources/${id}.png`)
-        console.log('是资源(图片): ', id, '->', uri.toString())
+        // Get the proper file extension
+        const ext = res.file_extension || 'bin'
+        // For resources, go through VFS so no programProfilePath is required
+        const uri = vscode.Uri.parse(`${JOPLIN_SCHEME}:/_resources/${id}.${ext}`)
+        console.log('是资源: ', id, '->', uri.toString(), '(ext:', ext, ', isImage:', isImage, ')')
         return uri
       }
     } catch (err: any) {

@@ -2,7 +2,7 @@
   "name": "joplin-vscode-plugin-ai",
   "displayName": "Joplin AI Enhanced",
   "description": "%package.description%",
-  "version": "0.5.0",
+  "version": "0.5.3",
   "publisher": "local",
   "engines": {
     "vscode": "^1.45.0"

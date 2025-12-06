@@ -2,6 +2,7 @@ import * as vscode from 'vscode'
 import { folderApi, noteApi, resourceApi, TypeEnum, config } from 'joplin-api'
 import { FolderListAllRes } from 'joplin-api/dist/modal/FolderListAllRes'
 import { treeEach } from '@liuli-util/tree'
+import { transformMarkdownImageLinks } from '../util/transformMarkdownLinks'
 
 /**
  * Virtual FileSystem Provider for Joplin notebooks.
@@ -342,7 +343,9 @@ export class JoplinFileSystemProvider implements vscode.FileSystemProvider {
 
     try {
       const note = await noteApi.get(parsed.noteId, ['id', 'title', 'body'])
-      const content = note.body || ''
+      let content = note.body || ''
+      // Transform Joplin resource links to HTTP URLs for markdown preview
+      content = transformMarkdownImageLinks(content)
       return new TextEncoder().encode(content)
     } catch (err) {
       console.error('Failed to read note', parsed.noteId, err)

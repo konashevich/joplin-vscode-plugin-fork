@@ -2,7 +2,6 @@ import MarkdownIt from 'markdown-it'
 import { TypeEnum } from 'joplin-api'
 import { JoplinLinkRegex, JoplinResourceRegex } from './constant'
 import { appConfig } from '../config/AppConfig'
-import { JOPLIN_SCHEME } from '../model/JoplinFileSystemProvider'
 
 export function wrapLink(id: string, type: TypeEnum.Resource | TypeEnum.Note) {
   const q = encodeURIComponent(`id=${id}`)
@@ -20,6 +19,7 @@ export function wrapLink(id: string, type: TypeEnum.Resource | TypeEnum.Note) {
 
 export function useJoplinLink() {
   return function (md: MarkdownIt) {
+    console.log('[joplin-link] useJoplinLink plugin activated')
     // Handle links (<a> tags)
     const defaultLinkRender =
       md.renderer.rules.link_open ||
@@ -63,18 +63,23 @@ export function useJoplinLink() {
       const aIndex = token.attrIndex('src')
       if (aIndex >= 0) {
         const src = token.attrs![aIndex][1]
-        console.log('[joplin] Processing image src:', src)
+        console.log('[joplin-md-preview] Processing image src:', src)
         // Check if it's a Joplin resource link (:/id)
         if (JoplinLinkRegex.test(src)) {
           const id = src.match(JoplinLinkRegex)![1]
-          // Rewrite to Joplin VFS URL
-          const newSrc = `${JOPLIN_SCHEME}:/_resources/${id}.png`
-          console.log('[joplin] Rewriting image:', src, '->', newSrc)
+          // Rewrite to local HTTP URL served by Joplin's REST API
+          const port = appConfig.port || 41184
+          const token_param = encodeURIComponent(appConfig.token || '')
+          const newSrc = `http://localhost:${port}/resources/${id}/file?token=${token_param}`
+          console.log('[joplin-md-preview] Rewriting image:', src, '->', newSrc)
           token.attrs![aIndex][1] = newSrc
         } else if (JoplinResourceRegex.test(src)) {
           const id = src.match(JoplinResourceRegex)![1]
-          const newSrc = `${JOPLIN_SCHEME}:/_resources/${id}.png`
-          console.log('[joplin] Rewriting resource image:', src, '->', newSrc)
+          // Rewrite to local HTTP URL served by Joplin's REST API
+          const port = appConfig.port || 41184
+          const token_param = encodeURIComponent(appConfig.token || '')
+          const newSrc = `http://localhost:${port}/resources/${id}/file?token=${token_param}`
+          console.log('[joplin-md-preview] Rewriting resource image:', src, '->', newSrc)
           token.attrs![aIndex][1] = newSrc
         }
       }
