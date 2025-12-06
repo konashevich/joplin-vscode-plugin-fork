@@ -18,6 +18,7 @@ import { safePromise } from '../util/safePromise'
 import { AsyncArray } from '@liuli-util/async'
 import path = require('path')
 import { i18n } from '../util/I18n'
+import { JOPLIN_SCHEME } from '../model/JoplinFileSystemProvider'
 
 /**
  * other service
@@ -75,12 +76,6 @@ export class HandlerService {
   private readonly openFileService = new OpenFileService()
 
   async openResource(id: string) {
-    if (!appConfig.programProfilePath) {
-      vscode.window.showWarningMessage(
-        i18n.t("Please set up Joplin's personal directory"),
-      )
-      return
-    }
     const resource = await safePromise(
       resourceApi.get(id, ['id', 'title', 'filename', 'file_extension']),
     )
@@ -88,32 +83,21 @@ export class HandlerService {
       vscode.window.showWarningMessage(i18n.t('Resource does not exist'))
       return
     }
-    // 如果标题包含后缀则不再拼接后缀名（后缀名其实也是不准的）
-    const fileName =
-      resource.filename ||
-      (/\..*$/.test(resource.title)
-        ? resource.title
-        : resource.title + '.' + resource.file_extension)
-    const filePath = path.resolve(
-      appConfig.programProfilePath,
-      'tmp/edited_resources',
-      fileName,
-    )
-    await resourceActionApi.watch(resource.id)
-    const noteId = JoplinNoteUtil.getNoteIdByFileName(
-      vscode.window.activeTextEditor?.document.fileName,
-    )
-    console.log('open file: ', filePath, noteId, resource.id)
-    const isWatch = await resourceActionApi.noteIsWatched(resource.id)
-    if (isWatch) {
-      vscode.window.showInformationMessage(
-        i18n.t('Start monitoring attachment resource modification: ') +
-          resource.title,
-      )
+    
+    // Use VFS to open the resource - no programProfilePath needed
+    const ext = resource.file_extension || 'bin'
+    const resourceUri = vscode.Uri.parse(`${JOPLIN_SCHEME}:/_resources/${id}.${ext}`)
+    console.log('Opening resource via VFS:', resourceUri.toString())
+    
+    try {
+      // Open the resource in VS Code
+      const doc = await vscode.workspace.openTextDocument(resourceUri)
+      await vscode.window.showTextDocument(doc)
+    } catch (err) {
+      console.error('Failed to open resource as text, trying binary viewer:', err)
+      // For binary files, try opening with the default editor
+      await vscode.commands.executeCommand('vscode.open', resourceUri)
     }
-    this.openResourceMap.set(noteId!, resource.id)
-    // await this.openFileService.openFileByOS(filePath)
-    await this.openFileService.openByVSCode(filePath)
   }
 
   async openNote(id: string) {
