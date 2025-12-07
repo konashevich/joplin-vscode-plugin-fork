@@ -1,0 +1,273 @@
+{
+  "requesterUsername": "konashevich",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/18244957",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_2783c418-ea23-4ab3-a48f-da05c82179fc",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 49
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 50
+            },
+            "text": "find details of my rockchip nas in MyPC in joplin",
+            "kind": "text"
+          }
+        ],
+        "text": "find details of my rockchip nas in MyPC in joplin"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "run_in_terminal"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Using \"Run in Terminal\"",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "terminal",
+            "terminalToolSessionId": "569c3088-5059-40d6-b6c9-8fc1e5e1a52c",
+            "terminalCommandId": "tool-8fb8d995-0137-48a0-adc0-8db0517f0b13",
+            "commandLine": {
+              "original": "joplin --version"
+            },
+            "language": "sh"
+          },
+          "toolCallId": "a859cc0f-056d-435a-9b93-84273c3a4d3b",
+          "toolId": "run_in_terminal"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "run_in_terminal"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Using \"Run in Terminal\"",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "terminal",
+            "terminalToolSessionId": "141a6703-b33d-4a61-8800-de4eed64f9e4",
+            "terminalCommandId": "tool-a52906e1-f8e0-45e9-a773-9cda6d751fab",
+            "commandLine": {
+              "original": "node --version"
+            },
+            "language": "sh"
+          },
+          "toolCallId": "738a4983-b701-4081-b772-c4db2a660b8b",
+          "toolId": "run_in_terminal"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "run_in_terminal"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Using \"Run in Terminal\"",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "terminal",
+            "terminalToolSessionId": "11f3a8ff-66af-4615-8fcc-c497abc5de93",
+            "terminalCommandId": "tool-2efd758a-0e3d-4f30-957b-7f05f2184f45",
+            "commandLine": {
+              "original": "npm install -g joplin"
+            },
+            "language": "sh"
+          },
+          "toolCallId": "8a62a478-5b70-4c6e-8fef-d24e1a645194",
+          "toolId": "run_in_terminal"
+        }
+      ],
+      "responseId": "response_c0e6fcd0-36ef-496a-b9da-6854872a21be",
+      "result": {
+        "timings": {
+          "firstProgress": 10745,
+          "totalElapsed": 35914
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "renderedUserMessage": [
+            {
+              "type": 1,
+              "text": "<context>\nThe current date is 7 December 2025.\n</context>\n<reminderInstructions>\nWhen using the replace_string_in_file tool, include 3-5 lines of unchanged code before and after the string you want to replace, to make it unambiguous which part of the file should be edited.\n\n</reminderInstructions>\n<user_query>\nfind details of my rockchip nas in MyPC in joplin\n</user_query>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "renderedGlobalContext": [
+            {
+              "type": 1,
+              "text": "<environment_info>\nThe user's current OS is: Linux\nThe user's default shell is: \"bash\". When you generate terminal commands, please generate them correctly for this shell.\n</environment_info>\n<workspace_info>\nThere is no workspace currently open.\nThis is the state of the context at this point in the conversation. The view of the workspace structure may be truncated. You can use tools to collect more context if needed.\n</workspace_info>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "cacheKey": "",
+          "toolCallRounds": [
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "run_in_terminal",
+                  "arguments": "{\"command\":\"joplin --version\",\"explanation\":\"Check if Joplin CLI is installed and get its version.\",\"isBackground\":false}",
+                  "id": "call_10799004__vscode-1765065473886"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "f3aad1f9-3f5e-419a-b77b-95e49c8cbdc3"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "run_in_terminal",
+                  "arguments": "{\"command\":\"node --version\",\"explanation\":\"Check if Node.js is installed, required for installing Joplin CLI.\",\"isBackground\":false}",
+                  "id": "call_02082622__vscode-1765065473887"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "da9811af-9780-478c-b9f2-977e0cc2bd40"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "run_in_terminal",
+                  "arguments": "{\"command\":\"npm install -g joplin\",\"explanation\":\"Install Joplin CLI globally using npm.\",\"isBackground\":false}",
+                  "id": "call_48064307__vscode-1765065473888"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "e41b7515-0c2e-43ca-b7f1-6b09bd6de99d"
+            }
+          ],
+          "toolCallResults": {
+            "call_10799004__vscode-1765065473886": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "bash: joplin: command not found\n\n\nCommand exited with code 127"
+                }
+              ]
+            },
+            "call_02082622__vscode-1765065473887": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "v22.17.1\n"
+                }
+              ]
+            },
+            "call_48064307__vscode-1765065473888": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "The user cancelled the tool call."
+                }
+              ]
+            }
+          },
+          "modelMessageId": "e7598fd4-8a82-4201-aa44-52fddfc6a7f0",
+          "responseId": "d46e0221-932a-495b-957b-69494293a340",
+          "sessionId": "c6873971-d0b5-47e0-b4ab-7feaf30a18b5",
+          "agentId": "github.copilot.editsAgent"
+        },
+        "details": "Grok Code Fast 1 • 0x"
+      },
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "isCanceled": true,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.33.4",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "list"
+          }
+        ],
+        "disambiguation": []
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1765065525568,
+      "modelId": "copilot/grok-code-fast-1"
+    }
+  ]
+}
