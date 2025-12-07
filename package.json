@@ -59,6 +59,12 @@
         }
       ]
     },
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "joplin.mcpServer",
+        "label": "Joplin Notes MCP Server"
+      }
+    ],
     "commands": [
       {
         "command": "joplinNote.refreshNoteList",
@@ -184,6 +190,27 @@
         "command": "joplinNote.removeFromWorkspace",
         "title": "%commands.joplinNote.removeFromWorkspace%",
         "category": "Joplin"
+      }
+      ,
+      {
+        "command": "joplinNote.api.status",
+        "title": "Joplin: Check Connection Status (API)",
+        "category": "Joplin API"
+      },
+      {
+        "command": "joplinNote.api.listNotebooks",
+        "title": "Joplin: List Notebooks (API)",
+        "category": "Joplin API"
+      },
+      {
+        "command": "joplinNote.api.searchNotes",
+        "title": "Joplin: Search Notes (API)",
+        "category": "Joplin API"
+      },
+      {
+        "command": "joplinNote.api.getNoteContent",
+        "title": "Joplin: Get Note Content (API)",
+        "category": "Joplin API"
       }
     ],
     "menus": {
@@ -430,7 +457,9 @@
     "markdown-it": "^12.0.3",
     "open": "^7.3.0",
     "use-query-params": "^1.1.9",
-    "vscode-nls": "^5.0.0"
+    "vscode-nls": "^5.0.0",
+    "@modelcontextprotocol/sdk": "^0.3.1",
+    "zod": "^3.23.8"
   },
   "husky": {
     "hooks": {

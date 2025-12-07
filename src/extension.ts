@@ -3,7 +3,7 @@
 import * as vscode from 'vscode'
 import { NoteListProvider } from './model/NoteProvider'
 import { JoplinNoteCommandService } from './service/JoplinNoteCommandService'
-import { TypeEnum } from 'joplin-api'
+import { TypeEnum, noteApi, searchApi, folderApi } from 'joplin-api'
 import { appConfig } from './config/AppConfig'
 import { HandlerService } from './service/HandlerService'
 import { checkJoplinServer } from './util/checkJoplinServer'
@@ -15,6 +15,7 @@ import { globalState } from './state/GlobalState'
 import { init } from './init'
 import { registerCommand } from './util/registerCommand'
 import { ClassUtil } from '@liuli-util/object'
+import * as path from 'path'
 import {
   joplinFileSystemProvider,
   JOPLIN_SCHEME,
@@ -98,6 +99,127 @@ export async function activate(context: vscode.ExtensionContext) {
   registerCommand('joplinNote.manageTags', joplinNoteCommandService.manageTags)
   registerCommand('joplinNote.createTag', joplinNoteCommandService.createTag)
   registerCommand('joplinNote.removeTag', joplinNoteCommandService.removeTag)
+
+  const sanitizeName = (name: string): string =>
+    name.replace(/[<>:"/\\|?*]/g, '_').trim()
+
+  const findFolderByTitle = (
+    folders: any[],
+    target: string,
+  ): any | undefined => {
+    for (const f of folders) {
+      if (f.title?.toLowerCase() === target.toLowerCase()) {
+        return f
+      }
+      if (f.children) {
+        const res = findFolderByTitle(f.children, target)
+        if (res) {
+          return res
+        }
+      }
+    }
+    return undefined
+  }
+
+  registerCommand('joplinNote.api.status', async () => {
+    if (!appConfig.token || !appConfig.port) {
+      return { connected: false, error: 'Joplin token/port not configured' }
+    }
+    try {
+      await folderApi.listAll()
+      return { connected: true }
+    } catch (err: any) {
+      return { connected: false, error: String(err?.message || err) }
+    }
+  })
+
+  registerCommand('joplinNote.api.listNotebooks', async () => {
+    const folders = await folderApi.listAll()
+    const results: Array<{
+      id: string
+      title: string
+      parentId: string
+      path: string
+    }> = []
+
+    const walk = (nodes: any[], parentPath: string = '') => {
+      for (const node of nodes) {
+        const path = parentPath
+          ? `${parentPath}/${sanitizeName(node.title)}`
+          : `/${sanitizeName(node.title)}`
+        results.push({
+          id: node.id,
+          title: node.title,
+          parentId: node.parent_id || '',
+          path,
+        })
+        if (node.children && node.children.length > 0) {
+          walk(node.children, path)
+        }
+      }
+    }
+
+    walk(folders)
+    return results
+  })
+
+  registerCommand(
+    'joplinNote.api.searchNotes',
+    async (args?: { query?: string; notebook?: string; limit?: number }) => {
+      const query = args?.query?.trim() || ''
+      const limit = args?.limit ?? 20
+      const notebook = args?.notebook?.trim()
+
+      const { items } = await searchApi.search({
+        query,
+        type: TypeEnum.Note,
+        fields: ['id', 'title', 'parent_id'],
+        limit,
+        order_by: 'user_updated_time',
+        order_dir: 'DESC',
+      })
+
+      let notes = items
+      if (notebook) {
+        const folders = await folderApi.listAll()
+        const target = findFolderByTitle(folders, notebook)
+        if (target) {
+          notes = notes.filter((n) => n.parent_id === target.id)
+        }
+      }
+
+      return notes.map((note) => ({
+        id: note.id,
+        title: note.title,
+        parentId: note.parent_id,
+      }))
+    },
+  )
+
+  registerCommand(
+    'joplinNote.api.getNoteContent',
+    async (args?: { noteId?: string }) => {
+      if (!args?.noteId) {
+        return { error: 'noteId is required' }
+      }
+      try {
+        const note = await noteApi.get(args.noteId, [
+          'id',
+          'title',
+          'body',
+          'parent_id',
+        ])
+        return {
+          id: note.id,
+          title: note.title,
+          body: note.body,
+          parentId: note.parent_id,
+        }
+      } catch (err: any) {
+        return { error: String(err?.message || err) }
+      }
+    },
+  )
   registerCommand('joplinNote.showCurrentlyOpenNote', async () => {
     {
       const activeFileName = vscode.window.activeTextEditor?.document.fileName
@@ -179,6 +301,67 @@ export async function activate(context: vscode.ExtensionContext) {
     }
   })
   //endregion
+
+  //endregion
+
+  //region register MCP server definition provider
+
+  const lm = (vscode as any).lm
+  const McpStdioServerDefinition = (vscode as any)
+    .McpStdioServerDefinition as
+    | undefined
+    | (new (
+        label: string,
+        command: string,
+        args?: string[],
+        env?: Record<string, string | number | null>,
+        version?: string,
+      ) => any)
+
+  if (lm?.registerMcpServerDefinitionProvider && McpStdioServerDefinition) {
+    const serverScript = context.asAbsolutePath(
+      path.join('out', 'mcp-server', 'index.js'),
+    )
+
+    const provider = {
+      provideMcpServerDefinitions: () => {
+        const env: Record<string, string> = {
+          JOPLIN_TOKEN: appConfig.token ?? '',
+          JOPLIN_PORT: String(appConfig.port ?? 41184),
+        }
+
+        return [
+          new McpStdioServerDefinition(
+            'Joplin Notes MCP Server',
+            process.execPath,
+            [serverScript],
+            env,
+            '1',
+          ),
+        ]
+      },
+      resolveMcpServerDefinition: async (server: any) => {
+        if (!appConfig.token) {
+          vscode.window.showWarningMessage(
+            i18n.t('Configure the Joplin token to start the MCP server'),
+          )
+          return undefined
+        }
+
+        server.env = {
+          ...(server.env || {}),
+          JOPLIN_TOKEN: appConfig.token,
+          JOPLIN_PORT: String(appConfig.port ?? 41184),
+        }
+
+        return server
+      },
+    }
+
+    context.subscriptions.push(
+      lm.registerMcpServerDefinitionProvider('joplin.mcpServer', provider),
+    )
+  }
 
   //endregion
 
