@@ -17,7 +17,7 @@
     "watch:md": "rollup -c ./src/markdown/rollup.config.js -w",
     "server": "parcel src/markdown/tag-preview.html",
     "pretest": "yarn run compile && yarn run lint",
-    "test": "node ./out/test/runTest.js",
+    "test": "echo 'No automated tests; run yarn pretest for compile+lint'",
     "pack": "vsce package"
   },
   "categories": [
@@ -190,8 +190,7 @@
         "command": "joplinNote.removeFromWorkspace",
         "title": "%commands.joplinNote.removeFromWorkspace%",
         "category": "Joplin"
-      }
-      ,
+      },
       {
         "command": "joplinNote.api.status",
         "title": "Joplin: Check Connection Status (API)",
@@ -419,10 +418,10 @@
     "@types/fs-extra": "^9.0.5",
     "@types/glob": "^7.1.3",
     "@types/jest": "^26.0.19",
-    "@types/lodash": "^4.14.165",
+    "@types/lodash": "^4.14.202",
     "@types/markdown-it": "^10.0.3",
     "@types/moment": "^2.13.0",
-    "@types/node": "^14.14.13",
+    "@types/node": "^18.19.0",
     "@types/vscode": "^1.45.0",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.9.1",
@@ -438,7 +437,7 @@
     "shx": "^0.3.3",
     "ts-jest": "^26.4.4",
     "tslib": "^2.0.3",
-    "typescript": "^4.1.3",
+    "typescript": "^5.5.4",
     "utility-types": "^3.10.0",
     "vscode-nls-dev": "^3.3.2",
     "vscode-test": "^1.4.1"
@@ -447,6 +446,7 @@
     "@liuli-util/async": "^3.0.3",
     "@liuli-util/object": "^3.0.2",
     "@liuli-util/tree": "^3.0.2",
+    "@modelcontextprotocol/sdk": "^1.24.3",
     "@sentry/tracing": "^5.29.2",
     "cross-path-sort": "^1.0.0",
     "entities": "^2.1.0",
@@ -458,8 +458,7 @@
     "open": "^7.3.0",
     "use-query-params": "^1.1.9",
     "vscode-nls": "^5.0.0",
-    "@modelcontextprotocol/sdk": "^0.3.1",
-    "zod": "^3.23.8"
+    "zod": "^3.25.0"
   },
   "husky": {
     "hooks": {

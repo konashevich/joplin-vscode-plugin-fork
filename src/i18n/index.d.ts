@@ -46,3 +46,4 @@ export type TranslateParams =
   | [key: 'Joplin is not in the workspace']
   | [key: 'Joplin notebooks removed from workspace']
   | [key: 'Failed to remove Joplin from workspace']
+  | [key: 'Configure the Joplin token to start the MCP server']

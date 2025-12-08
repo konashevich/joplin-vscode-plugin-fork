@@ -111,3 +111,14 @@ VSCode has _a lot_ of keybindings. To avoid constantly clashing with all the bui
 Type `Joplin` into the Command Palette (<kbd>Ctrl</kbd>+<kbd>P</kbd>) to see all the new commands available to you. Some of them already have keybindings. Assign new bindings under the <kbd>Ctrl</kbd>+<kbd>J</kbd> namespace to fit your needs.
 
 > You can check the documentation to learn more: [Document website](https://rxliuli.com/joplin-vscode-plugin/)
+
+## AI agents and MCP
+
+This fork bundles a Model Context Protocol (MCP) server plus non-interactive API commands so AI agents can read and search your Joplin notes without extra setup.
+
+- **Auto-registered MCP:** On activation, the extension registers a stdio MCP server. Agents that support MCP (e.g., Copilot Agent mode) should see `Joplin Notes` automatically.
+- **Prereqs:** Joplin desktop running, Web Clipper enabled, and the extension settings `token` and `port` set to match Web Clipper. Restart VS Code after configuring.
+- **Tools exposed:** `joplin_status`, `joplin_list_notebooks`, `joplin_search_notes`, `joplin_get_note`, and `joplin_list_notes_in_notebook`. Fallback VS Code commands: `joplinNote.api.status`, `joplinNote.api.listNotebooks`, `joplinNote.api.searchNotes`, `joplinNote.api.getNoteContent`.
+- **Manual validation steps:** In VS Code, open the Command Palette and run `Developer: Inspect MCP Servers` to confirm the `Joplin Notes` entry. In an agent chat, ask it to run `joplin_status` and `joplin_search_notes` with a test query.
+- **Troubleshooting:** If the MCP server is missing, ensure VS Code >= 1.96, the extension is enabled, and `token`/`port` are configured. If a tool returns a connection error, start Joplin and re-run `joplin_status`. Avoid installing the Joplin CLI; use the MCP tools or `joplinNote.api.*` commands instead.
+- **More help:** See `docs/TROUBLESHOOTING.md` and `docs/VALIDATION_CHECKLIST.md` for detailed fixes and validation steps.

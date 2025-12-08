@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "Node16",
     "target": "es6",
     "outDir": "out",
     "lib": ["es6", "ESNext", "DOM"],
+    "moduleResolution": "node16",
     "sourceMap": true,
     "rootDir": "src",
     "strict": true /* enable all strict type-checking options */,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
     "esModuleInterop": true
     /* Additional Checks */

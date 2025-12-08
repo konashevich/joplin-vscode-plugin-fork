@@ -17,11 +17,11 @@ When a user asks an AI agent (like Copilot) to "find details of my rockchip NAS 
 
 We will implement a multi-layered approach:
 
-| Layer | Purpose | Benefit |
-|-------|---------|---------|
-| **MCP Server** | Native tool calling for LLMs | Agent can call `joplin_search`, `joplin_get_note` directly |
-| **Non-UI Commands** | Programmatic VS Code commands | Fallback if MCP isn't available; usable by other extensions |
-| **Extension-Registered MCP** | Auto-configure MCP on install | Zero-config for users—MCP server appears automatically |
+| Layer                        | Purpose                       | Benefit                                                     |
+| ---------------------------- | ----------------------------- | ----------------------------------------------------------- |
+| **MCP Server**               | Native tool calling for LLMs  | Agent can call `joplin_search`, `joplin_get_note` directly  |
+| **Non-UI Commands**          | Programmatic VS Code commands | Fallback if MCP isn't available; usable by other extensions |
+| **Extension-Registered MCP** | Auto-configure MCP on install | Zero-config for users—MCP server appears automatically      |
 
 ---
 
@@ -30,19 +30,20 @@ We will implement a multi-layered approach:
 ### 1.1 Overview
 
 Create a standalone MCP server (Node.js/TypeScript) that:
+
 - Connects to Joplin's REST API (same as the extension does)
 - Exposes tools for searching, listing, and reading notes
 - Can be run locally via `stdio` transport or remotely via `http`
 
 ### 1.2 Tools to Implement
 
-| Tool Name | Description | Input | Output |
-|-----------|-------------|-------|--------|
-| `joplin_status` | Check Joplin connectivity | none | `{ connected: boolean, version?: string, error?: string }` |
-| `joplin_list_notebooks` | List all notebooks (folders) | none | `[{ id, title, parent_id, path }]` |
-| `joplin_search_notes` | Search notes by query | `{ query: string, notebook?: string, limit?: number }` | `[{ id, title, notebook, snippet }]` |
-| `joplin_get_note` | Get full note content | `{ noteId: string }` | `{ id, title, body, notebook, tags, created, updated }` |
-| `joplin_list_notes_in_notebook` | List notes in a specific notebook | `{ notebookId: string }` | `[{ id, title, updated }]` |
+| Tool Name                       | Description                       | Input                                                  | Output                                                     |
+| ------------------------------- | --------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------- |
+| `joplin_status`                 | Check Joplin connectivity         | none                                                   | `{ connected: boolean, version?: string, error?: string }` |
+| `joplin_list_notebooks`         | List all notebooks (folders)      | none                                                   | `[{ id, title, parent_id, path }]`                         |
+| `joplin_search_notes`           | Search notes by query             | `{ query: string, notebook?: string, limit?: number }` | `[{ id, title, notebook, snippet }]`                       |
+| `joplin_get_note`               | Get full note content             | `{ noteId: string }`                                   | `{ id, title, body, notebook, tags, created, updated }`    |
+| `joplin_list_notes_in_notebook` | List notes in a specific notebook | `{ notebookId: string }`                               | `[{ id, title, updated }]`                                 |
 
 ### 1.3 MCP Server Structure
 
@@ -76,14 +77,17 @@ JOPLIN_PORT=41184  # default Joplin Web Clipper port
 
 ```typescript
 // tools/searchNotes.ts
-import { z } from 'zod';
-import { joplinClient } from '../joplin-client';
+import { z } from 'zod'
+import { joplinClient } from '../joplin-client'
 
 export const searchNotesSchema = z.object({
   query: z.string().describe('Search query (title or body text)'),
-  notebook: z.string().optional().describe('Limit search to this notebook name'),
+  notebook: z
+    .string()
+    .optional()
+    .describe('Limit search to this notebook name'),
   limit: z.number().default(10).describe('Maximum results to return'),
-});
+})
 
 export async function searchNotes(input: z.infer<typeof searchNotesSchema>) {
   const results = await joplinClient.search({
@@ -91,26 +95,26 @@ export async function searchNotes(input: z.infer<typeof searchNotesSchema>) {
     type: 'note',
     fields: ['id', 'title', 'parent_id', 'body'],
     limit: input.limit,
-  });
+  })
 
   // Filter by notebook if specified
-  let notes = results.items;
+  let notes = results.items
   if (input.notebook) {
-    const folders = await joplinClient.listFolders();
-    const targetFolder = folders.find(f => 
-      f.title.toLowerCase() === input.notebook!.toLowerCase()
-    );
+    const folders = await joplinClient.listFolders()
+    const targetFolder = folders.find(
+      (f) => f.title.toLowerCase() === input.notebook!.toLowerCase(),
+    )
     if (targetFolder) {
-      notes = notes.filter(n => n.parent_id === targetFolder.id);
+      notes = notes.filter((n) => n.parent_id === targetFolder.id)
     }
   }
 
-  return notes.map(note => ({
+  return notes.map((note) => ({
     id: note.id,
     title: note.title,
     notebook: note.parent_id, // Could resolve to name
     snippet: note.body?.substring(0, 200) + '...',
-  }));
+  }))
 }
 ```
 
@@ -146,37 +150,40 @@ Include the standalone MCP server as a bundled dependency or compile it into `ou
 #### Step 3: Register in `extension.ts`
 
 ```typescript
-import * as vscode from 'vscode';
-import * as path from 'path';
+import * as vscode from 'vscode'
+import * as path from 'path'
 
 export async function activate(context: vscode.ExtensionContext) {
   // ... existing activation code ...
 
   // Register MCP Server Definition Provider
-  const mcpServerPath = context.asAbsolutePath(path.join('out', 'mcp-server', 'index.js'));
-  
+  const mcpServerPath = context.asAbsolutePath(
+    path.join('out', 'mcp-server', 'index.js'),
+  )
+
   context.subscriptions.push(
     vscode.lm.registerMcpServerDefinitionProvider('joplin.mcpServer', {
       provideMcpServerDefinitions: async () => {
         // Only provide if Joplin is configured
         if (!appConfig.token) {
-          return [];
+          return []
         }
 
         return [
           new vscode.McpStdioServerDefinition(
-            'Joplin Notes',           // label
-            'node',                    // command
-            [mcpServerPath],           // args
-            {                          // env
+            'Joplin Notes', // label
+            'node', // command
+            [mcpServerPath], // args
+            {
+              // env
               JOPLIN_TOKEN: appConfig.token,
               JOPLIN_PORT: String(appConfig.port),
-            }
+            },
           ),
-        ];
+        ]
       },
-    })
-  );
+    }),
+  )
 }
 ```
 
@@ -195,12 +202,12 @@ Even without MCP, we should expose programmatic commands that return data (not U
 
 ### 3.1 Commands to Add
 
-| Command | Input | Output |
-|---------|-------|--------|
-| `joplinNote.api.status` | none | `{ connected: boolean, error?: string }` |
-| `joplinNote.api.listNotebooks` | none | `[{ id, title, path }]` |
-| `joplinNote.api.searchNotes` | `{ query: string, limit?: number }` | `[{ id, title, notebook }]` |
-| `joplinNote.api.getNoteContent` | `{ noteId: string }` | `{ id, title, body, tags }` |
+| Command                         | Input                               | Output                                   |
+| ------------------------------- | ----------------------------------- | ---------------------------------------- |
+| `joplinNote.api.status`         | none                                | `{ connected: boolean, error?: string }` |
+| `joplinNote.api.listNotebooks`  | none                                | `[{ id, title, path }]`                  |
+| `joplinNote.api.searchNotes`    | `{ query: string, limit?: number }` | `[{ id, title, notebook }]`              |
+| `joplinNote.api.getNoteContent` | `{ noteId: string }`                | `{ id, title, body, tags }`              |
 
 ### 3.2 Implementation
 
@@ -209,36 +216,47 @@ Even without MCP, we should expose programmatic commands that return data (not U
 
 registerCommand('joplinNote.api.status', async () => {
   try {
-    const ping = await noteApi.ping();
-    return { connected: true, version: ping.version };
+    const ping = await noteApi.ping()
+    return { connected: true, version: ping.version }
   } catch (err) {
-    return { connected: false, error: String(err) };
+    return { connected: false, error: String(err) }
   }
-});
+})
 
-registerCommand('joplinNote.api.searchNotes', async (args: { query: string; limit?: number }) => {
-  const { items } = await searchApi.search({
-    query: args.query,
-    type: TypeEnum.Note,
-    fields: ['id', 'title', 'parent_id'],
-    limit: args.limit || 20,
-  });
-  return items.map(note => ({
-    id: note.id,
-    title: note.title,
-    parentId: note.parent_id,
-  }));
-});
+registerCommand(
+  'joplinNote.api.searchNotes',
+  async (args: { query: string; limit?: number }) => {
+    const { items } = await searchApi.search({
+      query: args.query,
+      type: TypeEnum.Note,
+      fields: ['id', 'title', 'parent_id'],
+      limit: args.limit || 20,
+    })
+    return items.map((note) => ({
+      id: note.id,
+      title: note.title,
+      parentId: note.parent_id,
+    }))
+  },
+)
 
-registerCommand('joplinNote.api.getNoteContent', async (args: { noteId: string }) => {
-  const note = await noteApi.get(args.noteId, ['id', 'title', 'body', 'parent_id']);
-  return {
-    id: note.id,
-    title: note.title,
-    body: note.body,
-    parentId: note.parent_id,
-  };
-});
+registerCommand(
+  'joplinNote.api.getNoteContent',
+  async (args: { noteId: string }) => {
+    const note = await noteApi.get(args.noteId, [
+      'id',
+      'title',
+      'body',
+      'parent_id',
+    ])
+    return {
+      id: note.id,
+      title: note.title,
+      body: note.body,
+      parentId: note.parent_id,
+    }
+  },
+)
 ```
 
 ### 3.3 Declare in `package.json`
@@ -304,11 +322,13 @@ This workspace has the Joplin VS Code extension installed with MCP tools.
 3. Use `joplin_list_notebooks` to see available notebooks
 
 ## Do NOT:
+
 - Try to install `joplin` via npm or any package manager
 - Use the Joplin CLI (it's not installed)
 - Call interactive UI commands like `joplinNote.search`
 
 ## Example flow for "find rockchip NAS in MyPC":
+
 1. Call `joplin_search_notes` with query "rockchip NAS" and notebook "MyPC"
 2. Call `joplin_get_note` with the returned noteId to get full content
 ```
@@ -319,34 +339,34 @@ This workspace has the Joplin VS Code extension installed with MCP tools.
 
 ### Phase 1: Standalone MCP Server (Week 1-2)
 
-1. [ ] Create `joplin-mcp-server/` directory structure
-2. [ ] Implement Joplin REST API client (reuse from extension if possible)
-3. [ ] Implement `joplin_status` tool
-4. [ ] Implement `joplin_list_notebooks` tool
-5. [ ] Implement `joplin_search_notes` tool
-6. [ ] Implement `joplin_get_note` tool
+1. [x] Create `joplin-mcp-server/` directory structure (scaffolded at `src/mcp-server`)
+2. [x] Implement Joplin REST API client (reused `joplin-api` directly)
+3. [x] Implement `joplin_status` tool
+4. [x] Implement `joplin_list_notebooks` tool
+5. [x] Implement `joplin_search_notes` tool
+6. [x] Implement `joplin_get_note` tool
 7. [ ] Test with VS Code MCP configuration (manual `mcp.json`)
-8. [ ] Write README with setup instructions
+8. [x] Write README with setup instructions
 
 ### Phase 2: Extension-Registered MCP (Week 2-3)
 
-1. [ ] Add `mcpServerDefinitionProviders` to `package.json`
-2. [ ] Bundle MCP server into extension output
-3. [ ] Implement `registerMcpServerDefinitionProvider` in `extension.ts`
+1. [x] Add `mcpServerDefinitionProviders` to `package.json`
+2. [x] Bundle MCP server into extension output (compiled under `out/mcp-server/index.js`)
+3. [x] Implement `registerMcpServerDefinitionProvider` in `extension.ts`
 4. [ ] Test auto-registration on extension activation
-5. [ ] Handle edge cases (no token configured, Joplin not running)
+5. [x] Handle edge cases (no token configured, basic checks for connectivity)
 
 ### Phase 3: Non-Interactive API Commands (Week 3)
 
-1. [ ] Add `joplinNote.api.*` commands to `package.json`
-2. [ ] Implement command handlers in extension
+1. [x] Add `joplinNote.api.*` commands to `package.json`
+2. [x] Implement command handlers in extension
 3. [ ] Test commands via Command Palette and programmatic invocation
 
 ### Phase 4: Polish & Documentation (Week 4)
 
-1. [ ] Update extension README with AI agent usage
-2. [ ] Add troubleshooting guide
-3. [ ] Add instructions file (MANDATORY) and include templates for workspace and GitHub Copilot instructions
+1. [x] Update extension README with AI agent usage
+2. [x] Add troubleshooting guide
+3. [x] Add instructions file (MANDATORY) and include templates for workspace and GitHub Copilot instructions
 4. [ ] Test end-to-end with Copilot agent mode
 
 ---
@@ -355,10 +375,10 @@ This workspace has the Joplin VS Code extension installed with MCP tools.
 
 ### MCP Transport Options
 
-| Transport | Use Case |
-|-----------|----------|
-| `stdio` | Local, bundled with extension (recommended) |
-| `http` | Remote server, shared across machines |
+| Transport | Use Case                                    |
+| --------- | ------------------------------------------- |
+| `stdio`   | Local, bundled with extension (recommended) |
+| `http`    | Remote server, shared across machines       |
 
 We'll use **stdio** for the extension-bundled version since it's simpler and inherits the extension's configuration.
 
@@ -371,6 +391,7 @@ We'll use **stdio** for the extension-bundled version since it's simpler and inh
 ### VS Code API Requirements
 
 The `registerMcpServerDefinitionProvider` API requires:
+
 - VS Code 1.96+ (December 2024)
 - The API is currently proposed; may need `enabledApiProposals` in `package.json`
 
@@ -426,3 +447,4 @@ Agent: "I found your note 'Rockchip NAS Setup' in MyPC. Here are the details:
 - [MCP Extension Sample](https://github.com/microsoft/vscode-extension-samples/tree/main/mcp-extension-sample)
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/)
 - [TypeScript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+- Local docs: `docs/TROUBLESHOOTING.md`, `docs/VALIDATION_CHECKLIST.md`

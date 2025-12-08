@@ -1,18 +1,34 @@
 import { config, folderApi, noteApi, searchApi, TypeEnum } from 'joplin-api'
-import { Server } from '@modelcontextprotocol/sdk/server'
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
 
 config.token = process.env.JOPLIN_TOKEN || ''
-config.port = process.env.JOPLIN_PORT ? Number(process.env.JOPLIN_PORT) : undefined
+config.port = process.env.JOPLIN_PORT ? Number(process.env.JOPLIN_PORT) : 41184
 
-const sanitizeName = (name: string): string => name.replace(/[<>:"/\\|?*]/g, '_').trim()
+const sanitizeName = (name: string): string =>
+  name.replace(/[<>:"/\\|?*]/g, '_').trim()
 
-const buildFolderPaths = (folders: any[]): Array<{ id: string; title: string; parentId: string; path: string }> => {
-  const results: Array<{ id: string; title: string; parentId: string; path: string }> = []
+const buildFolderPaths = (
+  folders: any[],
+): Array<{ id: string; title: string; parentId: string; path: string }> => {
+  const results: Array<{
+    id: string
+    title: string
+    parentId: string
+    path: string
+  }> = []
   const walk = (nodes: any[], parentPath: string = '') => {
     for (const node of nodes) {
-      const path = parentPath ? `${parentPath}/${sanitizeName(node.title)}` : `/${sanitizeName(node.title)}`
-      results.push({ id: node.id, title: node.title, parentId: node.parent_id || '', path })
+      const path = parentPath
+        ? `${parentPath}/${sanitizeName(node.title)}`
+        : `/${sanitizeName(node.title)}`
+      results.push({
+        id: node.id,
+        title: node.title,
+        parentId: node.parent_id || '',
+        path,
+      })
       if (node.children && node.children.length > 0) {
         walk(node.children, path)
       }
@@ -37,7 +53,33 @@ const findFolderByTitle = (folders: any[], target: string): any | undefined => {
   return undefined
 }
 
-const server = new Server({ name: 'joplin-mcp-server' })
+const server = new McpServer({ name: 'joplin-mcp-server', version: '1.0.0' })
+
+const statusOutputSchema = z.object({
+  connected: z.boolean(),
+  error: z.string().optional(),
+})
+const listNotebooksOutputSchema = z.array(
+  z.object({
+    id: z.string(),
+    title: z.string(),
+    parentId: z.string(),
+    path: z.string(),
+  }),
+)
+const searchNotesOutputSchema = z.array(
+  z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
+)
+const getNoteOutputSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  body: z.string(),
+  parentId: z.string(),
+  error: z.string().optional(),
+})
+const listNotesOutputSchema = z.array(
+  z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
+)
 
 const requireConfigured = () => {
   if (!config.token || !config.port) {
@@ -45,33 +87,42 @@ const requireConfigured = () => {
   }
 }
 
-server.tool(
+server.registerTool(
+  'joplin_status',
   {
-    name: 'joplin_status',
     description: 'Check connectivity to Joplin Web Clipper API',
-    inputSchema: { type: 'object', properties: {}, required: [] },
+    inputSchema: z.object({}).strict(),
+    outputSchema: statusOutputSchema,
   },
   async () => {
     try {
       requireConfigured()
       await folderApi.listAll()
-      return { connected: true }
-    } catch (err: any) {
-      return { connected: false, error: String(err?.message || err) }
+      return { content: [], structuredContent: { connected: true } }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err)
+      return {
+        content: [],
+        structuredContent: { connected: false, error: message },
+      }
     }
   },
 )
 
-server.tool(
+server.registerTool(
+  'joplin_list_notebooks',
   {
-    name: 'joplin_list_notebooks',
     description: 'List all Joplin notebooks with paths',
-    inputSchema: { type: 'object', properties: {}, required: [] },
+    inputSchema: z.object({}).strict(),
+    outputSchema: listNotebooksOutputSchema,
   },
   async () => {
     requireConfigured()
     const folders = await folderApi.listAll()
-    return buildFolderPaths(folders)
+    return {
+      content: [],
+      structuredContent: { items: buildFolderPaths(folders) },
+    }
   },
 )
 
@@ -81,21 +132,14 @@ const searchNotesInput = z.object({
   limit: z.number().int().positive().max(200).optional(),
 })
 
-server.tool(
+server.registerTool(
+  'joplin_search_notes',
   {
-    name: 'joplin_search_notes',
     description: 'Search notes by query, optionally scoped to a notebook',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        query: { type: 'string' },
-        notebook: { type: 'string' },
-        limit: { type: 'number' },
-      },
-      required: ['query'],
-    },
+    inputSchema: searchNotesInput,
+    outputSchema: searchNotesOutputSchema,
   },
-  async (input) => {
+  async (input: z.infer<typeof searchNotesInput>) => {
     const parsed = searchNotesInput.parse(input)
     requireConfigured()
     const { items } = await searchApi.search({
@@ -116,55 +160,67 @@ server.tool(
       }
     }
 
-    return notes.map((n) => ({ id: n.id, title: n.title, parentId: n.parent_id }))
+    return {
+      content: [],
+      structuredContent: {
+        items: notes.map((n) => ({
+          id: n.id,
+          title: n.title,
+          parentId: n.parent_id,
+        })),
+      },
+    }
   },
 )
 
 const getNoteInput = z.object({ noteId: z.string() })
 
-server.tool(
+server.registerTool(
+  'joplin_get_note',
   {
-    name: 'joplin_get_note',
     description: 'Get full content of a note by ID',
-    inputSchema: {
-      type: 'object',
-      properties: { noteId: { type: 'string' } },
-      required: ['noteId'],
-    },
+    inputSchema: getNoteInput,
+    outputSchema: getNoteOutputSchema,
   },
-  async (input) => {
+  async (input: z.infer<typeof getNoteInput>) => {
     const parsed = getNoteInput.parse(input)
     requireConfigured()
     try {
-      const note = await noteApi.get(parsed.noteId, ['id', 'title', 'body', 'parent_id'])
+      const note = await noteApi.get(parsed.noteId, [
+        'id',
+        'title',
+        'body',
+        'parent_id',
+      ])
       return {
-        id: note.id,
-        title: note.title,
-        body: note.body,
-        parentId: note.parent_id,
+        content: [],
+        structuredContent: {
+          id: note.id,
+          title: note.title,
+          body: note.body,
+          parentId: note.parent_id,
+        },
       }
-    } catch (err: any) {
-      return { error: String(err?.message || err) }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err)
+      return { content: [], structuredContent: { error: message } }
     }
   },
 )
 
-const listNotesInput = z.object({ notebookId: z.string(), limit: z.number().int().positive().max(200).optional() })
+const listNotesInput = z.object({
+  notebookId: z.string(),
+  limit: z.number().int().positive().max(200).optional(),
+})
 
-server.tool(
+server.registerTool(
+  'joplin_list_notes_in_notebook',
   {
-    name: 'joplin_list_notes_in_notebook',
     description: 'List notes in a specific notebook',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        notebookId: { type: 'string' },
-        limit: { type: 'number' },
-      },
-      required: ['notebookId'],
-    },
+    inputSchema: listNotesInput,
+    outputSchema: listNotesOutputSchema,
   },
-  async (input) => {
+  async (input: z.infer<typeof listNotesInput>) => {
     const parsed = listNotesInput.parse(input)
     requireConfigured()
     const notes = await folderApi.notesByFolderId(parsed.notebookId, [
@@ -174,11 +230,22 @@ server.tool(
       'user_updated_time',
     ])
     const sliced = parsed.limit ? notes.slice(0, parsed.limit) : notes
-    return sliced.map((n) => ({ id: n.id, title: n.title, parentId: n.parent_id }))
+    return {
+      content: [],
+      structuredContent: {
+        items: sliced.map((n) => ({
+          id: n.id,
+          title: n.title,
+          parentId: n.parent_id,
+        })),
+      },
+    }
   },
 )
 
-server.start().catch((err) => {
+const transport = new StdioServerTransport()
+
+server.connect(transport).catch((err: unknown) => {
   console.error('Failed to start Joplin MCP server', err)
   process.exit(1)
 })
