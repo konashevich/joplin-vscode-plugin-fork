@@ -1,0 +1,1349 @@
+{
+  "requesterUsername": "konashevich",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/18244957",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_2410cd3a-74fe-40c9-a61f-2d2c40b806d5",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 164
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 165
+            },
+            "text": "i need you search in joplin for note about ai technologies, specifically I am looking for a library/framework desined to scrape website and turn them into md file. ",
+            "kind": "text"
+          }
+        ],
+        "text": "i need you search in joplin for note about ai technologies, specifically I am looking for a library/framework desined to scrape website and turn them into md file. "
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "kind": "thinking",
+          "value": "**Managing tasks for AI research**\n\nI need to start by calling manage_todo_list and marking the first task as in-progress. I’ll create a friendly introduction before diving into it. \n\nMy tasks include searching Joplin notebooks for notes on AI technologies and converting content to markdown. But I'll also run some parallel searches with queries like \"scrape website markdown\" and \"AI technologies.\" I might even explore regex to optimize searches. Let's get started!",
+          "id": "h9L+iWnmQcBW60ji/+5oiu1R/clPCtNLC0i/EeF1I70Ev6RfuwMuYOTHhLVlKKI0Hf5RcRAwKlsg+CwZ8cZXf2v2SO40H1p86tPrTiZ5GyjUlZlTW/7VM6bBewrgQhigzVYwwZ4joQDE1NzWmwjDZNNBBxSA3m9czuf0Ufm/JoTuK8N5Q3AZTSlMP5bu7niPnMcUdOZ7HfFbLyK0LhnK3XamS+L+d4cRI5jJtz7ERJvkzSpuTQ/8nlOCjSRTFbh42fXO75OhK5fFkhGYwXMz3wa53RGpMpkWc+PXIqSkG5mSenYILO6BFVoUXp1dnK1EGbtg1OONn0WBh3qbHRNku8AKzQ/WTUs7R+hmWirNoILgB+4MNJdBqFc7kGdNngAsGZHiVmL7kEsl5Wfx578uYGACT93SR+skUnXi3lV4vw=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "Uu5zaYfBmZodcipqyXhBcZXkay7mh7m8OCZWwbc+zfq3Lu+HpvXaDPi1QVZzRpnxx/FcnnkLE5I5DKyHguLvzvSNHspi0WnLWAmS6Xl8ea0f/2GzW1JZ00Y2vzo6Xn/f1RvzXWsGpokupVKfiiK9qPO+SUm8AZGKdFNhupkOO+CZQOzNxGW6sPEJdXBILieEXuRVy4guK7lq3TCvYD1T5fQXmMmHNH0uDaUBF8Yl31CC8X7k7wF6hmbOGIcEOjFEsrmeRiSdTv5VmhdXPrZsFdmXw80LYhBLYfpb4Zo9TJMKt9JHLRDW0zLF3ai9Knl9dv5OoHYlWwG5qsoUEv9lIap50moNjLKYmSCu9sFaxIIOJhxSjSgS+28YUp1BK1ft67bdAU0TE1cux909P8HNQBqasVILrwe49egn5AM5bg=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "text"
+          }
+        },
+        {
+          "value": "I'm going to search your Joplin notes for anything about AI technologies and tools that scrape websites into Markdown, then inspect any promising notes I find.",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "manage_todo_list"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Using \"Manage and track todo items for task planning\"",
+          "pastTenseMessage": {
+            "value": "Created 3 todos",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "todoList",
+            "sessionId": "70c6ccd9-184c-4b0e-9a84-b4f62269348a",
+            "todoList": [
+              {
+                "id": "1",
+                "title": "Search Joplin notes for relevant entries",
+                "description": "",
+                "status": "in-progress"
+              },
+              {
+                "id": "2",
+                "title": "Open and read promising notes",
+                "description": "",
+                "status": "not-started"
+              },
+              {
+                "id": "3",
+                "title": "Summarize findings and recommend libraries/frameworks",
+                "description": "",
+                "status": "not-started"
+              }
+            ]
+          },
+          "toolCallId": "f10b7645-82e0-45bd-a17f-a1bcee21c8f7",
+          "toolId": "manage_todo_list"
+        },
+        {
+          "kind": "thinking",
+          "value": [],
+          "id": "Zn7Uax0rT5Cu6oZF2c2fddddOF/KnJJkk8kAvvOpvkiEKg2aDcIrk2SNCedU9Y+n+UQdPMQh4gj+u7njhj3MK3Pj5toQZj9SguQAMVH8caUtwMgi5NmQid4yVckbjHVWqULdzyol4SdyngLLXbyR7FYG+3T5WBu74ZCHunS1bYrszdPPdzI9KtG+MpLLgb/hZRUYoRUBXK2f7VoBd7nJc4Q+Ors+QXxesVEDogH7ORnCHEh1XLOBvrbRFPUw/wD47ZGyalUNK6HOoPzDul8vONZyEmHEynbnYFmlwuNiHt2MBMqBmoMbGFNC7K0GiU+KWIKHiegTKJliBJrpaUB9Sh8orm03698ehgnq3cKknArhuDkUR49zDjG8wMHkuX7q4wyf+Y+912IuHIvRs+tqfCw4kDjD7w6OTBBauoLUIA=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "text"
+          }
+        },
+        {
+          "value": "Proceeding to list Joplin notebooks and run several relevant searches (scrape, scraper, website->markdown, convert website to md).",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_list_notebooks"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_list_notebooks`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_list_notebooks` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Cannot read properties of undefined (reading '_zod')"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {}
+          },
+          "toolCallId": "f27ad8b5-2eba-45be-b34c-765fb804d96b",
+          "toolId": "mcp_joplin_notes__joplin_list_notebooks"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"query\": \"scrape\",\n  \"limit\": 200\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Request failed with status code 400"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "query": "scrape",
+              "limit": 200
+            }
+          },
+          "toolCallId": "35bf4ec3-6211-4116-9f15-335c28477f6b",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"query\": \"scraper\",\n  \"limit\": 200\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Request failed with status code 400"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "query": "scraper",
+              "limit": 200
+            }
+          },
+          "toolCallId": "70fcb37b-f91a-4185-89b8-38655be55d4d",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"query\": \"website markdown\",\n  \"limit\": 200\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Request failed with status code 400"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "query": "website markdown",
+              "limit": 200
+            }
+          },
+          "toolCallId": "6656f11a-4c57-4081-884f-bea432265c8e",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"query\": \"convert website to markdown\",\n  \"limit\": 200\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Request failed with status code 400"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "query": "convert website to markdown",
+              "limit": 200
+            }
+          },
+          "toolCallId": "3a88cb90-cfdc-4c76-8469-4c13d0033b2f",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "thinking",
+          "value": [],
+          "id": "mFi/VWmMtNq+CEp+iliAHBUQJPew3OSEeDChEZkldntL1iwgEk1BI7TiY+HBoSXcO4ABpHmgO21uHr+HiWaGbEyzPPXuDWWCqeG4x57UOx7jf+h+4pAHa2ZaOEZCstYuceDwyjeFF7GU29HrXNgnmFzeYUJkiKadm06ObZunEcNJXr5Y6MhuWvXuYwzysgjytuHBh9Qs34qi4gv/beTtpRskJSO/lvnHGUJ6VypKVRN4Ah3JVriAVMAcvOjA55dZWXjqOJwPTEgKrKiHXgpvkdqSQuvVSEMUggJsEWPODV1N1HoCbrzqVX7gm0eUYpx92XbAh2jFGMkcWkpWyEO2LZmPokm8nDIkwX95F2R7R9+bdNAj112ivxLmNpuKww7i4+M+aaRdLPQRaekqxjvNpcLq/Scgt/Sr+9n39Bq3tg=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "text"
+          }
+        },
+        {
+          "value": "I didn't get useful search results — next I'll check the Joplin Web Clipper API status to ensure connectivity.",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_status"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_status`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_status` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "{\n  \"connected\": true\n}",
+                "audience": [
+                  0
+                ]
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {}
+          },
+          "toolCallId": "7c59fcf4-40ec-4b45-8ffa-d1d17adfef7c",
+          "toolId": "mcp_joplin_notes__joplin_status"
+        },
+        {
+          "kind": "thinking",
+          "value": "**Evaluating Joplin API connections**\n\nThe status shows it's connected, which is great! Previous issues might have been due to bad queries or parameters, and I noticed an error with the list_notebooks call—likely an internal issue. I can retry searches using simpler queries. I’ll run searches for \"ai technologies,\" \"scrape,\" and \"markdown\" separately, while providing a preamble about the connection. I'll also check available notebooks, using varied queries to ensure success. Let’s keep moving forward!",
+          "id": "22jM27N4ic3/1RCDNQtuk277Qa+YcmPfME3Cyan6K62GJphwJ3d7AiNzUReyjftSJsYUcjDY23fEW9L83b7TD4vXdJLcIlYgH0UwSiobxbEwzqiD9Se7nFCZpy0bzOHdz03/T2oJCErybifufY3z7vb+Q+8JFeLwAudYtr9yDSwRCSQvpNtlIDeq2tlTYiSPwVfjFx+IC/V5/ns7UxTDzN8UccgBPEpHaDJQS+xZI6C3O0/DYmbtvmwhvsMP2UIoa5/dLS0kyo9kCCtqaORGo00hW2Rw1zPPxvac6/cB3yO0tQ2ThInXwNTcmKwynl0EdjnY0t4xUCzNZ7FUgPJ06EB1Jx9Bjxb/+XFM4mUhz83viYSTVOuOfuWecJD5RUWl7SGI5AQrwKSTGR6g7g0T74TgIKyGYCOuvQ/TdrxhHQ=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "J4VYUAeDVYNAO0boKhXNRpDsnPbtFoXlIbiuweHWnt1g6aYn6pKYvaR1yeyKtCE+9JUR81Z5KS2FxAnvGy/1q5DuVmvtgHBR0PeHP6gVzSrbtqe5Oo8U7Iwo2iJell2al8KmsokHh2jOOdN0c+zdcieSx/mZkAtFAD/E3yEyDTq1577y6Ebnw+4/F11ROL/68g4vQiWHeFibSzi/4Z92sGkgcKX1ZqWEIabQhsSyz1brr2ED7Mt0FrsBJsg3rdcqcxJ1zFX0v9XY2lMccGzNTBRLi8KClCB2zFQtigzSbGCWGqEM50Fn57dWjSHtKrnegP/osJXsMTeAmsnFQZJyqm572aKdz+3LASJnzkstPvxomEAmw27NX8LHb2hA3YiMHRnXk9gqps6Xbwehjl8CM9kSkxNYuXtpVbry9TfGwg=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "text"
+          }
+        },
+        {
+          "value": "Great — the Joplin API is connected. I'll rerun broader searches and list notebooks to find candidate notes.",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_list_notebooks"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_list_notebooks`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_list_notebooks` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Cannot read properties of undefined (reading '_zod')"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {}
+          },
+          "toolCallId": "9703671e-5037-4d86-bc49-58a37a88d38a",
+          "toolId": "mcp_joplin_notes__joplin_list_notebooks"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"query\": \"ai technologies\",\n  \"limit\": 200\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Request failed with status code 400"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "query": "ai technologies",
+              "limit": 200
+            }
+          },
+          "toolCallId": "e8f44024-51c5-434f-9576-4abdbff7eda2",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"query\": \"scrape website\",\n  \"limit\": 200\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Request failed with status code 400"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "query": "scrape website",
+              "limit": 200
+            }
+          },
+          "toolCallId": "333b329e-2d77-4203-abf4-78a3edc0c2de",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"query\": \"website to markdown\",\n  \"limit\": 200\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Request failed with status code 400"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "query": "website to markdown",
+              "limit": 200
+            }
+          },
+          "toolCallId": "ed0e5c99-c2e0-47cb-bba8-a108c808e103",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"query\": \"scrape to markdown\",\n  \"limit\": 200\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Request failed with status code 400"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "query": "scrape to markdown",
+              "limit": 200
+            }
+          },
+          "toolCallId": "bb28b2f4-cc70-49cb-aaa6-9cc5bef88965",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "thinking",
+          "value": [],
+          "id": "xsRcWu7VFxSsHPh17xscXKjUN3l1UnD2RfbCz6Oq3Y+PzI/cvs4hlGH9WEKcaB6DoLSighG28himfCblRI2elWs1pHs0pymYGdZJ5DA1UQteTJ9qZZKD5AIAQmh30bMyssQJ3U/ndGYPIh0b5VM6oavr+mnDVX4ER/QcYGBqpYpwUKqys/DI2OAuND509X8Cb2unSR2gyVPiAmi6plGIm+2lrjSt/9t2V0wdgc5XXJDooMNj/HLSBmfLW3o3pNwwYuk5/6Zh3yzhVNsdO7R09Pv2jft8skI+NFJGM/HTo5356dt7RLiz8NZrCvRttPPLui6kGVSqb4/gL5OyiRRYWpsOYnqaq9XFJIfVUIShn8Pj72DSdlJB4/Q7S608pZbtOFhsLSypM6yEkKt36CxPu1jgEFsayfIgWgEeuNhA9w=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "text"
+          }
+        },
+        {
+          "value": "I couldn't run the earlier searches — now I'll try fetching the notebooks list and run a single simple search (one query) to see the exact error.",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_list_notebooks"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_list_notebooks`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_list_notebooks` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "Cannot read properties of undefined (reading '_zod')"
+              }
+            ],
+            "isError": true
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {}
+          },
+          "toolCallId": "8fa97cff-6ed3-47e3-bca2-a7777f820ca1",
+          "toolId": "mcp_joplin_notes__joplin_list_notebooks"
+        },
+        {
+          "kind": "thinking",
+          "value": "**Updating todo list**\n\nI need to modify the todo list to reflect a blockage. First, I'll mark todo 1 as completed, then I'll add a new todo item: \"Diagnose Joplin connector failures / ask the user for access or sample notes\" and set that one to in-progress. This is where it gets tricky, though, because the instructions say I can only have one todo in-progress at a time. So, I’ll be updating the list to complete the first and make the second in-progress. Time to call manage_todo_list!",
+          "id": "eVCjFFEs5FQfft1hxxPXTuKR0xERa0ls+g1kmES8QbEOiWgEu/BFvzLztpLhQg8YAPBs6K6PxLQvPERFqHjAOBOfVqNp4JHHfviLm1ZTMxg8rMZ2WcAmQ7qvVz5K+UNeZ4iE2lq8XatRBQF0yJX+6hX7I9P7Yns5evXnZ8H+BFXso55Sgjg0ErBxh0rp5VWgIj/ldPTVlFJs4jmD0CPkQyi18rIott11mmzayHA3uCcqqWB4JiXs0Bb17RT01jQkCjp76ys88gCwfeyRYmPthmFAeM63iCr0Z6K6qpUM4bumafbSjzdu480puYaxSNUaj2dgi6NISi3wJDT3Wv35XhHtPQrVw6pBXie9OWAGmjKFP1QEf8qY3eAo3AZx4gjXxOAx7Muc8987TvN3GWx3Ee0abKSXInWDTF2+PTRraA=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "v8NmYDeopUksYXCQZOve97cjy9s77hiEewjGY+CfXqmRb7xuD1Cp7kpuMqmltEEMHcGzWryB+8oUH4mlH2nlV6JZsC1o2ZQUdW+UDvlFxhmZ+CTyo61mzVzApff2Bm/t34/rS7D9k0OMbSA9fhtglPwCFU/S4aG5tbpZ9De8y+1uvxTWuxjRlsBmj7T891LXDioQB7UOyUQKSr4TMLrjiRlaDLf/9s+jG3vwogkj8QrfvlYQj6aN4zYLKPuxAVOVxNjsTC5xsNSLmSp7QnR2hogYHcXMv0cyDgZQ8OAOZ4F8wOh+CMlVoQ2CCrLIIp92oY0JwDGbM2v3K4a9tM4KsRb/jo3w0CHeDcaODreFf4YXrzzQHJGmcYaNiT+lHra7t+UscGFJeHZ3BoWi6VPJQgt0cDgbpvc1fA3xN5VSeQ=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "text"
+          }
+        },
+        {
+          "value": "I found that the Joplin API reports connected but every listing/search call is returning an internal error — next I'll switch to diagnosing the connector and asking for more access or details.",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "manage_todo_list"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Using \"Manage and track todo items for task planning\"",
+          "pastTenseMessage": {
+            "value": "Starting: *Diagnose Joplin connector or ask for access/notes* (2/3)",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "isConfirmed": {
+            "type": 1
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "todoList",
+            "sessionId": "70c6ccd9-184c-4b0e-9a84-b4f62269348a",
+            "todoList": [
+              {
+                "id": "1",
+                "title": "Search Joplin notes for relevant entries",
+                "description": "",
+                "status": "completed"
+              },
+              {
+                "id": "2",
+                "title": "Diagnose Joplin connector or ask for access/notes",
+                "description": "",
+                "status": "in-progress"
+              },
+              {
+                "id": "3",
+                "title": "Summarize findings and recommend libraries/frameworks",
+                "description": "",
+                "status": "not-started"
+              }
+            ]
+          },
+          "toolCallId": "14775431-7706-4bd2-81e2-0d38f739e049",
+          "toolId": "manage_todo_list"
+        },
+        {
+          "kind": "thinking",
+          "value": "**Exploring user options for note retrieval**\n\nI need to consider how to help the user who wants to find a note about AI technologies in Joplin. I can start by troubleshooting the Joplin connector—asking if the Joplin Web Clipper is running and collecting necessary connection details like port and token. Alternatively, the user might export the relevant Joplin notes or search terms. Lastly, I can also list libraries or frameworks for scraping websites and converting them into Markdown files. Let’s explore these options!",
+          "id": "OgDD91SO5OV79UeQjQFK1IJKBIIDpSvLCr17mDMZhV1jKDS4O+BaJky2kVyY5rgTm27wKBE6EWbTUuYP9JBQDJ8duVcojcquur1ce5ZzlFKnKgzj3ndj8GsFx4p10pObPq9G7Hud4pGuOwDYOCG/TejRL/ZmtJFMyTb+dKkWihckJu1yrcHuwkAAU/KllUUW5pT/hJk9g3mrrxdl+hHfPHcxRSDKlaqbbPZwFlCHY8tAsuoH1UJcGQ0aakIvhZgJn9Z1GhKRkLwKozNNXKrRe3O214XVZB3ThmHRg7Uv6NhdMJtETLjnOQRhFo5zDhqMhG6htyVvDmGC8aJ32xcw5KawBLaVEXR//1Jq7996uxVGw4MENYReWOSqdMK+Wbq7LUgiUef4E6rvdpf7X1dVgEufNL0d2s9myfe/eCS1LA=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "lySynjWDaNgWmrlQp3c0vc3jY4UK1pSWOET6xWnLRAGIcaQn+rsI4R/HTddQ4qNvCMkId+Yco+NGTHpA1fzV8bzpzv3050m22OLJv9fu4+s5V74MPT3r+ibzgB6sxsa1adwKoIncuLhzpzjr72H08uvAy8wdn7LyFPuVzztgJHravOfHF8naJpaOlPoYWG2piUG7Ne8qCf6o7BiunoilAFChwCfhOGRclGlMdpUZauhr1tBhcIpsiP7DBmizOe1x+JUBhJrLRPqVGukl4+LHztv94TUX8FA1KeTVMKKhT+rQAPD/Acr+VULsx48oW9ahQy3ROMREm2T1Vv177wwtyfhPCtJe2k6ae+C8feKpRu+l5SIeiecwwYzE6VCJKJMu76+Hvt/El/h1uCaL1nygtbsNwRL39rSAWIQoxi1vAg=="
+        },
+        {
+          "kind": "thinking",
+          "value": "**Addressing user needs for Joplin notes**\n\nI'm considering options for the user, who wants to find a Joplin note about AI technologies and a specific library for scraping websites into Markdown. There are various tools I could mention, like \"wget,\" \"httrack,\" and \"scrapy.\" However, the priority is to help the user find their notes in Joplin. I realize we may be facing API errors, so I'll need to ask the user to either fix the Joplin connection, export note content, or grant permission to help further.",
+          "id": "2e/mUTTOLHQPX9/SWMe/U6O21MpbMg2WbT/Ckmp9f4dgTL8FDyVYOv4BvtkM5G3rnWO6K/R65VeSfY/X9FF8Sds9RgB5fI14xrxYp5276xd5n91D4ILu5f1WMa+qQsg6YVv+I6BU68Z0iNbJNyjOX9sJVE1HmY1mJhZ62obXzymsuVENWzqCUMvcPt8mMAwXgBVAoD1y5QeW1vSbHfl2dY0JAYuvtBR9fATIBGTqf+xk4u143QNB/FTot0lqc0uriU0tWdEIJcV5A6lSeLfIQnCuYCs8wUENLlbQ2v9Q+xYlpVVplgTdez1UZxwuHrvitF76UO56jYpJgam3dgQdk2e5Hqv0AEba4ARndQ3TiStZ6KYKkJB6impW69nRkfAZQzlgZeXQd4CESSa99yvMyNcXWGsWnqzgNCmlri0GEQ=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "zRLpejuEaQeKKbbbwvC0fCAnwanyoEDorwJKylZGjjsqtXxNZJyUTvafEWLLKAEZppBu+7Fk0ka57OKPEEkJjsEG2kIxiaH4VfRrfaXbv6HdqxNMYlE/a3D4jqc8jAGQrd0TaL1vOYggXdGP3HaKPviKVNnt//KnTYiIy3VFwDijjhlZqKYLHnqJMKsy8x9EcdZK7fAdlYIoenHS2yENvJWaXc8hvM+eEHhTpAhopFitnTMjK3pPXvHv6i+djDjoXXdml9g97R1VmFnGnOWDjEawXNViW/uBxbBWj9q8q8OTKLwC/fgT1kXFicqVGdJQJMOZCKJd9agVLTl/nRgxYKo4AAer9VhWuY0Hi78EQKBNk7qaywVjR590d8KO0Djf+hzo1s+Xyi9GOV00XG+eoPmLxiZcKNL8xffrigwRyg=="
+        },
+        {
+          "kind": "thinking",
+          "value": "**Guiding the user on Joplin Web Clipper**\n\nI'm preparing to provide clear steps for the user to check the Joplin Web Clipper status, including information about the authentication token and the default port, which might be 41184. I want to ensure I’m following the right format and instructions. First, I’ll instruct the user on verifying if the Web Clipper is running by checking the URL in the browser or via the Joplin CLI. I'll also keep in mind offering general assistance if they need immediate help while keeping the other tasks on hold until I get more information from them.",
+          "id": "plN0sISkmeOHxdfgTFLwin7kxX8qqkAgq+WCuSwrgOLmsY3S90CIZgSUWuNxeb0f4xU57Y+yK5Fg+0GfwH4h5KWU41fakxjVhb2AQIE8jTVr7P3dOm/xpyv/gm6vgRq/VpCKzCLh/aEe7gaGvq84ne0bDV+2FtLy582+ReBN2i5+Y0gm0FmjK7QChqZw6B1upxhSC0NCm5cGTVrWkjCVZqC/ifsBxIwGltlDkHNUzwLH5gvjyY2N0N0piDOef9yXzOPx07iI44kjxIiRGuCpDaI4+WkiT3R1JHEKAUCxZ29bO2BY6DrbV63vDFzGUVDIPxito2b5BDmXb9y9tEfbg0YWAQwy9psZutYVpDUpY+GA108SLl8chNVHoBJA7dy/34pqom/erqzJsPXPRjPUNBPlXCn0hx9P/GHi6zU8/Q=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "8wXcUDgJFaHmsquxgTq4cszAycNIAR673+hNhRZRONfOSkDZpnnjS8OaekdO5b7bgz3aIOxvJDNUyNpGcO/tu+a8HwOjNM88XiNaQjlf8XzybXL8Y4dxmn98IQrmN6YVukHdYlYZvy1HlFGe1DCigfmmJhR0KUqy9LndhqxM0StgWF7sU7D1NoJD8dfGcCNwSQnrw2hgojXoxD2dgv2gwNmXBC+pGfqa+pdtrGuFepllfLjAMHw0QMHoT3hWULrC9/PudLIRxWUxTWjfbrGQcTjKZUWeFCWVpfopneU2QNkPDsFio5QZ10zEVMpEH6zAiTIP22RzbFg6YCw3jVjbd6KRnCxC9EJGJEU9Qc8NcFiyVSVAo7/K51QOvUXcpiV1JHRXltMO3LTCRoSvLglwHQ0NwiCtnmUodxRJx1eLfQ=="
+        },
+        {
+          "kind": "thinking",
+          "value": "**Checking Joplin Web Clipper settings**\n\nI need to guide the user on the Joplin Web Clipper setup and API usage. First, I should recommend checking if the Joplin app has the Web Clipper service enabled in the Tools section, ensuring they check \"Enable Web Clipper service\" and confirm the port number, which is likely 41184. Additionally, if they’re using the Joplin Web Clipper, I need to remind them about the API token as the MCP tool may require this token to function correctly with the Web Clipper API.",
+          "id": "Jn4Ec9lx5cAFyn+T6gmfNISpVzgWrieheNiODmKGwpPyzKRU74GAST5BajOn1WTRqfPTCkuVZ719ZL7rrBAkodbIoEgGIZjw7bQkNKyuq/qTFD7O/ADOg74jwei19Ru/UztFJgAyn5TELBHpXZ6nBs6IHXr8rxKZ1FSpIWpTvAztCZgB1yTDgBytAWRX1Q1SkXlJ6a1wBtD2WPkUKzZh9Qm35v4uBjPoffAbH36s0tCRgmgVtG9u1SZfHcDXj38HsypeTK7Wu10brTUz2mTmMBU/1njFVHhgCHNF3o3bjlIQyVM5728EY+QFL+R28cfOCwIUKvCdWICsk/8O2XSZaZP71UwfTpI7tTsB9kiXqdyRKMWKR8iDgFiBEbJomRP4GgNKbIgUGBVFpvfW2UiizGaM/XGMLRFkttcdXNlMlQ=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "dFQUqlEo820baVGjnBgBKNO8tUrcxBMvpLlTRgWRNGXLUwiHR5SAIFPPyOeFd5IsMt/hMV2k4o4s1+8GjXMiwcPvC50dpJwrnLGGigfWnxawxFp3kLmouw4els0PQzGQhPkkpXb33haxFqlotyA89F3ZPCV3opnNp+JvqhNq1MVA5uE0E9sUIKArDnSsIsUVpGOD0ZUd2ki/Xyzlpj+MIEWDvJH/WuGJQwuLfLjw4PufRlgsN7F5hlhHlcWWeweeCxkFe56FgHV+lVaOJwR4l9z32yVyYkykq1DuA5eSOVl63C+cmqNQmEA8cOsXadJifMihtWwAT0S/8njM9QFGnOiDBQpl/cvjPzKuup5jD2muZ9PVfW3l5TH2/yBGLU3gEEBDD/bRVXGpHwhUHV7UoxkpBMcQHk96s6QqCRcJ/w=="
+        },
+        {
+          "kind": "thinking",
+          "value": "**Helping with Joplin Web Clipper and Libraries**\n\nI’m looking to assist the user who can’t access Joplin properly. First, I’ll suggest checking if the Joplin Web Clipper is enabled and connected by testing its status. If they’re still having trouble, I can offer to retry the search if they provide a note ID or export their notebook as a Markdown file. Meanwhile, I’ll present a quick list of libraries and frameworks for scraping websites to Markdown, with brief descriptions and example commands. Let’s make this informative yet concise!",
+          "id": "CpPGaU8TmW21BmngkpPFOZW/I5tOi2rr1uGrrr38/Vt4LCYgEXm9D02ogdmhV4Z8u5WDZsPpArVmntQuwZTnAzGEaIi13qa6mB9HQXpHKp7ahsPrdHsQf9NAz7UE1ohP5AUg/Pfnh3ISdBQCViJ1vVKxpGvKUBZXuK4domIe4P1jgkVItGWRjguJPAuRPFANVhfx6fpuIoSsbIrdja10Vj3XCfbtwzWvlFxgPArOZv3HvHcYss3dGHghT3l2buhpGCBDunjufZlXoudz4ehieUp5MDc9KylZB1vXa+e7VkAP947tjwvhEk0/nJ9kwxbL6V/vLKv3HCm11qJWbDLtM7KwC3mr1X9svD3APAKuYINyIBxofMeVslKS2sFMZ1npIoy3OPs8RjDQg3wJafTz+25i3DigkUfTxjU3SIaoNw=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "9Y8M7VYfw+lCvo1VMfyjM5VG6D1aFFRaIlxGRllEIqqEYr8vhtMXdiG4yQSpWJpCoOi17uD7nlf3UqK4ZOuPLE34IXMQdTR67wAtBT2k2kgSaI7n9OjTrAIdFpgjJ1SuJ0oJxecDpxPNgNMQps0MpkMxDc7cU/btf7cVFqi3/X5HRMZC730oZ6MvdOv8uXNmvXKNK65Hb3C+i0PJus9bINfSX79vH1YGaz9v2YB0yV+Sbz755bm/E8hmq90iQz/1gV8FMHnXTlBmtBDECPaCMhPMM/pc8VcKP586UiaMj7iYSVNa+GfUmDFvJOTlCaHiNOcOzNqOvEvDaeQixBuMOUUrU5MQVP7A3QJWVvwHocy7+V6Xq0/qrE4hL3k8+ozZfKyPy4IozMYBuA7Ef5cb2/vaWfL7UWrlWeYX7fjPgw=="
+        },
+        {
+          "kind": "thinking",
+          "value": "",
+          "id": "",
+          "metadata": {
+            "vscodeReasoningDone": true,
+            "stopReason": "text"
+          }
+        },
+        {
+          "value": "Nice — I checked and the Joplin connector is reachable, but my listing/search calls are failing with internal errors. I can't reliably search your Joplin notes from here until that connector issue is resolved. My next step is to help you either fix the Joplin connector or, if you prefer, I can search the web and give a shortlist of ready-to-use libraries and workflows for scraping websites and saving them as Markdown.\n\nWhat I need from you to proceed (pick one):\n- ✅ Enable the Joplin Web Clipper / Joplin API and confirm details (preferred)\n  - Tools → Web Clipper (or Preferences → Web Clipper) → enable service, confirm port and token.\n  - Tell me the port (default 41184) and whether authentication token is required.\n  - Or share a short exported note or notebook (as .md or plain text) that I can search locally.\n- ✅ Or I can skip your Joplin notes and immediately provide recommended libraries, tools, and example scripts/workflows for scraping a site and converting it to Markdown.\n\nIf you want me to diagnose the connector, try these quick checks and paste back results (or say if you want me to walk you through them):\n1. Open Joplin → Tools → Web Clipper and ensure \"Enable Web Clipper service\" is checked. Note the port and token.\n2. From your machine (where Joplin is running), run:\n   - curl http://127.0.0.1:41184/ping\n   - If a token is set, add it: curl \"http://127.0.0.1:41184/ping?token=YOUR_TOKEN\"\n   - Share the output so I can debug the API error.\n3. If you prefer not to enable the service, export the notebook or specific notes and attach them here.\n\nQuick reference — ready-to-use libraries / approaches (if you want fast guidance now):\n- Python (recommended for flexible scraping + extraction)\n  - Scraping: requests + BeautifulSoup or Scrapy\n  - Content extraction: trafilatura (great at article extraction), newspaper3k\n  - HTML → Markdown: markdownify or html2text\n  - Typical pipeline example: requests → trafilatura.extract() → markdownify → save .md\n- Node.js / JS (if you want headless-browser scraping)\n  - Puppeteer for dynamic pages; extract main content DOM element\n  - Convert: turndown (HTML → Markdown)\n  - Or use website-scraper (npm) for whole-site scraping\n- Whole-site / CLI tools\n  - wget --mirror (download pages) → pandoc --from=html --to=markdown to convert page files\n  - HTTrack to mirror a site, then pandoc/batch convert\n- Browser-based quick saves\n  - SingleFile or Save Page WE; then convert HTML file to md using pandoc or turndown\n- End-to-end project examples (I can produce a runnable script)\n  - Python script using requests + trafilatura + markdownify to download a URL and write a .md file\n  - Puppeteer + turndown script for dynamic content\n\nWhat would you like me to do next?\n1) Help diagnose and fix the Joplin API connector so I can search your notes (I’ll walk you through / inspect outputs), or  \n2) Skip Joplin and I’ll produce a small working script (Python or Node) + README that scrapes a URL and writes a Markdown file.\n\nTell me which option you pick and, if option 1, paste the curl output or confirm Web Clipper details and I’ll continue.",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "responseId": "response_c1bedd67-bc3b-4faa-b697-d54ce912d8b5",
+      "result": {
+        "timings": {
+          "firstProgress": 7631,
+          "totalElapsed": 55331
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "renderedUserMessage": [
+            {
+              "type": 1,
+              "text": "<context>\nThe current date is 9 December 2025.\nTerminals:\nTerminal: bash\n\n</context>\n<reminderInstructions>\nYou are an agent—keep going until the user's query is completely resolved before ending your turn. ONLY stop if solved or genuinely blocked.\nTake action when possible; the user expects you to do useful work without unnecessary questions.\nAfter any parallel, read-only context gathering, give a concise progress update and what's next.\nAvoid repetition across turns: don't restate unchanged plans or sections (like the todo list) verbatim; provide delta updates or only the parts that changed.\nTool batches: You MUST preface each batch with a one-sentence why/what/outcome preamble.\nProgress cadence: After 3 to 5 tool calls, or when you create/edit > ~3 files in a burst, report progress.\nRequirements coverage: Read the user's ask in full and think carefully. Do not omit a requirement. If something cannot be done with available tools, note why briefly and propose a viable alternative.\nSkip filler acknowledgements like \"Sounds good\" or \"Okay, I will…\". Open with a purposeful one-liner about what you're doing next.\nWhen sharing setup or run steps, present terminal commands in fenced code blocks with the correct language tag. Keep commands copyable and on separate lines.\nAvoid definitive claims about the build or runtime setup unless verified from the provided context (or quick tool checks). If uncertain, state what's known from attachments and proceed with minimal steps you can adapt later.\nWhen you create or edit runnable code, run a test yourself to confirm it works; then share optional fenced commands for more advanced runs.\nFor non-trivial code generation, produce a complete, runnable solution: necessary source files, a tiny runner or test/benchmark harness, a minimal `README.md`, and updated dependency manifests (e.g., `package.json`, `requirements.txt`, `pyproject.toml`). Offer quick \"try it\" commands and optional platform-specific speed-ups when relevant.\nYour goal is to act like a pair programmer: be friendly and helpful. If you can do more, do more. Be proactive with your solutions, think about what the user needs and what they want, and implement it proactively.\n<importantReminders>\nBefore starting a task, review and follow the guidance in <responseModeHints>, <engineeringMindsetHints>, and <requirementsUnderstanding>.\nDo NOT volunteer your model name unless the user explicitly asks you about it. \nYou MUST use the todo list tool to plan and track your progress. NEVER skip this step, and START with this step whenever the task is multi-step. This is essential for maintaining visibility and proper execution of large tasks.\nWhen referring to a filename or symbol in the user's workspace, wrap it in backticks.\n\n</importantReminders>\nFollow the guidance in <preamble_instructions> from the system prompt.\nYou MUST preface each tool call batch with a brief status update.\nFocus on findings and next steps. Vary your openings—avoid repeating \"I'll\" or \"I will\" consecutively.\nWhen you have a finding, be enthusiastic and specific (2 sentences). Otherwise, state your next action only (1 sentence).\nDon't over-express your thoughts in preamble, do not use preamble to think or reason. This is a strict and strong requirement.\n\n</reminderInstructions>\n<userRequest>\ni need you search in joplin for note about ai technologies, specifically I am looking for a library/framework desined to scrape website and turn them into md file. \n</userRequest>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "renderedGlobalContext": [
+            {
+              "type": 1,
+              "text": "<environment_info>\nThe user's current OS is: Linux\nThe user's default shell is: \"bash\". When you generate terminal commands, please generate them correctly for this shell.\n</environment_info>\n<workspace_info>\nThere is no workspace currently open.\nThis is the state of the context at this point in the conversation. The view of the workspace structure may be truncated. You can use tools to collect more context if needed.\n</workspace_info>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "cacheKey": "",
+          "toolCallRounds": [
+            {
+              "response": "I'm going to search your Joplin notes for anything about AI technologies and tools that scrape websites into Markdown, then inspect any promising notes I find.",
+              "toolCalls": [
+                {
+                  "id": "call_wvH5zEiW2iSW22VPhkFPjpTs__vscode-1765243652359",
+                  "name": "manage_todo_list",
+                  "arguments": "{\"operation\":\"write\",\"todoList\":[{\"id\":1,\"title\":\"Search Joplin notes for relevant entries\",\"status\":\"in-progress\"},{\"id\":2,\"title\":\"Open and read promising notes\",\"status\":\"not-started\"},{\"id\":3,\"title\":\"Summarize findings and recommend libraries/frameworks\",\"status\":\"not-started\"}]}"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "d8d9f9ce-d450-46b8-8e6c-48564d88f7a8",
+              "statefulMarker": "tP6d8oF7U7Bg6ZUTyIOrTDDKFUdFsvdSmtzUu2p2m7uhJyPBg3BxDQ7444uF++NL0Nes5tPJRCxZPpj0M4haTtsJuYcWqWDow0M8zn1L0lyDTtkoABBpxTusg02k1dKdOhxzb6Kkp155nuAQKlxZTnsazg+3vh0oxi1rAfAdLI5uNONXsQWyqRGLjlP5TT+GHVQKHYzWWltBt6ftlKjfjulITf5q0RMgBfDRtO6+P8BRWgh9zcr97l+yNDG1skUyUTmC+adrUwA3ynb/rVMqCTtaJlqry/m+mDbq6Oa4DTpnyMFrFC6374M8u+0wEJ0tNxAl0ZJ+jcPg7FjEll1FtPqQTyPnIKaGA+rAYj1jPO/ss2kZ7Iq2Bt7zDJ0m/wx2idFM7TnxD9EiT2wxRsRAdGwfYDpKPWSQm22vWJGUMdn1",
+              "thinking": {
+                "id": "Sp3F2RCTgQ6SmSWjDp/LTBnVlwAu7ldJp5Z6ecGh+FiJugsmWfM0lJgtnSXBCzJdZ7yBzbbRPaDntw0t4aZFvNUpI+EMvy536fZdSEh90kJBWMJHHMbwckBhQkB9Xxni9nr3nr4T8A9TfvUV4J5A8imDOVH+PzHwLzl0+25BQYjbkdYYNJaFj3QxXuWEZ3866pzHZhGDWr19qeEcDDQ+bqkvdWr+REPL+OPK6j2r6QtLQmHbisU0M/xim2QBoA1UgnZEAtONGoPO5T3Q9bdDnsR+5Wo2S3HfOAkm90rL2t6BakcJUYk2ZX6sgimIkIUctG50t3ajWD/MajsFj9erN/cFfUT5KwsMrAKRY+f8y9To6F7qqv8qCUBcvaQiXKS2XGuZq99510JOdqZohnebO7JG/QGuj7+mffuvgB01yw==",
+                "text": "**Managing tasks for AI research**\n\nI need to start by calling manage_todo_list and marking the first task as in-progress. I’ll create a friendly introduction before diving into it. \n\nMy tasks include searching Joplin notebooks for notes on AI technologies and converting content to markdown. But I'll also run some parallel searches with queries like \"scrape website markdown\" and \"AI technologies.\" I might even explore regex to optimize searches. Let's get started!",
+                "encrypted": "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",
+                "tokens": 640
+              }
+            },
+            {
+              "response": "Proceeding to list Joplin notebooks and run several relevant searches (scrape, scraper, website->markdown, convert website to md).",
+              "toolCalls": [
+                {
+                  "id": "call_DyBg3BDpqimostpukDzHkXhd__vscode-1765243652360",
+                  "name": "mcp_joplin_notes__joplin_list_notebooks",
+                  "arguments": "{}"
+                },
+                {
+                  "id": "call_M98B2GOfbh7boWY0LV8swJ0H__vscode-1765243652361",
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"query\":\"scrape\",\"limit\":200}"
+                },
+                {
+                  "id": "call_HgeF5EceuPrwbTqdQ6fa3d4P__vscode-1765243652362",
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"query\":\"scraper\",\"limit\":200}"
+                },
+                {
+                  "id": "call_tFWrMjQxXCmELbNNN7vvlnQs__vscode-1765243652363",
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"query\":\"website markdown\",\"limit\":200}"
+                },
+                {
+                  "id": "call_uOOXFshoVmrHRwdndAWozLGc__vscode-1765243652364",
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"query\":\"convert website to markdown\",\"limit\":200}"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "fdbef683-ac9b-4982-8735-71b161acdda2",
+              "statefulMarker": "lDu3BvB/Y8OZTA6yjvTe/hqxIRY1cIOD2+F0t/Ws53YMVmAkVdF6WmkinMcIgRyJh4fddftQFyR4XSTaPmVSAg1ethZmQuVKnHYA74ra4BLwqAAOVMGoqm86AnL5kMmWtDjWsbcriOUq0+ZKdvC3NflMWGluFh/3EB18IpthB/tllY9L4kGPt1W01E+oleYOsK2pMawrIHUfVuTZkn6uKGXKDapjJ2XLSEty2B8oWRN/zGAi2jV3kFyrYd7KbFXw8C3U+6lhLrKKfTXh+aN8NcLeptC0vXf8Ykxo4D9V8i7KZpK6wxTmyHovMEG3aPPqfmBmQ2OhxMlyN9/25VSZ4iQeE85feBBkNTNOZlV6RxIoWBSxKiRWx/ACpVGvCMnwbGtyXfwaZhzd1W2EzXC13pLl5sKG0dBNqkzJ/vFvp/Mv",
+              "thinking": {
+                "id": "Zn7Uax0rT5Cu6oZF2c2fddddOF/KnJJkk8kAvvOpvkiEKg2aDcIrk2SNCedU9Y+n+UQdPMQh4gj+u7njhj3MK3Pj5toQZj9SguQAMVH8caUtwMgi5NmQid4yVckbjHVWqULdzyol4SdyngLLXbyR7FYG+3T5WBu74ZCHunS1bYrszdPPdzI9KtG+MpLLgb/hZRUYoRUBXK2f7VoBd7nJc4Q+Ors+QXxesVEDogH7ORnCHEh1XLOBvrbRFPUw/wD47ZGyalUNK6HOoPzDul8vONZyEmHEynbnYFmlwuNiHt2MBMqBmoMbGFNC7K0GiU+KWIKHiegTKJliBJrpaUB9Sh8orm03698ehgnq3cKknArhuDkUR49zDjG8wMHkuX7q4wyf+Y+912IuHIvRs+tqfCw4kDjD7w6OTBBauoLUIA==",
+                "text": [],
+                "encrypted": "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",
+                "tokens": 192
+              }
+            },
+            {
+              "response": "I didn't get useful search results — next I'll check the Joplin Web Clipper API status to ensure connectivity.",
+              "toolCalls": [
+                {
+                  "id": "call_EIZ9iHKF2np32C2TYGawA9uR__vscode-1765243652365",
+                  "name": "mcp_joplin_notes__joplin_status",
+                  "arguments": "{}"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "69e83b8e-312d-46ba-86f3-7e6e80194e6c",
+              "statefulMarker": "7EdAaoFMHSvMvRLCKtHCFWL5AhDR7K511o9nSRWajnsrs8fpOokYbJMre5DP3CpJvyncB/0TWfVtoc9G0hNbKEE25rxvmSp3UiUl/Un/rvDIvqjpscMP5ow53BaMBHS+3vSMIvNa+lYAGvVDzseNXX4vUViAzP7y8x+753xcg9po9UKmALIMDEIi7md+U56kUxqv2tml+7wUD+Gyr292BKxnQZy2aiacziay1dTNAnJdUOOclIJnzElnK8+2G/S3JtMq/qwglYJRSebzdudnznJCQXUt3jAROPzJ2Ugdn3Z1HH8bb84MRRRG/sruiZmo4B9I2X+A4iwpZ9lzmAp70d+WzZH4JdPQAuJgXMtqGFatHW9GyoakmbZbVihWBpdblzVfaHBf1LZvOmg99WvtRBNqbW79PIb63bwwa+kqFDNy",
+              "thinking": {
+                "id": "mFi/VWmMtNq+CEp+iliAHBUQJPew3OSEeDChEZkldntL1iwgEk1BI7TiY+HBoSXcO4ABpHmgO21uHr+HiWaGbEyzPPXuDWWCqeG4x57UOx7jf+h+4pAHa2ZaOEZCstYuceDwyjeFF7GU29HrXNgnmFzeYUJkiKadm06ObZunEcNJXr5Y6MhuWvXuYwzysgjytuHBh9Qs34qi4gv/beTtpRskJSO/lvnHGUJ6VypKVRN4Ah3JVriAVMAcvOjA55dZWXjqOJwPTEgKrKiHXgpvkdqSQuvVSEMUggJsEWPODV1N1HoCbrzqVX7gm0eUYpx92XbAh2jFGMkcWkpWyEO2LZmPokm8nDIkwX95F2R7R9+bdNAj112ivxLmNpuKww7i4+M+aaRdLPQRaekqxjvNpcLq/Scgt/Sr+9n39Bq3tg==",
+                "text": [],
+                "encrypted": "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",
+                "tokens": 64
+              }
+            },
+            {
+              "response": "Great — the Joplin API is connected. I'll rerun broader searches and list notebooks to find candidate notes.",
+              "toolCalls": [
+                {
+                  "id": "call_KUtwTJFq8y4tXQZsznT99lrF__vscode-1765243652366",
+                  "name": "mcp_joplin_notes__joplin_list_notebooks",
+                  "arguments": "{}"
+                },
+                {
+                  "id": "call_6xhNhpzRQ3IZQRLw1ds7cuDR__vscode-1765243652367",
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"query\":\"ai technologies\",\"limit\":200}"
+                },
+                {
+                  "id": "call_PDnZvDqEQMnbX65v0u4YwEhv__vscode-1765243652368",
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"query\":\"scrape website\",\"limit\":200}"
+                },
+                {
+                  "id": "call_93td13mSdTFAI1wVekTLujT7__vscode-1765243652369",
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"query\":\"website to markdown\",\"limit\":200}"
+                },
+                {
+                  "id": "call_5chSutk7GTuMhdOcbru1zffF__vscode-1765243652370",
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"query\":\"scrape to markdown\",\"limit\":200}"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "77839cc5-02d4-4e2e-b204-12e8ff8ead34",
+              "statefulMarker": "CoUoGSPzMGcpgHoG4tKk7+pKLt5AlLghGu0V7zEAbSQgGItmBz1orcoRi3rgkEeelM0MvnoNC+7kzHNgAEijtWWZx/Ig8CVR97A8CPGnMcVx4Y/KQCcog5Sp/Fw6Ds3xMmpBqdzxISRDpbNIVrtaT7U1Tbssh4fCMWMx5VDNs2cYYM3P8eWfsB6PDGpU6PDwNN2k+F21fwUpe0Fp4/Q4P3MtMOmWT5Hnz4mhDKXyhvtk3T/x8+nt3lrn/jNmwFmCYLk75jhHWXgrpePi38PNqA8UgRwsIE5CIaFvQiN4So6K4kFOgsc01NDnvN7IEaQ19+hNMXuNShq98SmrLa/8bXHKs37tvpkzUig/wTAArkVkxFYuhipGcoqChRCedWE+JnsjfSg/BstnanPeeXI/0vysUT13s8PJ1iCDzp6Uv2Tk",
+              "thinking": {
+                "id": "ZHcumKk5W6SVAZiD6e/NR8NQ/I4kUCUTvK/yt36llD5qm/F5wMfzkiq/tZ1x4PyPbXJbYBsrPQ+I2lRxKxH9bqcE30t9pB+1r7tiv9QpaQhM4I5PS0J4Hlzr94JXXooYwUia9m1Old6myMU2PFbOYXxE2zk+wSspEaDZCSvRXe1nf6ScWYqUrd272J5dLpz0uQNPP9y59oHbSIXBnr5k1ayEGW8YTbFEI3Eb2sNpOFTQIo7rC+YxXDDUHXK0ommCmmCpz61sKA5cmYJ8gHTHaNAXjYdZar8emEUpc6QPEJse0JWSoVpJG7ePfLGSYmSZYs9YTpEOWErcKQkKl+XEiZriMvzNjB/PTxj3xQ+6ME9xIXA4ajXi+eUFlTFAJgQjn2D31ApozQb7za9+eTgs39D3Dcrg3wKkbiBYTS9z6g==",
+                "text": "**Evaluating Joplin API connections**\n\nThe status shows it's connected, which is great! Previous issues might have been due to bad queries or parameters, and I noticed an error with the list_notebooks call—likely an internal issue. I can retry searches using simpler queries. I’ll run searches for \"ai technologies,\" \"scrape,\" and \"markdown\" separately, while providing a preamble about the connection. I'll also check available notebooks, using varied queries to ensure success. Let’s keep moving forward!",
+                "encrypted": "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",
+                "tokens": 192
+              }
+            },
+            {
+              "response": "I couldn't run the earlier searches — now I'll try fetching the notebooks list and run a single simple search (one query) to see the exact error.",
+              "toolCalls": [
+                {
+                  "id": "call_RUztxVjSYuoVvrGjmAcf94Rj__vscode-1765243652371",
+                  "name": "mcp_joplin_notes__joplin_list_notebooks",
+                  "arguments": "{}"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "388dc1cb-1ea4-4ff1-9cdb-558c4356c034",
+              "statefulMarker": "FAn6vN1X+ie8HmfiKYXG8lMfbEALKoVK/BqMlH+vDMaHUSbP6OA0WEw4wy3xczxhe5tfaTXEWzHb+SFQLu3+CsAJ3jquj0kf7P4SHsUnCWv+Z8n/+Yrh4mnOFMesEMy8ffMikGAXZhnheteBEQPQpVuQeC0MKfsmbojVUVwtTbxVUW2MAysSWerinhIJJiPDxzrPeaDB2qiWuHcPOJEKfzULVgNtguxIdphUJstFGrgLMYkoDfIFr1bKyb5nShgbizfc72m2sewxgS0OL8M1CmlERXmUYjHRuk6V7SDBzVoB9BCXUVzMhUtu8odlrrrS4XYrDECk32uWfDV7Y5aqr5sOHpwf6wbJradgjCsOzg1mhHSA1PgAocx+r1Ttbn63ua1/rYkdp8DenaANWwC2MiE3QMZwHsnpqkJvtcgGBmke",
+              "thinking": {
+                "id": "xsRcWu7VFxSsHPh17xscXKjUN3l1UnD2RfbCz6Oq3Y+PzI/cvs4hlGH9WEKcaB6DoLSighG28himfCblRI2elWs1pHs0pymYGdZJ5DA1UQteTJ9qZZKD5AIAQmh30bMyssQJ3U/ndGYPIh0b5VM6oavr+mnDVX4ER/QcYGBqpYpwUKqys/DI2OAuND509X8Cb2unSR2gyVPiAmi6plGIm+2lrjSt/9t2V0wdgc5XXJDooMNj/HLSBmfLW3o3pNwwYuk5/6Zh3yzhVNsdO7R09Pv2jft8skI+NFJGM/HTo5356dt7RLiz8NZrCvRttPPLui6kGVSqb4/gL5OyiRRYWpsOYnqaq9XFJIfVUIShn8Pj72DSdlJB4/Q7S608pZbtOFhsLSypM6yEkKt36CxPu1jgEFsayfIgWgEeuNhA9w==",
+                "text": [],
+                "encrypted": "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",
+                "tokens": 384
+              }
+            },
+            {
+              "response": "I found that the Joplin API reports connected but every listing/search call is returning an internal error — next I'll switch to diagnosing the connector and asking for more access or details.",
+              "toolCalls": [
+                {
+                  "id": "call_2DRPDbGdLxyFyJ6hdrUmPwiB__vscode-1765243652372",
+                  "name": "manage_todo_list",
+                  "arguments": "{\"operation\":\"write\",\"todoList\":[{\"id\":1,\"title\":\"Search Joplin notes for relevant entries\",\"status\":\"completed\"},{\"id\":2,\"title\":\"Diagnose Joplin connector or ask for access/notes\",\"status\":\"in-progress\"},{\"id\":3,\"title\":\"Summarize findings and recommend libraries/frameworks\",\"status\":\"not-started\"}]}"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "329b1994-409b-4683-92a0-550883585db3",
+              "statefulMarker": "Jol+1ucJ08WbRyUQQi2S48o8GMni1YSPs7ymG6LCAAftR/A7dJeOx8XQat1Tu3zSYb1ZZ5U5J3XDSHz5Z+eLRp6vECVJ7EYLu7dbkCAkex/q0h1xVTh1Rrk7/5oLOOZ3mpiW6r6wwxdkoeR6YfbdpftKGqa6om5LQ0XVeT1130o6HTtJVP7H6gS53pZ4QZydtOlA4PNwO+VeQ211KHSkuAAecm7nGIG5TudcE19HgYuCmmxHCQ84Qj8N3qLsKdFWNUH+AtmNHMh9MGm5Se/tt+AK11PCXSx3Xm5deqQSpqqALCcFczdLR6lffznNAHm/P9IpE1dRtR0wzYw9obmSmE3tG16G210nv74AauOyvZUcFbJzhKcxXJMDRueofvSktmSUAYAvuCm99neCSHypPnIK8rxIda59togFexlnAdIz",
+              "thinking": {
+                "id": "xmiuRPfXZr+mvMRYBB4Li7HQ/gcLy8lE05Q1Gar2rHRwIj6stMw71lLrFHgXxLGYNHZf9uKKZuwQV64oO5JF2Vxf/dRDT8Uc1f0pP72Yjub0uo64tgi7Zgf0jD774keWwAnc1oJ+VdQbVx9nSN9d7qelgbJaga5Tr7TgdkNU1jT7yn+hZZSi4unqL+FxWsyoXhLMDxTMS1TvlNhGzsDFROKaGX1ilFjwS+ZNX+SJp9L0cP3dSrtPCZQdXL/F2UcHUUOK7AceZdJtkG2wdKoWOP3IDbAr81edJw0PZGWnVeDfJTtV/DQAMybBNUDT85rU9Tt9z4C9eJUd18VQ8FFGg4UEP/98zBnh6/eoVf8yS3VXtRASHXS0dJHGh4zwgQkhFpCwpCDu4FFmffyIr8zNO4bnOqPZ8+fP4D3u3gU94g==",
+                "text": "**Updating todo list**\n\nI need to modify the todo list to reflect a blockage. First, I'll mark todo 1 as completed, then I'll add a new todo item: \"Diagnose Joplin connector failures / ask the user for access or sample notes\" and set that one to in-progress. This is where it gets tricky, though, because the instructions say I can only have one todo in-progress at a time. So, I’ll be updating the list to complete the first and make the second in-progress. Time to call manage_todo_list!",
+                "encrypted": "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",
+                "tokens": 256
+              }
+            },
+            {
+              "response": "Nice — I checked and the Joplin connector is reachable, but my listing/search calls are failing with internal errors. I can't reliably search your Joplin notes from here until that connector issue is resolved. My next step is to help you either fix the Joplin connector or, if you prefer, I can search the web and give a shortlist of ready-to-use libraries and workflows for scraping websites and saving them as Markdown.\n\nWhat I need from you to proceed (pick one):\n- ✅ Enable the Joplin Web Clipper / Joplin API and confirm details (preferred)\n  - Tools → Web Clipper (or Preferences → Web Clipper) → enable service, confirm port and token.\n  - Tell me the port (default 41184) and whether authentication token is required.\n  - Or share a short exported note or notebook (as .md or plain text) that I can search locally.\n- ✅ Or I can skip your Joplin notes and immediately provide recommended libraries, tools, and example scripts/workflows for scraping a site and converting it to Markdown.\n\nIf you want me to diagnose the connector, try these quick checks and paste back results (or say if you want me to walk you through them):\n1. Open Joplin → Tools → Web Clipper and ensure \"Enable Web Clipper service\" is checked. Note the port and token.\n2. From your machine (where Joplin is running), run:\n   - curl http://127.0.0.1:41184/ping\n   - If a token is set, add it: curl \"http://127.0.0.1:41184/ping?token=YOUR_TOKEN\"\n   - Share the output so I can debug the API error.\n3. If you prefer not to enable the service, export the notebook or specific notes and attach them here.\n\nQuick reference — ready-to-use libraries / approaches (if you want fast guidance now):\n- Python (recommended for flexible scraping + extraction)\n  - Scraping: requests + BeautifulSoup or Scrapy\n  - Content extraction: trafilatura (great at article extraction), newspaper3k\n  - HTML → Markdown: markdownify or html2text\n  - Typical pipeline example: requests → trafilatura.extract() → markdownify → save .md\n- Node.js / JS (if you want headless-browser scraping)\n  - Puppeteer for dynamic pages; extract main content DOM element\n  - Convert: turndown (HTML → Markdown)\n  - Or use website-scraper (npm) for whole-site scraping\n- Whole-site / CLI tools\n  - wget --mirror (download pages) → pandoc --from=html --to=markdown to convert page files\n  - HTTrack to mirror a site, then pandoc/batch convert\n- Browser-based quick saves\n  - SingleFile or Save Page WE; then convert HTML file to md using pandoc or turndown\n- End-to-end project examples (I can produce a runnable script)\n  - Python script using requests + trafilatura + markdownify to download a URL and write a .md file\n  - Puppeteer + turndown script for dynamic content\n\nWhat would you like me to do next?\n1) Help diagnose and fix the Joplin API connector so I can search your notes (I’ll walk you through / inspect outputs), or  \n2) Skip Joplin and I’ll produce a small working script (Python or Node) + README that scrapes a URL and writes a Markdown file.\n\nTell me which option you pick and, if option 1, paste the curl output or confirm Web Clipper details and I’ll continue.",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "39e53e55-9b40-447a-9c16-43e4d19d2d6b",
+              "statefulMarker": "himBuSQGjUZP1tWYNCitGIxlTdEQ0E69XoriXKZS8bsn2p82ZHpuUodcHzhEmOT1tSondznJ2zT7m/199I7VnxlRPQ8xs0prAQ1xdXLMve8Gc5yxAifULVTJ6Oi6kXDUgNoj1OPbRdYb4Xr16CIpQ2li2WjxjXsnS54cvUrhSNV7z+90cgvPrVFAIiW58ulzfIeHF5Mszy5AWXrT3TIWv88Lj8EVVVzxAhkYt2I9OCKuAkiAG8OpQi2q0Ljw/7sEDbhgSpR0Dy2Zx8MnG8123tBxzrnh5yAcw7D69k2wjRxhqx/6z7xUeiCIGht0hB4zS5eQgFpqawNz/Nul/FsbLdFIIC85g8/6MRzldS5CAlC6XtQMBFeC7Nx8Fl/CCfO3ZVQMBLepWB1cNKeVZu4GiP+G3mbka4YyIAjOb6g9dD6X",
+              "thinking": {
+                "id": "eZQOFqkB9VEpkAtLNZCWrrXvel/8c+VKl01fkBDudp7/sKnPlu2lK7Ht9ZInN9gMoPo8W9dkWcTZJM8BbNVBHMJ9byGxVs3LjaKxOpIWzcplBYm9BRckHBLVd2fdtBAeJ1+8QVg5cN+t5KwtLzidmpzBzDs1S1iqHsPIAXj+1RiQEZv0U5vokj7huEafltgOP4l6d2Ry0m5MTzbVtMtsLXIno3RdHKfk2kmdrTXUmibonbeE8iY2AAIY5RJny74h2BqzDwZCAh+PBuxDPCdrzWAZ3lq1vb3ltBPfgZ7E9uDywZ/YZG1emrt0bK9wLjaTUARz+Un+6I/M7fp83FcC6OdvLIpCLhue76Bg6EnXD8i1Z5a7F3xy66YkicstrwHcRJiW0n4ZWOSj2I3/Vwp1B5yCHB3aIVLh1IW/NdzQEw==",
+                "text": "**Exploring user options for note retrieval**\n\nI need to consider how to help the user who wants to find a note about AI technologies in Joplin. I can start by troubleshooting the Joplin connector—asking if the Joplin Web Clipper is running and collecting necessary connection details like port and token. Alternatively, the user might export the relevant Joplin notes or search terms. Lastly, I can also list libraries or frameworks for scraping websites and converting them into Markdown files. Let’s explore these options!**Addressing user needs for Joplin notes**\n\nI'm considering options for the user, who wants to find a Joplin note about AI technologies and a specific library for scraping websites into Markdown. There are various tools I could mention, like \"wget,\" \"httrack,\" and \"scrapy.\" However, the priority is to help the user find their notes in Joplin. I realize we may be facing API errors, so I'll need to ask the user to either fix the Joplin connection, export note content, or grant permission to help further.**Guiding the user on Joplin Web Clipper**\n\nI'm preparing to provide clear steps for the user to check the Joplin Web Clipper status, including information about the authentication token and the default port, which might be 41184. I want to ensure I’m following the right format and instructions. First, I’ll instruct the user on verifying if the Web Clipper is running by checking the URL in the browser or via the Joplin CLI. I'll also keep in mind offering general assistance if they need immediate help while keeping the other tasks on hold until I get more information from them.**Checking Joplin Web Clipper settings**\n\nI need to guide the user on the Joplin Web Clipper setup and API usage. First, I should recommend checking if the Joplin app has the Web Clipper service enabled in the Tools section, ensuring they check \"Enable Web Clipper service\" and confirm the port number, which is likely 41184. Additionally, if they’re using the Joplin Web Clipper, I need to remind them about the API token as the MCP tool may require this token to function correctly with the Web Clipper API.**Helping with Joplin Web Clipper and Libraries**\n\nI’m looking to assist the user who can’t access Joplin properly. First, I’ll suggest checking if the Joplin Web Clipper is enabled and connected by testing its status. If they’re still having trouble, I can offer to retry the search if they provide a note ID or export their notebook as a Markdown file. Meanwhile, I’ll present a quick list of libraries and frameworks for scraping websites to Markdown, with brief descriptions and example commands. Let’s make this informative yet concise!",
+                "encrypted": "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",
+                "tokens": 1600
+              }
+            }
+          ],
+          "toolCallResults": {
+            "call_wvH5zEiW2iSW22VPhkFPjpTs__vscode-1765243652359": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Successfully wrote todo list"
+                }
+              ]
+            },
+            "call_DyBg3BDpqimostpukDzHkXhd__vscode-1765243652360": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Cannot read properties of undefined (reading '_zod')"
+                }
+              ]
+            },
+            "call_M98B2GOfbh7boWY0LV8swJ0H__vscode-1765243652361": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Request failed with status code 400"
+                }
+              ]
+            },
+            "call_HgeF5EceuPrwbTqdQ6fa3d4P__vscode-1765243652362": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Request failed with status code 400"
+                }
+              ]
+            },
+            "call_tFWrMjQxXCmELbNNN7vvlnQs__vscode-1765243652363": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Request failed with status code 400"
+                }
+              ]
+            },
+            "call_uOOXFshoVmrHRwdndAWozLGc__vscode-1765243652364": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Request failed with status code 400"
+                }
+              ]
+            },
+            "call_EIZ9iHKF2np32C2TYGawA9uR__vscode-1765243652365": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "{\"connected\":true}"
+                }
+              ]
+            },
+            "call_KUtwTJFq8y4tXQZsznT99lrF__vscode-1765243652366": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Cannot read properties of undefined (reading '_zod')"
+                }
+              ]
+            },
+            "call_6xhNhpzRQ3IZQRLw1ds7cuDR__vscode-1765243652367": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Request failed with status code 400"
+                }
+              ]
+            },
+            "call_PDnZvDqEQMnbX65v0u4YwEhv__vscode-1765243652368": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Request failed with status code 400"
+                }
+              ]
+            },
+            "call_93td13mSdTFAI1wVekTLujT7__vscode-1765243652369": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Request failed with status code 400"
+                }
+              ]
+            },
+            "call_5chSutk7GTuMhdOcbru1zffF__vscode-1765243652370": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Request failed with status code 400"
+                }
+              ]
+            },
+            "call_RUztxVjSYuoVvrGjmAcf94Rj__vscode-1765243652371": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Cannot read properties of undefined (reading '_zod')"
+                }
+              ]
+            },
+            "call_2DRPDbGdLxyFyJ6hdrUmPwiB__vscode-1765243652372": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Successfully wrote todo list"
+                }
+              ]
+            }
+          },
+          "modelMessageId": "871d66d3-b3b1-4285-aeac-8e1ffd40d024",
+          "responseId": "86fd5c48-8040-41c1-9ec0-617424eb13d5",
+          "sessionId": "9e6ab083-6404-4aa1-b024-8c1b507a2fb3",
+          "agentId": "github.copilot.editsAgent"
+        },
+        "details": "Raptor mini (Preview) • 0x"
+      },
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.33.5",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "list"
+          }
+        ],
+        "disambiguation": []
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1765243782470,
+      "modelId": "copilot/oswe-vscode-secondary"
+    }
+  ]
+}
