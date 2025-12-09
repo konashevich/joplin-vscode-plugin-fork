@@ -10,7 +10,8 @@
   "icon": "resources/icon.png",
   "scripts": {
     "vscode:prepublish": "yarn run compile",
-    "compile": "tsc -p ./ && yarn copy",
+    "compile": "tsc -p ./ && yarn copy && yarn bundle:mcp",
+    "bundle:mcp": "node scripts/bundle-mcp-server.js",
     "copy": "shx cp -rf src/util/clipboard out/util",
     "lint": "eslint src --ext ts",
     "watch": "tsc -watch -p ./",
@@ -425,6 +426,7 @@
     "@typescript-eslint/parser": "^4.9.1",
     "@vscode/vsce": "^3.7.1",
     "copyfiles": "^2.4.1",
+    "esbuild": "^0.27.1",
     "eslint": "^7.15.0",
     "glob": "^7.1.6",
     "jest": "^26.6.3",

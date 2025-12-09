@@ -1,23 +1,81 @@
 # Joplin MCP Server: Bugfix Plan
 
 **Related:** [AI Agent Integration Plan](AI_AGENT_INTEGRATION_PLAN.md)  
-**Date:** December 9, 2025  
-**Status:** Analysis Complete → Fix Pending
+**Date:** December 9-10, 2025  
+**Status:** ✅ FIXED (Bundled MCP Server)
 
 ---
 
 ## Executive Summary
 
-The MCP server implementation (Phase 1 & 2) was deployed but **all search and listing tools fail** in production. Agent testing revealed two critical bugs:
+The MCP server implementation (Phase 1 & 2) had **multiple critical bugs** preventing AI agents from using Joplin tools:
 
-1. **Schema Validation Crash** (`joplin_list_notebooks`, `joplin_search_notes`, `joplin_list_notes_in_notebook`)
-2. **Joplin API Bad Request** (`joplin_search_notes`)
+1. **Schema Validation Crash** - Zod schema mismatches (`_zod` error)
+2. **Joplin API Bad Request** - Search requested unsupported `body` field  
+3. **Missing Dependencies** - `uri-js` module not found (VSIX packaging issue)
 
-Both bugs prevent the core use case: searching Joplin notes via AI agents.
+**Final Solution:** Bundle MCP server with esbuild to include all dependencies.
 
 ---
 
-## Bug Analysis
+## Bug #6: Missing `uri-js` Module (Dec 10, 2024) 🔴 CRITICAL
+
+### Error
+
+```
+Error: Cannot find module 'uri-js'
+Require stack:
+- node_modules/ajv/lib/compile/resolve.js
+- node_modules/@modelcontextprotocol/sdk/dist/cjs/server/mcp.js
+- out/mcp-server/index.js
+```
+
+### Root Cause
+
+**Dependency conflict between ajv versions:**
+
+- Project root has `ajv@6.12.6` (requires `uri-js`)
+- MCP SDK needs `ajv@8.17.1` (uses `fast-uri` instead)
+- Yarn/npm creates nested `node_modules/@modelcontextprotocol/sdk/node_modules/ajv@8`
+- **VSCE does NOT package nested `node_modules`** by default
+
+When the VSIX was installed, only the top-level `ajv@6` was included. The MCP SDK's code loaded `ajv@6` but expected `ajv@8`, causing the module resolution to look for `uri-js` which wasn't included.
+
+### Solution: Bundle MCP Server with esbuild
+
+Created `scripts/bundle-mcp-server.js`:
+
+```javascript
+const esbuild = require('esbuild')
+esbuild.build({
+  entryPoints: ['src/mcp-server/index.ts'],
+  bundle: true,
+  platform: 'node',
+  outfile: 'out/mcp-server/index.js',
+  external: ['vscode'],
+  packages: 'bundle',  // Bundle ALL dependencies
+})
+```
+
+Updated `package.json`:
+```json
+"compile": "tsc -p ./ && yarn copy && yarn bundle:mcp",
+"bundle:mcp": "node scripts/bundle-mcp-server.js"
+```
+
+**Result:** MCP server is now a single 1.25 MB file with all dependencies bundled inline.
+
+### Verification
+
+```bash
+# Test installed MCP server
+JOPLIN_TOKEN=xxx JOPLIN_PORT=41184 node ~/.vscode/extensions/local.joplin-vscode-plugin-ai-0.5.5/out/mcp-server/index.js
+# No error - starts successfully
+```
+
+---
+
+## Previous Bug Analysis (Preserved for Reference)
 
 ### Bug #1: Schema Validation Crash
 
@@ -386,6 +444,64 @@ const getNoteOutputSchema = z.union([...])
 - `joplin_get_note` now works correctly for both success and error cases
 - No functional difference for schema validation (both discriminated and regular union validate the same way)
 - VSIX rebuilt at 14:52 Dec 9, 2024 with this fix
+
+---
+
+## Bug #5: VSIX Built Without Dependencies (Dec 9, 2024) 🔴 CRITICAL
+
+### Discovery
+
+After installing VSIX v0.5.5 (built at 14:52), the extension completely failed to activate:
+- Tree View showed "No notes detected"
+- Refresh button returned error: `command 'joplinNote.refreshNoteList' not found`
+- VS Code reload did not fix the issue
+
+### Root Cause
+
+The VSIX was built using `npx vsce package --no-dependencies`, which **excludes `node_modules`** from the package. Without dependencies like `joplin-api`, the extension cannot function.
+
+**Evidence:**
+```bash
+# Broken VSIX (14:52):
+unzip -l joplin-vscode-plugin-ai-0.5.5.vsix | grep "node_modules" | wc -l
+# Output: 0
+
+# File size: 2.1 MB (suspiciously small)
+```
+
+When the extension tried to `import { folderApi } from 'joplin-api'`, it failed with a module not found error, causing activation to fail before any commands were registered.
+
+### Solution
+
+Rebuilt VSIX **without** `--no-dependencies` flag:
+
+```bash
+npx vsce package
+```
+
+**Result:**
+- File size: 9.6 MB (includes 4937 files from `node_modules`)
+- Contains all required dependencies: `joplin-api`, `@modelcontextprotocol/sdk`, etc.
+- VSIX rebuilt at 20:10 Dec 9, 2024
+
+### Impact
+
+- **CRITICAL:** All previous VSIX builds at 14:10 and 14:52 were **non-functional**
+- Users must install the 20:10 build for the extension to work
+- MCP server fixes are only effective in the 20:10+ builds
+
+### Deployment Instructions
+
+**IMPORTANT:** Always build VSIX with dependencies:
+```bash
+npm run compile
+npx vsce package  # DO NOT USE --no-dependencies
+```
+
+Verify the VSIX includes dependencies:
+```bash
+unzip -l joplin-vscode-plugin-ai-0.5.5.vsix | grep "node_modules/joplin-api"
+```
 
 ### Note on Schema Fix Approach
 
