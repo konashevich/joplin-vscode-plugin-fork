@@ -74,7 +74,8 @@ const searchNotesOutputSchema = z.object({
     z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
   ),
 })
-const getNoteOutputSchema = z.discriminatedUnion('success', [
+// Use z.union instead of z.discriminatedUnion to avoid MCP SDK Zod v3/v4 compat bug
+const getNoteOutputSchema = z.union([
   z.object({
     success: z.literal(true),
     id: z.string(),

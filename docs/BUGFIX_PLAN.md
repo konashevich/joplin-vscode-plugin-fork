@@ -331,8 +331,61 @@ Implement **Option A** (remove snippet) for immediate bugfix. Consider **Option 
 | `joplin_list_notebooks`       | Schema validation crash | 115  | Schema expected array, got object | Updated schema to `z.object({ items: z.array(...) })` |
 | `joplin_search_notes`         | HTTP 400 + Schema crash | 145  | Requests `body` + schema mismatch | Removed `body` field + updated schema            |
 | `joplin_list_notes_in_notebook` | Schema validation crash | 230  | Schema expected array, got object | Updated schema to `z.object({ items: z.array(...) })` |
-| `joplin_get_note`             | ✅ Working (error case fixed) | 180 | Error return missing required fields | Implemented discriminated union (`success: true/false`) |
+| `joplin_get_note`             | `_zod` property error   | 77   | MCP SDK Zod v3/v4 compatibility bug with `z.discriminatedUnion` | Changed to `z.union` (avoids problematic code path) |
 | `joplin_status`               | ✅ Working              | 95   | Correct structure                | No change needed                                 |
+
+---
+
+## Bug #4: MCP SDK Zod Version Compatibility Issue (Dec 9, 2024)
+
+### Discovery
+
+After implementing the discriminated union fix for `joplin_get_note`, testing showed the tool STILL failed with:
+```
+Cannot read properties of undefined (reading '_zod')
+```
+
+### Root Cause Analysis
+
+The MCP SDK v1.24.3 includes `zod-compat.js` which attempts to support both Zod v3 and v4:
+
+```javascript
+// From node_modules/@modelcontextprotocol/sdk/dist/cjs/server/zod-compat.js
+return !!schema._zod;  // Line 46 - checks for Zod v4
+rawShape = (_b = (_a = v4Schema._zod)?.def)?.shape;  // Line 91
+```
+
+**Version conflict in this project:**
+```
+npm ls zod:
+├─┬ @modelcontextprotocol/sdk@1.24.3
+│ ├─┬ zod-to-json-schema@3.25.0
+│ │ └── zod@4.1.13    <-- v4
+│ └── zod@3.25.76     <-- v3 (deduped)
+└── zod@3.25.76        <-- v3 (project uses this)
+```
+
+When using complex Zod v3 schemas like `z.discriminatedUnion()`, the MCP SDK's compatibility layer tries to access `._zod` (a Zod v4-only property), resulting in `undefined`.
+
+### Solution
+
+Changed from `z.discriminatedUnion` to `z.union`:
+
+```typescript
+// BEFORE (broken with MCP SDK):
+const getNoteOutputSchema = z.discriminatedUnion('success', [...])
+
+// AFTER (works):
+const getNoteOutputSchema = z.union([...])
+```
+
+**Why this works:** `z.union` uses simpler internal Zod structures that don't trigger the problematic v4-compat code path in the MCP SDK.
+
+### Impact
+
+- `joplin_get_note` now works correctly for both success and error cases
+- No functional difference for schema validation (both discriminated and regular union validate the same way)
+- VSIX rebuilt at 14:52 Dec 9, 2024 with this fix
 
 ### Note on Schema Fix Approach
 
