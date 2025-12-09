@@ -145,39 +145,46 @@ The plan was **not poor**—it outlined a reasonable enhancement. The implementa
 
 ## Solution Design
 
-### Fix #1: Correct Schema Validation (High Priority)
+### Fix #1: Correct Schema Validation (High Priority) ✅ IMPLEMENTED
 
-**Change:** Unwrap the `items` object and return arrays directly.
+**Actual Solution Applied:** Wrap arrays in an `items` object in the schema definition (not unwrap in implementation).
 
-**Before:**
+**Root Issue:** The MCP SDK's `structuredContent` field requires an object type (with index signature `{ [x: string]: unknown }`), not a plain array. TypeScript correctly rejects arrays as `structuredContent`.
+
+**Before (Broken):**
 ```typescript
-return {
-  content: [],
-  structuredContent: { items: buildFolderPaths(folders) }
-}
+// Schema expected array
+const listNotebooksOutputSchema = z.array(z.object({ ... }))
+
+// Implementation returned wrapped object
+return { structuredContent: { items: [...] } }  // ❌ Schema mismatch
 ```
 
-**After:**
+**After (Fixed):**
 ```typescript
-return {
-  content: [],
-  structuredContent: buildFolderPaths(folders)
-}
+// Schema now wraps array in items object
+const listNotebooksOutputSchema = z.object({
+  items: z.array(z.object({ ... }))
+})
+
+// Implementation matches schema
+return { structuredContent: { items: [...] } }  // ✅ Valid
 ```
 
 **Applies to:**
-- `joplin_list_notebooks` (line ~115)
-- `joplin_search_notes` (line ~158)
-- `joplin_list_notes_in_notebook` (line ~230)
+- `joplin_list_notebooks` (line ~62, ~119)
+- `joplin_search_notes` (line ~72, ~163)
+- `joplin_list_notes_in_notebook` (line ~82, ~237)
 
 **Impact:**
 - ✅ Fixes schema validation crash
-- ✅ Aligns with working `extension.ts` patterns
-- ⚠️ **Breaking change** for any external MCP clients (unlikely since tools are currently broken)
+- ✅ TypeScript compilation passes
+- ✅ No breaking changes (original implementation kept `items` wrapper)
+- ✅ Matches MCP SDK requirements
 
 ---
 
-### Fix #2: Remove `body` from Search API (High Priority)
+### Fix #2: Remove `body` from Search API (High Priority) ✅ IMPLEMENTED
 
 **Change:** Remove `'body'` from the `fields` array in `joplin_search_notes`.
 
@@ -195,6 +202,7 @@ fields: ['id', 'title', 'parent_id'],
 - ✅ Fixes HTTP 400 error
 - ✅ Matches proven patterns in `JoplinNoteCommandService.ts` and `extension.ts`
 - ⚠️ Abandons snippet feature (see discussion below)
+- ✅ Compilation successful
 
 ---
 
@@ -271,12 +279,15 @@ Implement **Option A** (remove snippet) for immediate bugfix. Consider **Option 
 ## Implementation Checklist
 
 ### Phase 1: Critical Bugfixes
-- [ ] Fix `joplin_list_notebooks` return structure
-- [ ] Fix `joplin_search_notes` return structure
-- [ ] Fix `joplin_list_notes_in_notebook` return structure
-- [ ] Remove `'body'` from `joplin_search_notes` fields array
-- [ ] Test all tools via MCP CLI/harness
-- [ ] Update `AI_AGENT_INTEGRATION_PLAN.md` Phase 1 checklist (mark items as "Fixed" or "Tested")
+
+- [x] Fix `joplin_list_notebooks` schema (wrap array in `items` object)
+- [x] Fix `joplin_search_notes` schema (wrap array in `items` object)
+- [x] Fix `joplin_list_notes_in_notebook` schema (wrap array in `items` object)
+- [x] Remove `'body'` from `joplin_search_notes` fields array
+- [x] Compile and verify TypeScript passes
+- [x] Update `AI_AGENT_INTEGRATION_PLAN.md` Phase 1 checklist
+- [ ] Test all tools via live MCP integration test
+- [ ] Test with VS Code Copilot agent
 
 ### Phase 2: Documentation
 - [ ] Update `TROUBLESHOOTING.md` with "Search returns 400" entry
@@ -315,10 +326,16 @@ Implement **Option A** (remove snippet) for immediate bugfix. Consider **Option 
 
 ## Appendix: Error Correlation Table
 
-| Tool                          | Error Type              | Line | Root Cause                       | Fix              |
-|-------------------------------|-------------------------|------|----------------------------------|------------------|
-| `joplin_list_notebooks`       | Schema validation crash | 115  | Returns `{ items: [...] }`       | Return `[...]`   |
-| `joplin_search_notes`         | HTTP 400 + Schema crash | 145  | Requests `body` + wraps response | Remove body + unwrap |
-| `joplin_list_notes_in_notebook` | Schema validation crash | 230  | Returns `{ items: [...] }`       | Return `[...]`   |
-| `joplin_get_note`             | ✅ Working              | 180  | Correct structure                | No change needed |
-| `joplin_status`               | ✅ Working              | 95   | Correct structure                | No change needed |
+| Tool                          | Error Type              | Line | Root Cause                       | Fix Applied                                      |
+|-------------------------------|-------------------------|------|----------------------------------|--------------------------------------------------|
+| `joplin_list_notebooks`       | Schema validation crash | 115  | Schema expected array, got object | Updated schema to `z.object({ items: z.array(...) })` |
+| `joplin_search_notes`         | HTTP 400 + Schema crash | 145  | Requests `body` + schema mismatch | Removed `body` field + updated schema            |
+| `joplin_list_notes_in_notebook` | Schema validation crash | 230  | Schema expected array, got object | Updated schema to `z.object({ items: z.array(...) })` |
+| `joplin_get_note`             | ✅ Working (error case fixed) | 180 | Error return missing required fields | Implemented discriminated union (`success: true/false`) |
+| `joplin_status`               | ✅ Working              | 95   | Correct structure                | No change needed                                 |
+
+### Note on Schema Fix Approach
+
+The original plan proposed unwrapping `{ items: [...] }` to return plain arrays. During implementation, this was found to be **impossible** because the MCP SDK's `structuredContent` field requires an object type (`{ [x: string]: unknown }`), not an array.
+
+**Actual solution:** Keep the `{ items: [...] }` wrapper in the implementation and update the Zod schemas to match. This is the only viable approach given MCP SDK constraints.

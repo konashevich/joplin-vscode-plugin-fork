@@ -59,27 +59,39 @@ const statusOutputSchema = z.object({
   connected: z.boolean(),
   error: z.string().optional(),
 })
-const listNotebooksOutputSchema = z.array(
+const listNotebooksOutputSchema = z.object({
+  items: z.array(
+    z.object({
+      id: z.string(),
+      title: z.string(),
+      parentId: z.string(),
+      path: z.string(),
+    }),
+  ),
+})
+const searchNotesOutputSchema = z.object({
+  items: z.array(
+    z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
+  ),
+})
+const getNoteOutputSchema = z.discriminatedUnion('success', [
   z.object({
+    success: z.literal(true),
     id: z.string(),
     title: z.string(),
+    body: z.string(),
     parentId: z.string(),
-    path: z.string(),
   }),
-)
-const searchNotesOutputSchema = z.array(
-  z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
-)
-const getNoteOutputSchema = z.object({
-  id: z.string(),
-  title: z.string(),
-  body: z.string(),
-  parentId: z.string(),
-  error: z.string().optional(),
+  z.object({
+    success: z.literal(false),
+    error: z.string(),
+  }),
+])
+const listNotesOutputSchema = z.object({
+  items: z.array(
+    z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
+  ),
 })
-const listNotesOutputSchema = z.array(
-  z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
-)
 
 const requireConfigured = () => {
   if (!config.token || !config.port) {
@@ -145,7 +157,7 @@ server.registerTool(
     const { items } = await searchApi.search({
       query: parsed.query,
       type: TypeEnum.Note,
-      fields: ['id', 'title', 'parent_id', 'body'],
+      fields: ['id', 'title', 'parent_id'],
       limit: parsed.limit ?? 20,
       order_by: 'user_updated_time',
       order_dir: 'DESC',
@@ -195,6 +207,7 @@ server.registerTool(
       return {
         content: [],
         structuredContent: {
+          success: true as const,
           id: note.id,
           title: note.title,
           body: note.body,
@@ -203,7 +216,7 @@ server.registerTool(
       }
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : String(err)
-      return { content: [], structuredContent: { error: message } }
+      return { content: [], structuredContent: { success: false as const, error: message } }
     }
   },
 )

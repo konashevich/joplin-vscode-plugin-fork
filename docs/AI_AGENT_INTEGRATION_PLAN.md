@@ -342,11 +342,12 @@ This workspace has the Joplin VS Code extension installed with MCP tools.
 1. [x] Create `joplin-mcp-server/` directory structure (scaffolded at `src/mcp-server`)
 2. [x] Implement Joplin REST API client (reused `joplin-api` directly)
 3. [x] Implement `joplin_status` tool
-4. [x] Implement `joplin_list_notebooks` tool
-5. [x] Implement `joplin_search_notes` tool
+4. [x] Implement `joplin_list_notebooks` tool (Fixed: schema now wraps array in `items`)
+5. [x] Implement `joplin_search_notes` tool (Fixed: removed `body` field, fixed schema)
 6. [x] Implement `joplin_get_note` tool
-7. [ ] Test with VS Code MCP configuration (manual `mcp.json`)
-8. [x] Write README with setup instructions
+7. [x] **BUGFIXES APPLIED** - See [BUGFIX_PLAN.md](BUGFIX_PLAN.md) for details
+8. [ ] Test with VS Code MCP configuration (manual `mcp.json`)
+9. [x] Write README with setup instructions
 
 ### Phase 2: Extension-Registered MCP (Week 2-3)
 
