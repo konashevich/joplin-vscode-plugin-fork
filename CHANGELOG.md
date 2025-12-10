@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.5.6
+
+- fix: Resolve MCP SDK Zod union compatibility issue causing crashes in `joplin_get_note` tool
+
 ## 0.4.5
 
 - fix: Fix the line wrapping problem caused by the `\r` character at the end of the line that may appear when copying the internal reference of the note
