@@ -74,20 +74,15 @@ const searchNotesOutputSchema = z.object({
     z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
   ),
 })
-// Use z.union instead of z.discriminatedUnion to avoid MCP SDK Zod v3/v4 compat bug
-const getNoteOutputSchema = z.union([
-  z.object({
-    success: z.literal(true),
-    id: z.string(),
-    title: z.string(),
-    body: z.string(),
-    parentId: z.string(),
-  }),
-  z.object({
-    success: z.literal(false),
-    error: z.string(),
-  }),
-])
+// Use a flat object with optional fields to avoid MCP SDK Zod union issues
+const getNoteOutputSchema = z.object({
+  success: z.boolean(),
+  id: z.string().optional(),
+  title: z.string().optional(),
+  body: z.string().nullish(),
+  parentId: z.string().optional(),
+  error: z.string().optional(),
+})
 const listNotesOutputSchema = z.object({
   items: z.array(
     z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
