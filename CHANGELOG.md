@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.5.7
+
+- fix: Improve extension initialization to avoid restart requirements
+- fix: Improve MCP search tool robustness (notebook ID support, limit handling)
+
 ## 0.5.6
 
 - fix: Resolve MCP SDK Zod union compatibility issue causing crashes in `joplin_get_note` tool

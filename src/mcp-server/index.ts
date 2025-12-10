@@ -38,13 +38,13 @@ const buildFolderPaths = (
   return results
 }
 
-const findFolderByTitle = (folders: any[], target: string): any | undefined => {
+const findFolder = (folders: any[], target: string): any | undefined => {
   for (const f of folders) {
-    if (f.title?.toLowerCase() === target.toLowerCase()) {
+    if (f.id === target || f.title?.toLowerCase() === target.toLowerCase()) {
       return f
     }
     if (f.children) {
-      const res = findFolderByTitle(f.children, target)
+      const res = findFolder(f.children, target)
       if (res) {
         return res
       }
@@ -71,7 +71,12 @@ const listNotebooksOutputSchema = z.object({
 })
 const searchNotesOutputSchema = z.object({
   items: z.array(
-    z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
+    z.object({
+      id: z.string(),
+      title: z.string(),
+      parentId: z.string(),
+      uri: z.string().optional(),
+    }),
   ),
 })
 // Use a flat object with optional fields to avoid MCP SDK Zod union issues
@@ -81,11 +86,17 @@ const getNoteOutputSchema = z.object({
   title: z.string().optional(),
   body: z.string().nullish(),
   parentId: z.string().optional(),
+  uri: z.string().optional(),
   error: z.string().optional(),
 })
 const listNotesOutputSchema = z.object({
   items: z.array(
-    z.object({ id: z.string(), title: z.string(), parentId: z.string() }),
+    z.object({
+      id: z.string(),
+      title: z.string(),
+      parentId: z.string(),
+      uri: z.string().optional(),
+    }),
   ),
 })
 
@@ -136,8 +147,8 @@ server.registerTool(
 
 const searchNotesInput = z.object({
   query: z.string(),
-  notebook: z.string().optional(),
-  limit: z.number().int().positive().max(200).optional(),
+  notebook: z.string().describe('Notebook title or ID').optional(),
+  limit: z.number().int().positive().max(100).optional(),
 })
 
 server.registerTool(
@@ -162,7 +173,7 @@ server.registerTool(
     let notes = items
     if (parsed.notebook) {
       const folders = await folderApi.listAll()
-      const target = findFolderByTitle(folders, parsed.notebook)
+      const target = findFolder(folders, parsed.notebook)
       if (target) {
         notes = notes.filter((n) => n.parent_id === target.id)
       }
@@ -175,6 +186,7 @@ server.registerTool(
           id: n.id,
           title: n.title,
           parentId: n.parent_id,
+          uri: `joplin:/__by_id/${n.id}.md`,
         })),
       },
     }
@@ -208,6 +220,7 @@ server.registerTool(
           title: note.title,
           body: note.body,
           parentId: note.parent_id,
+          uri: `joplin:/__by_id/${note.id}.md`,
         },
       }
     } catch (err: unknown) {
@@ -246,6 +259,7 @@ server.registerTool(
           id: n.id,
           title: n.title,
           parentId: n.parent_id,
+          uri: `joplin:/__by_id/${n.id}.md`,
         })),
       },
     }

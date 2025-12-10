@@ -6,7 +6,7 @@ import { JoplinNoteCommandService } from './service/JoplinNoteCommandService'
 import { TypeEnum, noteApi, searchApi, folderApi } from 'joplin-api'
 import { appConfig } from './config/AppConfig'
 import { HandlerService } from './service/HandlerService'
-import { checkJoplinServer } from './util/checkJoplinServer'
+import { checkJoplinServer, initJoplinConfig } from './util/checkJoplinServer'
 import MarkdownIt from 'markdown-it'
 import { useJoplinLink } from './util/useJoplinLink'
 import { uploadResourceService } from './service/UploadResourceService'
@@ -29,9 +29,8 @@ init()
 // noinspection JSUnusedLocalSymbols
 export async function activate(context: vscode.ExtensionContext) {
   globalState.context = context
-  if (!(await checkJoplinServer())) {
-    return
-  }
+  initJoplinConfig()
+  checkJoplinServer()
 
   //region register Joplin virtual file system
   // This makes Joplin notebooks visible to VS Code's file system API,

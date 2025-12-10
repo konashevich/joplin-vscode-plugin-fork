@@ -2,11 +2,7 @@ import * as vscode from 'vscode'
 import { joplinApi, config } from 'joplin-api'
 import { appConfig } from '../config/AppConfig'
 
-/**
- * check joplin server
- */
-export async function checkJoplinServer() {
-  // Initialize joplin-api config from appConfig before pinging
+export function initJoplinConfig() {
   if (appConfig.token) {
     config.token = appConfig.token
   }
@@ -15,6 +11,14 @@ export async function checkJoplinServer() {
   } else {
     config.port = 41184
   }
+}
+
+/**
+ * check joplin server
+ */
+export async function checkJoplinServer() {
+  // Initialize joplin-api config from appConfig before pinging
+  initJoplinConfig()
 
   const errMsg = () =>
     vscode.window.showErrorMessage(
