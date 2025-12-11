@@ -1,0 +1,945 @@
+{
+  "requesterUsername": "konashevich",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/18244957",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_d1e6afde-f4e8-45cc-b950-496dfce71043",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 152
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 153
+            },
+            "text": "i am looking for a note in joplin that is devoted to a library/tool/framework that can turn webpages in md format. it will likely be present i ai folder",
+            "kind": "text"
+          }
+        ],
+        "text": "i am looking for a note in joplin that is devoted to a library/tool/framework that can turn webpages in md format. it will likely be present i ai folder"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "I'll help you search for that note in Joplin. Let me start by checking the Joplin connection and looking in the AI folder. ",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_status"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_status`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_status` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "{\n  \"connected\": true\n}",
+                "audience": [
+                  0
+                ]
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {}
+          },
+          "toolCallId": "5bb61d24-e42a-4e3d-acc7-4e583afb9ebf",
+          "toolId": "mcp_joplin_notes__joplin_status"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_list_notebooks`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_list_notebooks` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "{\n  \"items\": [\n    {\n      \"id\": \"2d262cb195c3432aa10608b790f46ca6\",\n      \"title\": \"!Ideas\",\n      \"parentId\": \"\",\n      \"path\": \"/!Ideas\"\n    },\n    {\n      \"id\": \"6e3266f1582d4213bd638706c2329ec1\",\n      \"title\": \" Mail encryption \",\n      \"parentId\": \"2d262cb195c3432aa10608b790f46ca6\",\n      \"path\": \"/!Ideas/Mail encryption\"\n    },\n    {\n      \"id\": \"1714eae036f84b4ba956882f6116e7ac\",\n      \"title\": \"CO2 Device\",\n      \"parentId\": \"2d262cb195c3432aa10608b790f46ca6\",\n      \"path\": \"/!Ideas/CO2 Device\"\n    },\n    {\n      \"id\": \"5900dcb860e347eb8bad6263288a298f\",\n      \"title\": \"DeFi Mortgage\",\n      \"parentId\": \"2d262cb195c3432aa10608b790f46ca6\",\n      \"path\": \"/!Ideas/DeFi Mortgage\"\n    },\n    {\n      \"id\": \"937e4e1ffb3b4e6d94862e6051f8a395\",\n      \"title\": \"LexHub\",\n      \"parentId\": \"2d262cb195c3432aa10608b790f46ca6\",\n      \"path\": \"/!Ideas/LexHub\"\n    },\n    {\n      \"id\": \"fbd6695efcb9496fb5dc3ad38f670c30\",\n      \"title\": \"Notes\",\n      \"parentId\": \"2d262cb195c3432aa10608b790f46ca6\",\n      \"path\": \"/!Ideas/Notes\"\n    },\n    {\n      \"id\": \"df046ce30a2f47e5b2d12d687707136b\",\n      \"title\": \"Papers\",\n      \"parentId\": \"2d262cb195c3432aa10608b790f46ca6\",\n      \"path\": \"/!Ideas/Papers\"\n    },\n    {\n      \"id\": \"07b49833aa114be78207f8d98ccafd17\",\n      \"title\": \"Artificial Sea\",\n      \"parentId\": \"df046ce30a2f47e5b2d12d687707136b\",\n      \"path\": \"/!Ideas/Papers/Artificial Sea\"\n    },\n    {\n      \"id\": \"2196e2a16e6948a1a859098b1b2bcb40\",\n      \"title\": \"Bitcoin Price\",\n      \"parentId\": \"df046ce30a2f47e5b2d12d687707136b\",\n      \"path\": \"/!Ideas/Papers/Bitcoin Price\"\n    },\n    {\n      \"id\": \"9510a5b22f3d4d23a0ba2f624e25995e\",\n      \"title\": \"Brisbane biosdiesel\",\n      \"parentId\": \"df046ce30a2f47e5b2d12d687707136b\",\n      \"path\": \"/!Ideas/Papers/Brisbane biosdiesel\"\n    },\n    {\n      \"id\": \"20d1a3ee621045d1952ad23ad3990458\",\n      \"title\": \"e-Waste Africa\",\n      \"parentId\": \"df046ce30a2f47e5b2d12d687707136b\",\n      \"path\": \"/!Ideas/Papers/e-Waste Africa\"\n    },\n    {\n      \"id\": \"e078ccfb73c5425aba5211b1648e6b05\",\n      \"title\": \"GDPR and Blockchain\",\n      \"parentId\": \"df046ce30a2f47e5b2d12d687707136b\",\n      \"path\": \"/!Ideas/Papers/GDPR and Blockchain\"\n    },\n    {\n      \"id\": \"22904b52bbaf4be2bb48c52e1c324c8e\",\n      \"title\": \"Jurisdictions on Blockchain\",\n      \"parentId\": \"df046ce30a2f47e5b2d12d687707136b\",\n      \"path\": \"/!Ideas/Papers/Jurisdictions on Blockchain\"\n    },\n    {\n      \"id\": \"5c7046e14aaf474395b70b591e777f95\",\n      \"title\": \"Triple entry\",\n      \"parentId\": \"df046ce30a2f47e5b2d12d687707136b\",\n      \"path\": \"/!Ideas/Papers/Triple entry\"\n    },\n    {\n      \"id\": \"20a13835f90c4188ba6658731bd6b000\",\n      \"title\": \"Why Digital ID on Blockchain\",\n      \"parentId\": \"df046ce30a2f47e5b2d12d687707136b\",\n      \"path\": \"/!Ideas/Papers/Why Digital ID on Blockchain\"\n    },\n    {\n      \"id\": \"f8880796713e4833b5d7361b52d96dfc\",\n      \"title\": \"Radio\",\n      \"parentId\": \"2d262cb195c3432aa10608b790f46ca6\",\n      \"path\": \"/!Ideas/Radio\"\n    },\n    {\n      \"id\": \"08b126723ddb4a91b873488df81e65db\",\n      \"title\": \"Robots Toilets\",\n      \"parentId\": \"2d262cb195c3432aa10608b790f46ca6\",\n      \"path\": \"/!Ideas/Robots Toilets\"\n    },\n    {\n      \"id\": \"c8c1d27d959b43edb6a80e53742656fe\",\n      \"title\": \"@blockchainstate\",\n      \"parentId\": \"\",\n      \"path\": \"/@blockchainstate\"\n    },\n    {\n      \"id\": \"654cfefc8505478db990ffb730dd1f6a\",\n      \"title\": \"@droleksiikonashevych\",\n      \"parentId\": \"\",\n      \"path\": \"/@droleksiikonashevych\"\n    },\n    {\n      \"id\": \"2b3fdd7efe68416c86d48579a38eeed1\",\n      \"title\": \"Acacia\",\n      \"parentId\": \"\",\n      \"path\": \"/Acacia\"\n    },\n    {\n      \"id\": \"62f76986eb7e4dd69dbd3d33eb395a45\",\n      \"title\": \"Job\",\n      \"parentId\": \"2b3fdd7efe68416c86d48579a38eeed1\",\n      \"path\": \"/Acacia/Job\"\n    },\n    {\n      \"id\": \"1ac84c5310444f5fb14f54e6036bb45b\",\n      \"title\": \"Public blockchains\",\n      \"parentId\": \"2b3fdd7efe68416c86d48579a38eeed1\",\n      \"path\": \"/Acacia/Public blockchains\"\n    },\n    {\n      \"id\": \"f5892feec131449b80f0f83ce1433803\",\n      \"title\": \"Stablecoins AU\",\n      \"parentId\": \"2b3fdd7efe68416c86d48579a38eeed1\",\n      \"path\": \"/Acacia/Stablecoins AU\"\n    },\n    {\n      \"id\": \"f19d4c92b06049649f11f700fd797df6\",\n      \"title\": \"AI\",\n      \"parentId\": \"\",\n      \"path\": \"/AI\"\n    },\n    {\n      \"id\": \"636386c8b2f245cea3d65b0f14da1a3c\",\n      \"title\": \"AI in Law\",\n      \"parentId\": \"f19d4c92b06049649f11f700fd797df6\",\n      \"path\": \"/AI/AI in Law\"\n    },\n    {\n      \"id\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"title\": \"!Project\",\n      \"parentId\": \"636386c8b2f245cea3d65b0f14da1a3c\",\n      \"path\": \"/AI/AI in Law/!Project\"\n    },\n    {\n      \"id\": \"f268558671934ca49108838d50fbc107\",\n      \"title\": \"API\",\n      \"parentId\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"path\": \"/AI/AI in Law/!Project/API\"\n    },\n    {\n      \"id\": \"74863a97d82e4a749fbbf7edce491269\",\n      \"title\": \"Cloud pricing\",\n      \"parentId\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"path\": \"/AI/AI in Law/!Project/Cloud pricing\"\n    },\n    {\n      \"id\": \"ba232f05d7eb4911a87ec724960fe92f\",\n      \"title\": \"Contacts\",\n      \"parentId\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"path\": \"/AI/AI in Law/!Project/Contacts\"\n    },\n    {\n      \"id\": \"b2b4adaf35df4aa381d861e444ef65d1\",\n      \"title\": \"Design\",\n      \"parentId\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"path\": \"/AI/AI in Law/!Project/Design\"\n    },\n    {\n      \"id\": \"f0e546b46dbd4d3398927a2dda48060f\",\n      \"title\": \"Grants\",\n      \"parentId\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"path\": \"/AI/AI in Law/!Project/Grants\"\n    },\n    {\n      \"id\": \"a3da6761ef0a454a9ad04a5134b309cb\",\n      \"title\": \"LLM Tests\",\n      \"parentId\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"path\": \"/AI/AI in Law/!Project/LLM Tests\"\n    },\n    {\n      \"id\": \"2ace2b9dd54a4040b2f875a7745d2b57\",\n      \"title\": \"Model pricing\",\n      \"parentId\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"path\": \"/AI/AI in Law/!Project/Model pricing\"\n    },\n    {\n      \"id\": \"ec983760fd2e4a108d34b4bedf614a8c\",\n      \"title\": \"Telegram Group\",\n      \"parentId\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"path\": \"/AI/AI in Law/!Project/Telegram Group\"\n    },\n    {\n      \"id\": \"43f4e44652bf41b4bf21b696b46656c5\",\n      \"title\": \"website\",\n      \"parentId\": \"0bd84913656b4e0f8bd7a50f6b8b290e\",\n      \"path\": \"/AI/AI in Law/!Project/website\"\n    },\n    {\n      \"id\": \"e58fcf9e2eed438fa5decf3cbf4b2d07\",\n      \"title\": \"AustLII extension\",\n      \"parentId\": \"636386c8b2f245cea3d65b0f14da1a3c\",\n      \"path\": \"/AI/AI in Law/AustLII extension\"\n    },\n    {\n      \"id\": \"bf624a4514fb4d0f96a5aa4b0c161335\",\n      \"title\": \"LVI2025\",\n      \"parentId\": \"636386c8b2f245cea3d65b0f14da1a3c\",\n      \"path\": \"/AI/AI in Law/LVI2025\"\n    },\n    {\n      \"id\": \"c4151d7628834456bcdeed7f7ff46e64\",\n      \"title\": \"MCP\",\n      \"parentId\": \"636386c8b2f245cea3d65b0f14da1a3c\",\n      \"path\": \"/AI/AI in Law/MCP\"\n    },\n    {\n      \"id\": \"7ce19f85ef8f480bb68d5fd74fbc1605\",\n      \"title\": \"Standards\",\n      \"parentId\": \"636386c8b2f245cea3d65b0f14da1a3c\",\n      \"path\": \"/AI/AI in Law/Standards\"\n    },\n    {\n      \"id\": \"85e8baf35d0f4ae4b50dc97feb5e567f\",\n      \"title\": \"Techs\",\n      \"parentId\": \"636386c8b2f245cea3d65b0f14da1a3c\",\n      \"path\": \"/AI/AI in Law/Techs\"\n    },\n    {\n      \"id\": \"4f6a8236a5494bc9bee9999ce92795a9\",\n      \"title\": \"Umar Butler\",\n      \"parentId\": \"636386c8b2f245cea3d65b0f14da1a3c\",\n      \"path\": \"/AI/AI in Law/Umar Butler\"\n    },\n    {\n      \"id\": \"02a73058b8584fcf8a502a71158e579f\",\n      \"title\": \"Word Extension\",\n      \"parentId\": \"636386c8b2f245cea3d65b0f14da1a3c\",\n      \"path\": \"/AI/AI in Law/Word Extension\"\n    },\n    {\n      \"id\": \"c15f342cfbd64c0c8b4b1322306574d5\",\n      \"title\": \"NPU\",\n      \"parentId\": \"f19d4c92b06049649f11f700fd797df6\",\n      \"path\": \"/AI/NPU\"\n    },\n    {\n      \"id\": \"e6f685a0556a4b879dbab63497bb0b0e\",\n      \"title\": \"Word MCP\",\n      \"parentId\": \"f19d4c92b06049649f11f700fd797df6\",\n      \"path\": \"/AI/Word MCP\"\n    },\n    {\n      \"id\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"title\": \"Blockchain\",\n      \"parentId\": \"\",\n      \"path\": \"/Blockchain\"\n    },\n    {\n      \"id\": \"4e19eafad4be4e96879cec1b7c7b956e\",\n      \"title\": \"20122\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/20122\"\n    },\n    {\n      \"id\": \"72b442e4a1c54418bf4fdfa0dd9c57bd\",\n      \"title\": \"Blockchain regulations\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/Blockchain regulations\"\n    },\n    {\n      \"id\": \"d79f5edcd2e445e8b085416227a36a6d\",\n      \"title\": \"Books\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/Books\"\n    },\n    {\n      \"id\": \"b4ce0bda8ac7448fb22a9d38b6768745\",\n      \"title\": \"Bitcoin 1M\",\n      \"parentId\": \"d79f5edcd2e445e8b085416227a36a6d\",\n      \"path\": \"/Blockchain/Books/Bitcoin 1M\"\n    },\n    {\n      \"id\": \"e9e3175204a6443fadaead56c7f6aece\",\n      \"title\": \"Blockchain for lawyers\",\n      \"parentId\": \"d79f5edcd2e445e8b085416227a36a6d\",\n      \"path\": \"/Blockchain/Books/Blockchain for lawyers\"\n    },\n    {\n      \"id\": \"9534c8980fab489fb760cfe563a99cbf\",\n      \"title\": \"Chapter\",\n      \"parentId\": \"d79f5edcd2e445e8b085416227a36a6d\",\n      \"path\": \"/Blockchain/Books/Chapter\"\n    },\n    {\n      \"id\": \"23286c24613047228e882c90e75bf6e3\",\n      \"title\": \"Cross blockchain protocol\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/Cross blockchain protocol\"\n    },\n    {\n      \"id\": \"3d2b45a7610045bfac86233fb47de9d2\",\n      \"title\": \"CryptoVault\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/CryptoVault\"\n    },\n    {\n      \"id\": \"674a2fc4c6b14e71a01b0e5a8063c4d0\",\n      \"title\": \"Digital ID\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/Digital ID\"\n    },\n    {\n      \"id\": \"e202324b640842439b0cd4ac7fd508bf\",\n      \"title\": \"EBSI\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/EBSI\"\n    },\n    {\n      \"id\": \"5f8d398e62da41e0b3de2c3cbb8a6655\",\n      \"title\": \"Fintech Edu\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/Fintech Edu\"\n    },\n    {\n      \"id\": \"a46473173a6348298a50e303e7cae007\",\n      \"title\": \"Macquarie Uni\",\n      \"parentId\": \"5f8d398e62da41e0b3de2c3cbb8a6655\",\n      \"path\": \"/Blockchain/Fintech Edu/Macquarie Uni\"\n    },\n    {\n      \"id\": \"274963fa809a4b05a462fa59e9557b5a\",\n      \"title\": \"Hardware wallets\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/Hardware wallets\"\n    },\n    {\n      \"id\": \"7725428bcec6420aa62fc11e8c0d59d8\",\n      \"title\": \"Mining\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/Mining\"\n    },\n    {\n      \"id\": \"f4364bb147e948079e3dfefdac1c2b9f\",\n      \"title\": \"Gas\",\n      \"parentId\": \"7725428bcec6420aa62fc11e8c0d59d8\",\n      \"path\": \"/Blockchain/Mining/Gas\"\n    },\n    {\n      \"id\": \"0ebe0f893e04456aa628b0836b1afe72\",\n      \"title\": \"SEC\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/SEC\"\n    },\n    {\n      \"id\": \"0fcbf60ca0464454af1fed4f40ef32f6\",\n      \"title\": \"SMSF CrytpoAudit\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/SMSF CrytpoAudit\"\n    },\n    {\n      \"id\": \"c46297591c404df78cfc52ca22b2d497\",\n      \"title\": \"T-Rex on Bubble\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/T-Rex on Bubble\"\n    },\n    {\n      \"id\": \"b703a13fc6184194a94f7f5e3b8027c0\",\n      \"title\": \"Treasury\",\n      \"parentId\": \"f4e2a6663bb24b119a485764ea4ea441\",\n      \"path\": \"/Blockchain/Treasury\"\n    },\n    {\n      \"id\": \"c64ac17e8ad9438fb177b0715cb6de0a\",\n      \"title\": \"Statement\",\n      \"parentId\": \"b703a13fc6184194a94f7f5e3b8027c0\",\n      \"path\": \"/Blockchain/Treasury/Statement\"\n    },\n    {\n      \"id\": \"7c9319a8c9544045b8af0f58eba28d9a\",\n      \"title\": \"Crisis AI\",\n      \"parentId\": \"\",\n      \"path\": \"/Crisis AI\"\n    },\n    {\n      \"id\": \"c4fe381257924373ac54497ec901e706\",\n      \"title\": \"DataBanksia\",\n      \"parentId\": \"\",\n      \"path\": \"/DataBanksia\"\n    },\n    {\n      \"id\": \"27f74eee1a2c49799b70189e5fe8e67d\",\n      \"title\": \"Dev DataBanksia\",\n      \"parentId\": \"c4fe381257924373ac54497ec901e706\",\n      \"path\": \"/DataBanksia/Dev DataBanksia\"\n    },\n    {\n      \"id\": \"73c6c67c9a6249579b7416006407b3c9\",\n      \"title\": \"Domain DataBanksia\",\n      \"parentId\": \"c4fe381257924373ac54497ec901e706\",\n      \"path\": \"/DataBanksia/Domain DataBanksia\"\n    },\n    {\n      \"id\": \"4ee03abbe5c546af87459e143d6b5020\",\n      \"title\": \"Map DataSets\",\n      \"parentId\": \"c4fe381257924373ac54497ec901e706\",\n      \"path\": \"/DataBanksia/Map DataSets\"\n    },\n    {\n      \"id\": \"5a2280ed6094491d82bbfd97e60d5a9b\",\n      \"title\": \"PropStat\",\n      \"parentId\": \"4ee03abbe5c546af87459e143d6b5020\",\n      \"path\": \"/DataBanksia/Map DataSets/PropStat\"\n    },\n    {\n      \"id\": \"d96057f081174b21955abc48783b66f1\",\n      \"title\": \"Map Tech\",\n      \"parentId\": \"c4fe381257924373ac54497ec901e706\",\n      \"path\": \"/DataBanksia/Map Tech\"\n    },\n    {\n      \"id\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"title\": \"DevTechs\",\n      \"parentId\": \"\",\n      \"path\": \"/DevTechs\"\n    },\n    {\n      \"id\": \"188a81db14e74da0b479af947c5fcff4\",\n      \"title\": \"3D Modelling\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/3D Modelling\"\n    },\n    {\n      \"id\": \"f89644a85a7845e69ad986e21b91080f\",\n      \"title\": \"Bambulab\",\n      \"parentId\": \"188a81db14e74da0b479af947c5fcff4\",\n      \"path\": \"/DevTechs/3D Modelling/Bambulab\"\n    },\n    {\n      \"id\": \"d0d4e1841e1749d6b01c2bd5c7d83efe\",\n      \"title\": \"Aliexpress\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/Aliexpress\"\n    },\n    {\n      \"id\": \"c27da84792994866a2536aa74160b88a\",\n      \"title\": \"CS50 Web\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/CS50 Web\"\n    },\n    {\n      \"id\": \"c6947c84fa6e4238b4f45d6495dc23de\",\n      \"title\": \"CSS Grid\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/CSS Grid\"\n    },\n    {\n      \"id\": \"234a6ec902894ddf85c42b849d8d0a6c\",\n      \"title\": \"DB\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/DB\"\n    },\n    {\n      \"id\": \"c09128ece1a849f98c8ae68f3549ac89\",\n      \"title\": \"DIY\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/DIY\"\n    },\n    {\n      \"id\": \"0018cd4b1d2a4488ae6eda01e2fced6f\",\n      \"title\": \"Drone\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/Drone\"\n    },\n    {\n      \"id\": \"7023bb3bf1dc4f03b66eb5adab2808af\",\n      \"title\": \"Hi-Fli Drone \",\n      \"parentId\": \"0018cd4b1d2a4488ae6eda01e2fced6f\",\n      \"path\": \"/DevTechs/Drone/Hi-Fli Drone\"\n    },\n    {\n      \"id\": \"6e3ed2100e0d410ea0cae0e50cce0932\",\n      \"title\": \"QWERTY Drone\",\n      \"parentId\": \"0018cd4b1d2a4488ae6eda01e2fced6f\",\n      \"path\": \"/DevTechs/Drone/QWERTY Drone\"\n    },\n    {\n      \"id\": \"e1b0d79b1daa47f69b01cf72b9832a26\",\n      \"title\": \"eMokie\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/eMokie\"\n    },\n    {\n      \"id\": \"e9918ffd86cb4bec8f75e99f2117f8e4\",\n      \"title\": \"Impersonation Alert\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/Impersonation Alert\"\n    },\n    {\n      \"id\": \"97b0ea3578204c6c8dc0e1746e441963\",\n      \"title\": \"MongoDB Notes\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/MongoDB Notes\"\n    },\n    {\n      \"id\": \"ae7f221791bb4d85996ffe20e826961b\",\n      \"title\": \"NoCode\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/NoCode\"\n    },\n    {\n      \"id\": \"0931481ead544cec95c53a97b0ef9f40\",\n      \"title\": \"Node.js\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/Node.js\"\n    },\n    {\n      \"id\": \"563a65fecb7045fe8119c338c4e6bb70\",\n      \"title\": \"Plab\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/Plab\"\n    },\n    {\n      \"id\": \"f8251bae863d45ddb581f154a981c3f1\",\n      \"title\": \"Python\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/Python\"\n    },\n    {\n      \"id\": \"aeb39536fbe3490095311a5d0af517e9\",\n      \"title\": \"RC Boats\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/RC Boats\"\n    },\n    {\n      \"id\": \"08f6c5d18bf44018b83767ee49f671e1\",\n      \"title\": \"Robots\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/Robots\"\n    },\n    {\n      \"id\": \"5268eee1244146f69eab5ceaca420dc2\",\n      \"title\": \"Self-Driving Cars\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/Self-Driving Cars\"\n    },\n    {\n      \"id\": \"33ae50129ed54183a6f332a9c7de6e02\",\n      \"title\": \"RFID\",\n      \"parentId\": \"5268eee1244146f69eab5ceaca420dc2\",\n      \"path\": \"/DevTechs/Self-Driving Cars/RFID\"\n    },\n    {\n      \"id\": \"08d3a0faef6540f295057797c3a4e72c\",\n      \"title\": \"Website builder\",\n      \"parentId\": \"ee3068a1783a4770bd820bb5f70357cd\",\n      \"path\": \"/DevTechs/Website builder\"\n    },\n    {\n      \"id\": \"3a0a4b07681f416f98fc9f24cf8fa042\",\n      \"title\": \"IV VIA\",\n      \"parentId\": \"\",\n      \"path\": \"/IV VIA\"\n    },\n    {\n      \"id\": \"3ee6378192694c70bcb681d71600191b\",\n      \"title\": \"AU Stat\",\n      \"parentId\": \"3a0a4b07681f416f98fc9f24cf8fa042\",\n      \"path\": \"/IV VIA/AU Stat\"\n    },\n    {\n      \"id\": \"90a4dd9df6df4480b4e9b73ed15f68e0\",\n      \"title\": \"other stat\",\n      \"parentId\": \"3ee6378192694c70bcb681d71600191b\",\n      \"path\": \"/IV VIA/AU Stat/other stat\"\n    },\n    {\n      \"id\": \"b38756be494b41ba88706097fec10386\",\n      \"title\": \"old ivvia\",\n      \"parentId\": \"3a0a4b07681f416f98fc9f24cf8fa042\",\n      \"path\": \"/IV VIA/old ivvia\"\n    },\n    {\n      \"id\": \"7a498218d7cc4e6e89426c582d9b8a33\",\n      \"title\": \"Project Ivvia\",\n      \"parentId\": \"3a0a4b07681f416f98fc9f24cf8fa042\",\n      \"path\": \"/IV VIA/Project Ivvia\"\n    },\n    {\n      \"id\": \"54b7c5834aaa4340a566aaab0d207a69\",\n      \"title\": \"Spark Tokenization Grand Prix\",\n      \"parentId\": \"7a498218d7cc4e6e89426c582d9b8a33\",\n      \"path\": \"/IV VIA/Project Ivvia/Spark Tokenization Grand Prix\"\n    },\n    {\n      \"id\": \"7691105757e54503b9fabe846ca0db7b\",\n      \"title\": \"Listen&Polish\",\n      \"parentId\": \"\",\n      \"path\": \"/Listen&Polish\"\n    },\n    {\n      \"id\": \"f9b2d89479cc4ad3848b5a291b27ccb1\",\n      \"title\": \"MED\",\n      \"parentId\": \"\",\n      \"path\": \"/MED\"\n    },\n    {\n      \"id\": \"efa1c32d0d5d4b29979e27c1effd2d5f\",\n      \"title\": \"MyPC\",\n      \"parentId\": \"\",\n      \"path\": \"/MyPC\"\n    },\n    {\n      \"id\": \"8eac49bc13644fc1aff703313a331e26\",\n      \"title\": \"🗂Apps\",\n      \"parentId\": \"efa1c32d0d5d4b29979e27c1effd2d5f\",\n      \"path\": \"/MyPC/🗂Apps\"\n    },\n    {\n      \"id\": \"046678408a254dc9acc8c11891961edf\",\n      \"title\": \"Android\",\n      \"parentId\": \"efa1c32d0d5d4b29979e27c1effd2d5f\",\n      \"path\": \"/MyPC/Android\"\n    },\n    {\n      \"id\": \"241a4c6a12ca47e5bdcc54c2e2cdb19e\",\n      \"title\": \"Farm\",\n      \"parentId\": \"efa1c32d0d5d4b29979e27c1effd2d5f\",\n      \"path\": \"/MyPC/Farm\"\n    },\n    {\n      \"id\": \"65f219de0c24459badbeccd38d87b8b3\",\n      \"title\": \"FriendlyELEC\",\n      \"parentId\": \"efa1c32d0d5d4b29979e27c1effd2d5f\",\n      \"path\": \"/MyPC/FriendlyELEC\"\n    },\n    {\n      \"id\": \"7b37507759a64a668d92acfb0f623564\",\n      \"title\": \"Note apps\",\n      \"parentId\": \"efa1c32d0d5d4b29979e27c1effd2d5f\",\n      \"path\": \"/MyPC/Note apps\"\n    },\n    {\n      \"id\": \"0fce39daa659445eaba20e28191b7e46\",\n      \"title\": \"NUC\",\n      \"parentId\": \"efa1c32d0d5d4b29979e27c1effd2d5f\",\n      \"path\": \"/MyPC/NUC\"\n    },\n    {\n      \"id\": \"f8665a7a281a49fb9f36f10ba5b3ffd9\",\n      \"title\": \"Radxa\",\n      \"parentId\": \"efa1c32d0d5d4b29979e27c1effd2d5f\",\n      \"path\": \"/MyPC/Radxa\"\n    },\n    {\n      \"id\": \"48038920f6c94e358729d5a2ffaefcbf\",\n      \"title\": \"Takeout\",\n      \"parentId\": \"efa1c32d0d5d4b29979e27c1effd2d5f\",\n      \"path\": \"/MyPC/Takeout\"\n    },\n    {\n      \"id\": \"ab3571cc24d34bfb9354fe38d8ba948d\",\n      \"title\": \"NAATI\",\n      \"parentId\": \"\",\n      \"path\": \"/NAATI\"\n    },\n    {\n      \"id\": \"39304715120441e5a5605fdf95099c3d\",\n      \"title\": \"Real Estate\",\n      \"parentId\": \"\",\n      \"path\": \"/Real Estate\"\n    },\n    {\n      \"id\": \"226beea069ed4d4780fe673fb0bbbdc5\",\n      \"title\": \"BER Systems\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/BER Systems\"\n    },\n    {\n      \"id\": \"5c11a27e5e084e13aece31117d6ce054\",\n      \"title\": \"Danish Land Register\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/Danish Land Register\"\n    },\n    {\n      \"id\": \"8b73dbcbb2b54542b290d6ac6b28678b\",\n      \"title\": \"ELNO\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/ELNO\"\n    },\n    {\n      \"id\": \"7910586b85ce4ce39781283f9ad7a84c\",\n      \"title\": \"Hidden reason\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/Hidden reason\"\n    },\n    {\n      \"id\": \"f3cd1649cff14891ae2a3a4e56e0b048\",\n      \"title\": \"Hlibivka\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/Hlibivka\"\n    },\n    {\n      \"id\": \"97dd45a3d60c43d09f2051d8bba46c1b\",\n      \"title\": \"Land registry\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/Land registry\"\n    },\n    {\n      \"id\": \"7bdc983d22224be8aa97e36ccddbdbe7\",\n      \"title\": \"Land systems\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/Land systems\"\n    },\n    {\n      \"id\": \"c085845c8b38471a99220e88c13259ac\",\n      \"title\": \"Pangeos Turtle\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/Pangeos Turtle\"\n    },\n    {\n      \"id\": \"c196a4f854634c7ab2bddaab4b793df7\",\n      \"title\": \"Price Forecast\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/Price Forecast\"\n    },\n    {\n      \"id\": \"23ea98e778d94da290f0d0ce1718555b\",\n      \"title\": \"Real Estate Economy\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/Real Estate Economy\"\n    },\n    {\n      \"id\": \"ec2b47621a764bcbb54524b68a32b5fa\",\n      \"title\": \"SEEKBLOCKS\",\n      \"parentId\": \"39304715120441e5a5605fdf95099c3d\",\n      \"path\": \"/Real Estate/SEEKBLOCKS\"\n    },\n    {\n      \"id\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"title\": \"Renault\",\n      \"parentId\": \"\",\n      \"path\": \"/Renault\"\n    },\n    {\n      \"id\": \"76a852503145464290750d28d05ce0fb\",\n      \"title\": \"Archive\",\n      \"parentId\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"path\": \"/Renault/Archive\"\n    },\n    {\n      \"id\": \"1a764d2fce67418d9a271259c94deb3d\",\n      \"title\": \"Cruise control\",\n      \"parentId\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"path\": \"/Renault/Cruise control\"\n    },\n    {\n      \"id\": \"b3e34535c3b34d449af7436dfe88449e\",\n      \"title\": \"GPS\",\n      \"parentId\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"path\": \"/Renault/GPS\"\n    },\n    {\n      \"id\": \"6c7e199515a84c8b84ab66a0e081e08e\",\n      \"title\": \"Head unit \",\n      \"parentId\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"path\": \"/Renault/Head unit\"\n    },\n    {\n      \"id\": \"6c7b2115b9b443eeaabc1ad70cc04068\",\n      \"title\": \"Kitchen redesign\",\n      \"parentId\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"path\": \"/Renault/Kitchen redesign\"\n    },\n    {\n      \"id\": \"1e3c72c143f64537a861eb836505f73f\",\n      \"title\": \"Plumbing\",\n      \"parentId\": \"6c7b2115b9b443eeaabc1ad70cc04068\",\n      \"path\": \"/Renault/Kitchen redesign/Plumbing\"\n    },\n    {\n      \"id\": \"4798e24e4e05405ea940ab353f5f0851\",\n      \"title\": \"Manuals\",\n      \"parentId\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"path\": \"/Renault/Manuals\"\n    },\n    {\n      \"id\": \"e4636067eb354ac0b795f7847ea95f6d\",\n      \"title\": \"TOMZ\",\n      \"parentId\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"path\": \"/Renault/TOMZ\"\n    },\n    {\n      \"id\": \"959aa4b0167a440eae11e10f527a9752\",\n      \"title\": \"Ultrasonic sensor\",\n      \"parentId\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"path\": \"/Renault/Ultrasonic sensor\"\n    },\n    {\n      \"id\": \"a1435e1dbd384318b30714d18eed2a98\",\n      \"title\": \"Wireless monitor\",\n      \"parentId\": \"50fbff9ce4334abab22cd17bbaa5104d\",\n      \"path\": \"/Renault/Wireless monitor\"\n    },\n    {\n      \"id\": \"2b996fa066704d5a9f24a122c63d50db\",\n      \"title\": \"Testnotebook1\",\n      \"parentId\": \"\",\n      \"path\": \"/Testnotebook1\"\n    },\n    {\n      \"id\": \"25f420fa11c94c65a70216819382aa53\",\n      \"title\": \"Subnotebook\",\n      \"parentId\": \"2b996fa066704d5a9f24a122c63d50db\",\n      \"path\": \"/Testnotebook1/Subnotebook\"\n    },\n    {\n      \"id\": \"10588ff3d7174d21827f106d1a72f2f9\",\n      \"title\": \"Vocolibri\",\n      \"parentId\": \"\",\n      \"path\": \"/Vocolibri\"\n    },\n    {\n      \"id\": \"7b586295c7f54c82ac590411719cde5d\",\n      \"title\": \"!Project Vocolibri\",\n      \"parentId\": \"10588ff3d7174d21827f106d1a72f2f9\",\n      \"path\": \"/Vocolibri/!Project Vocolibri\"\n    },\n    {\n      \"id\": \"8025d10e1af94d568dd9faec91b3b98c\",\n      \"title\": \"Choice of TTS\",\n      \"parentId\": \"10588ff3d7174d21827f106d1a72f2f9\",\n      \"path\": \"/Vocolibri/Choice of TTS\"\n    },\n    {\n      \"id\": \"8677555ce1354b228028aebaba1785e4\",\n      \"title\": \"Dev Vocolibri\",\n      \"parentId\": \"10588ff3d7174d21827f106d1a72f2f9\",\n      \"path\": \"/Vocolibri/Dev Vocolibri\"\n    },\n    {\n      \"id\": \"7fceac876df24fdd82560742db625743\",\n      \"title\": \"DevTech Vocolibri\",\n      \"parentId\": \"10588ff3d7174d21827f106d1a72f2f9\",\n      \"path\": \"/Vocolibri/DevTech Vocolibri\"\n    },\n    {\n      \"id\": \"10a7b38ea3024d08a0f85f67e76944d1\",\n      \"title\": \"Setup Vocolibri\",\n      \"parentId\": \"10588ff3d7174d21827f106d1a72f2f9\",\n      \"path\": \"/Vocolibri/Setup Vocolibri\"\n    },\n    {\n      \"id\": \"770216d594bc4088885987b9e51e7628\",\n      \"title\": \"WEB3AU\",\n      \"parentId\": \"\",\n      \"path\": \"/WEB3AU\"\n    },\n    {\n      \"id\": \"eb0ab1e4f1b7461fac6995baffa50da2\",\n      \"title\": \"Ecosystem\",\n      \"parentId\": \"770216d594bc4088885987b9e51e7628\",\n      \"path\": \"/WEB3AU/Ecosystem\"\n    },\n    {\n      \"id\": \"a8f17c720f434d8297449788908dcb38\",\n      \"title\": \"Events\",\n      \"parentId\": \"770216d594bc4088885987b9e51e7628\",\n      \"path\": \"/WEB3AU/Events\"\n    },\n    {\n      \"id\": \"24f51fe37447484087ff547b53cac3d0\",\n      \"title\": \"Setup WEB3AU\",\n      \"parentId\": \"770216d594bc4088885987b9e51e7628\",\n      \"path\": \"/WEB3AU/Setup WEB3AU\"\n    },\n    {\n      \"id\": \"61e7beaf37674328b840b8b9edae7508\",\n      \"title\": \"Sources\",\n      \"parentId\": \"770216d594bc4088885987b9e51e7628\",\n      \"path\": \"/WEB3AU/Sources\"\n    },\n    {\n      \"id\": \"8bfe7333796c4eea9faf9d4f3612690f\",\n      \"title\": \"Team WEB3AU\",\n      \"parentId\": \"770216d594bc4088885987b9e51e7628\",\n      \"path\": \"/WEB3AU/Team WEB3AU\"\n    },\n    {\n      \"id\": \"5f66f84aa8814d8b9602f05ab1975aca\",\n      \"title\": \"Topics on WEB3AU\",\n      \"parentId\": \"770216d594bc4088885987b9e51e7628\",\n      \"path\": \"/WEB3AU/Topics on WEB3AU\"\n    },\n    {\n      \"id\": \"c2e1c697a1544384b06822e4cc77df57\",\n      \"title\": \"YoutubePlus\",\n      \"parentId\": \"\",\n      \"path\": \"/YoutubePlus\"\n    }\n  ]\n}",
+                "audience": [
+                  0
+                ]
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {}
+          },
+          "toolCallId": "ec51c845-5789-4748-9c2d-e5e5842de403",
+          "toolId": "mcp_joplin_notes__joplin_list_notebooks"
+        },
+        {
+          "value": "Good! I can see there's an AI folder. Now let me search for notes about webpage to markdown conversion tools in the AI folder. ",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"query\": \"webpage markdown md convert\",\n  \"notebook\": \"AI\",\n  \"limit\": 20\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "{\n  \"items\": []\n}",
+                "audience": [
+                  0
+                ]
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "query": "webpage markdown md convert",
+              "notebook": "AI",
+              "limit": 20
+            }
+          },
+          "toolCallId": "4fa67460-0f80-4a4e-be4a-d755a6a2aead",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "value": "Let me try a broader search with different keywords related to webpage conversion tools: ",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_search_notes`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_search_notes` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"limit\": 20,\n  \"notebook\": \"AI\",\n  \"query\": \"html markdown\"\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "{\n  \"items\": [\n    {\n      \"id\": \"0e2c31c6d65342c49b59241caf6f68d9\",\n      \"title\": \"MarkItDown: Microsoft’s open-source tool for Markdown conversion | InfoWorld\",\n      \"parentId\": \"f19d4c92b06049649f11f700fd797df6\",\n      \"uri\": \"joplin:/__by_id/0e2c31c6d65342c49b59241caf6f68d9.md\"\n    }\n  ]\n}",
+                "audience": [
+                  0
+                ]
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "limit": 20,
+              "notebook": "AI",
+              "query": "html markdown"
+            }
+          },
+          "toolCallId": "7f9b7192-df48-4f08-815c-a1b442cd1df4",
+          "toolId": "mcp_joplin_notes__joplin_search_notes"
+        },
+        {
+          "value": "Perfect! I found it. Let me get the full content of this note about MarkItDown: ",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "mcp_joplin_notes__joplin_get_note"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Running `joplin_get_note`",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "pastTenseMessage": {
+            "value": "Ran `joplin_get_note` ",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "originMessage": "Joplin Notes MCP Server (MCP Server)",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "mcp",
+            "serverLabel": "joplin-mcp-server",
+            "label": "Joplin Notes MCP Server",
+            "collectionId": "local.joplin-vscode-plugin-ai/joplin.mcpServer",
+            "definitionId": "local.joplin-vscode-plugin-ai/Joplin Notes MCP Server"
+          },
+          "resultDetails": {
+            "input": "{\n  \"noteId\": \"0e2c31c6d65342c49b59241caf6f68d9\"\n}",
+            "output": [
+              {
+                "type": "embed",
+                "isText": true,
+                "value": "{\n  \"success\": true,\n  \"id\": \"0e2c31c6d65342c49b59241caf6f68d9\",\n  \"title\": \"MarkItDown: Microsoft’s open-source tool for Markdown conversion | InfoWorld\",\n  \"body\": \"https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html\",\n  \"parentId\": \"f19d4c92b06049649f11f700fd797df6\",\n  \"uri\": \"joplin:/__by_id/0e2c31c6d65342c49b59241caf6f68d9.md\"\n}",
+                "audience": [
+                  0
+                ]
+              }
+            ],
+            "isError": false
+          },
+          "toolSpecificData": {
+            "kind": "input",
+            "rawInput": {
+              "noteId": "0e2c31c6d65342c49b59241caf6f68d9"
+            }
+          },
+          "toolCallId": "b4c26d3f-dde3-4c0b-9308-32141b9bee35",
+          "toolId": "mcp_joplin_notes__joplin_get_note"
+        },
+        {
+          "value": "Found it! The note is about **MarkItDown** - Microsoft's open-source tool for Markdown conversion. \n\nThe note is located in the AI folder and contains a link to an InfoWorld article: https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "responseId": "response_112ecf7c-ecba-4f73-8900-f237edadcce6",
+      "result": {
+        "timings": {
+          "firstProgress": 9159,
+          "totalElapsed": 35650
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "renderedUserMessage": [
+            {
+              "type": 1,
+              "text": "<context>\nThe current date is 10 December 2025.\nTerminals:\nTerminal: bash\n\n</context>\n<reminderInstructions>\nWhen using the replace_string_in_file tool, include 3-5 lines of unchanged code before and after the string you want to replace, to make it unambiguous which part of the file should be edited.\nFor maximum efficiency, whenever you plan to perform multiple independent edit operations, invoke them simultaneously using multi_replace_string_in_file tool rather than sequentially. This will greatly improve user's cost and time efficiency leading to a better user experience. Do not announce which tool you're using (for example, avoid saying \"I'll implement all the changes using multi_replace_string_in_file\").\nDo NOT create a new markdown file to document each change or summarize your work unless specifically requested by the user.\n\n</reminderInstructions>\n<userRequest>\ni am looking for a note in joplin that is devoted to a library/tool/framework that can turn webpages in md format. it will likely be present i ai folder\n</userRequest>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "renderedGlobalContext": [
+            {
+              "type": 1,
+              "text": "<environment_info>\nThe user's current OS is: Linux\nThe user's default shell is: \"bash\". When you generate terminal commands, please generate them correctly for this shell.\n</environment_info>\n<workspace_info>\nThere is no workspace currently open.\nThis is the state of the context at this point in the conversation. The view of the workspace structure may be truncated. You can use tools to collect more context if needed.\n</workspace_info>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "cacheKey": "",
+          "toolCallRounds": [
+            {
+              "response": "I'll help you search for that note in Joplin. Let me start by checking the Joplin connection and looking in the AI folder. ",
+              "toolCalls": [
+                {
+                  "name": "mcp_joplin_notes__joplin_status",
+                  "arguments": "{}",
+                  "id": "tooluse_EqsFC-DgT7y2w3MlRO4R9w__vscode-1765337830290"
+                },
+                {
+                  "name": "mcp_joplin_notes__joplin_list_notebooks",
+                  "arguments": "{}",
+                  "id": "tooluse_4724EnZITy22kFIikoLvOg__vscode-1765337830291"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "41bee242-51b8-4a4a-8ef1-4fc6fae11739"
+            },
+            {
+              "response": "Good! I can see there's an AI folder. Now let me search for notes about webpage to markdown conversion tools in the AI folder. ",
+              "toolCalls": [
+                {
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"query\": \"webpage markdown md convert\", \"notebook\": \"AI\", \"limit\": 20}",
+                  "id": "tooluse_HHfI9LGAQWqPzAn7AJe62A__vscode-1765337830292"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "7f974215-b84a-4b31-9257-6469e8c85f93"
+            },
+            {
+              "response": "Let me try a broader search with different keywords related to webpage conversion tools: ",
+              "toolCalls": [
+                {
+                  "name": "mcp_joplin_notes__joplin_search_notes",
+                  "arguments": "{\"limit\": 20, \"notebook\": \"AI\", \"query\": \"html markdown\"}",
+                  "id": "tooluse_kA02AKfySgGS1qs9CZvTkw__vscode-1765337830293"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "8285d365-f829-4e1c-85af-6fe260bebe49"
+            },
+            {
+              "response": "Perfect! I found it. Let me get the full content of this note about MarkItDown: ",
+              "toolCalls": [
+                {
+                  "name": "mcp_joplin_notes__joplin_get_note",
+                  "arguments": "{\"noteId\": \"0e2c31c6d65342c49b59241caf6f68d9\"}",
+                  "id": "tooluse_yaoKgC3cSs2wkrl5Ocby9w__vscode-1765337830294"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "425ed731-409d-4c2f-a041-7fc8cd9586d8"
+            },
+            {
+              "response": "Found it! The note is about **MarkItDown** - Microsoft's open-source tool for Markdown conversion. \n\nThe note is located in the AI folder and contains a link to an InfoWorld article: https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "61da06ea-670e-43ff-a45e-89b766418760"
+            }
+          ],
+          "toolCallResults": {
+            "tooluse_EqsFC-DgT7y2w3MlRO4R9w__vscode-1765337830290": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "{\"connected\":true}"
+                }
+              ]
+            },
+            "tooluse_4724EnZITy22kFIikoLvOg__vscode-1765337830291": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "{\"items\":[{\"id\":\"2d262cb195c3432aa10608b790f46ca6\",\"title\":\"!Ideas\",\"parentId\":\"\",\"path\":\"/!Ideas\"},{\"id\":\"6e3266f1582d4213bd638706c2329ec1\",\"title\":\" Mail encryption \",\"parentId\":\"2d262cb195c3432aa10608b790f46ca6\",\"path\":\"/!Ideas/Mail encryption\"},{\"id\":\"1714eae036f84b4ba956882f6116e7ac\",\"title\":\"CO2 Device\",\"parentId\":\"2d262cb195c3432aa10608b790f46ca6\",\"path\":\"/!Ideas/CO2 Device\"},{\"id\":\"5900dcb860e347eb8bad6263288a298f\",\"title\":\"DeFi Mortgage\",\"parentId\":\"2d262cb195c3432aa10608b790f46ca6\",\"path\":\"/!Ideas/DeFi Mortgage\"},{\"id\":\"937e4e1ffb3b4e6d94862e6051f8a395\",\"title\":\"LexHub\",\"parentId\":\"2d262cb195c3432aa10608b790f46ca6\",\"path\":\"/!Ideas/LexHub\"},{\"id\":\"fbd6695efcb9496fb5dc3ad38f670c30\",\"title\":\"Notes\",\"parentId\":\"2d262cb195c3432aa10608b790f46ca6\",\"path\":\"/!Ideas/Notes\"},{\"id\":\"df046ce30a2f47e5b2d12d687707136b\",\"title\":\"Papers\",\"parentId\":\"2d262cb195c3432aa10608b790f46ca6\",\"path\":\"/!Ideas/Papers\"},{\"id\":\"07b49833aa114be78207f8d98ccafd17\",\"title\":\"Artificial Sea\",\"parentId\":\"df046ce30a2f47e5b2d12d687707136b\",\"path\":\"/!Ideas/Papers/Artificial Sea\"},{\"id\":\"2196e2a16e6948a1a859098b1b2bcb40\",\"title\":\"Bitcoin Price\",\"parentId\":\"df046ce30a2f47e5b2d12d687707136b\",\"path\":\"/!Ideas/Papers/Bitcoin Price\"},{\"id\":\"9510a5b22f3d4d23a0ba2f624e25995e\",\"title\":\"Brisbane biosdiesel\",\"parentId\":\"df046ce30a2f47e5b2d12d687707136b\",\"path\":\"/!Ideas/Papers/Brisbane biosdiesel\"},{\"id\":\"20d1a3ee621045d1952ad23ad3990458\",\"title\":\"e-Waste Africa\",\"parentId\":\"df046ce30a2f47e5b2d12d687707136b\",\"path\":\"/!Ideas/Papers/e-Waste Africa\"},{\"id\":\"e078ccfb73c5425aba5211b1648e6b05\",\"title\":\"GDPR and Blockchain\",\"parentId\":\"df046ce30a2f47e5b2d12d687707136b\",\"path\":\"/!Ideas/Papers/GDPR and Blockchain\"},{\"id\":\"22904b52bbaf4be2bb48c52e1c324c8e\",\"title\":\"Jurisdictions on Blockchain\",\"parentId\":\"df046ce30a2f47e5b2d12d687707136b\",\"path\":\"/!Ideas/Papers/Jurisdictions on Blockchain\"},{\"id\":\"5c7046e14aaf474395b70b591e777f95\",\"title\":\"Triple entry\",\"parentId\":\"df046ce30a2f47e5b2d12d687707136b\",\"path\":\"/!Ideas/Papers/Triple entry\"},{\"id\":\"20a13835f90c4188ba6658731bd6b000\",\"title\":\"Why Digital ID on Blockchain\",\"parentId\":\"df046ce30a2f47e5b2d12d687707136b\",\"path\":\"/!Ideas/Papers/Why Digital ID on Blockchain\"},{\"id\":\"f8880796713e4833b5d7361b52d96dfc\",\"title\":\"Radio\",\"parentId\":\"2d262cb195c3432aa10608b790f46ca6\",\"path\":\"/!Ideas/Radio\"},{\"id\":\"08b126723ddb4a91b873488df81e65db\",\"title\":\"Robots Toilets\",\"parentId\":\"2d262cb195c3432aa10608b790f46ca6\",\"path\":\"/!Ideas/Robots Toilets\"},{\"id\":\"c8c1d27d959b43edb6a80e53742656fe\",\"title\":\"@blockchainstate\",\"parentId\":\"\",\"path\":\"/@blockchainstate\"},{\"id\":\"654cfefc8505478db990ffb730dd1f6a\",\"title\":\"@droleksiikonashevych\",\"parentId\":\"\",\"path\":\"/@droleksiikonashevych\"},{\"id\":\"2b3fdd7efe68416c86d48579a38eeed1\",\"title\":\"Acacia\",\"parentId\":\"\",\"path\":\"/Acacia\"},{\"id\":\"62f76986eb7e4dd69dbd3d33eb395a45\",\"title\":\"Job\",\"parentId\":\"2b3fdd7efe68416c86d48579a38eeed1\",\"path\":\"/Acacia/Job\"},{\"id\":\"1ac84c5310444f5fb14f54e6036bb45b\",\"title\":\"Public blockchains\",\"parentId\":\"2b3fdd7efe68416c86d48579a38eeed1\",\"path\":\"/Acacia/Public blockchains\"},{\"id\":\"f5892feec131449b80f0f83ce1433803\",\"title\":\"Stablecoins AU\",\"parentId\":\"2b3fdd7efe68416c86d48579a38eeed1\",\"path\":\"/Acacia/Stablecoins AU\"},{\"id\":\"f19d4c92b06049649f11f700fd797df6\",\"title\":\"AI\",\"parentId\":\"\",\"path\":\"/AI\"},{\"id\":\"636386c8b2f245cea3d65b0f14da1a3c\",\"title\":\"AI in Law\",\"parentId\":\"f19d4c92b06049649f11f700fd797df6\",\"path\":\"/AI/AI in Law\"},{\"id\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"title\":\"!Project\",\"parentId\":\"636386c8b2f245cea3d65b0f14da1a3c\",\"path\":\"/AI/AI in Law/!Project\"},{\"id\":\"f268558671934ca49108838d50fbc107\",\"title\":\"API\",\"parentId\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"path\":\"/AI/AI in Law/!Project/API\"},{\"id\":\"74863a97d82e4a749fbbf7edce491269\",\"title\":\"Cloud pricing\",\"parentId\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"path\":\"/AI/AI in Law/!Project/Cloud pricing\"},{\"id\":\"ba232f05d7eb4911a87ec724960fe92f\",\"title\":\"Contacts\",\"parentId\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"path\":\"/AI/AI in Law/!Project/Contacts\"},{\"id\":\"b2b4adaf35df4aa381d861e444ef65d1\",\"title\":\"Design\",\"parentId\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"path\":\"/AI/AI in Law/!Project/Design\"},{\"id\":\"f0e546b46dbd4d3398927a2dda48060f\",\"title\":\"Grants\",\"parentId\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"path\":\"/AI/AI in Law/!Project/Grants\"},{\"id\":\"a3da6761ef0a454a9ad04a5134b309cb\",\"title\":\"LLM Tests\",\"parentId\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"path\":\"/AI/AI in Law/!Project/LLM Tests\"},{\"id\":\"2ace2b9dd54a4040b2f875a7745d2b57\",\"title\":\"Model pricing\",\"parentId\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"path\":\"/AI/AI in Law/!Project/Model pricing\"},{\"id\":\"ec983760fd2e4a108d34b4bedf614a8c\",\"title\":\"Telegram Group\",\"parentId\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"path\":\"/AI/AI in Law/!Project/Telegram Group\"},{\"id\":\"43f4e44652bf41b4bf21b696b46656c5\",\"title\":\"website\",\"parentId\":\"0bd84913656b4e0f8bd7a50f6b8b290e\",\"path\":\"/AI/AI in Law/!Project/website\"},{\"id\":\"e58fcf9e2eed438fa5decf3cbf4b2d07\",\"title\":\"AustLII extension\",\"parentId\":\"636386c8b2f245cea3d65b0f14da1a3c\",\"path\":\"/AI/AI in Law/AustLII extension\"},{\"id\":\"bf624a4514fb4d0f96a5aa4b0c161335\",\"title\":\"LVI2025\",\"parentId\":\"636386c8b2f245cea3d65b0f14da1a3c\",\"path\":\"/AI/AI in Law/LVI2025\"},{\"id\":\"c4151d7628834456bcdeed7f7ff46e64\",\"title\":\"MCP\",\"parentId\":\"636386c8b2f245cea3d65b0f14da1a3c\",\"path\":\"/AI/AI in Law/MCP\"},{\"id\":\"7ce19f85ef8f480bb68d5fd74fbc1605\",\"title\":\"Standards\",\"parentId\":\"636386c8b2f245cea3d65b0f14da1a3c\",\"path\":\"/AI/AI in Law/Standards\"},{\"id\":\"85e8baf35d0f4ae4b50dc97feb5e567f\",\"title\":\"Techs\",\"parentId\":\"636386c8b2f245cea3d65b0f14da1a3c\",\"path\":\"/AI/AI in Law/Techs\"},{\"id\":\"4f6a8236a5494bc9bee9999ce92795a9\",\"title\":\"Umar Butler\",\"parentId\":\"636386c8b2f245cea3d65b0f14da1a3c\",\"path\":\"/AI/AI in Law/Umar Butler\"},{\"id\":\"02a73058b8584fcf8a502a71158e579f\",\"title\":\"Word Extension\",\"parentId\":\"636386c8b2f245cea3d65b0f14da1a3c\",\"path\":\"/AI/AI in Law/Word Extension\"},{\"id\":\"c15f342cfbd64c0c8b4b1322306574d5\",\"title\":\"NPU\",\"parentId\":\"f19d4c92b06049649f11f700fd797df6\",\"path\":\"/AI/NPU\"},{\"id\":\"e6f685a0556a4b879dbab63497bb0b0e\",\"title\":\"Word MCP\",\"parentId\":\"f19d4c92b06049649f11f700fd797df6\",\"path\":\"/AI/Word MCP\"},{\"id\":\"f4e2a6663bb24b119a485764ea4ea441\",\"title\":\"Blockchain\",\"parentId\":\"\",\"path\":\"/Blockchain\"},{\"id\":\"4e19eafad4be4e96879cec1b7c7b956e\",\"title\":\"20122\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/20122\"},{\"id\":\"72b442e4a1c54418bf4fdfa0dd9c57bd\",\"title\":\"Blockchain regulations\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/Blockchain regulations\"},{\"id\":\"d79f5edcd2e445e8b085416227a36a6d\",\"title\":\"Books\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/Books\"},{\"id\":\"b4ce0bda8ac7448fb22a9d38b6768745\",\"title\":\"Bitcoin 1M\",\"parentId\":\"d79f5edcd2e445e8b085416227a36a6d\",\"path\":\"/Blockchain/Books/Bitcoin 1M\"},{\"id\":\"e9e3175204a6443fadaead56c7f6aece\",\"title\":\"Blockchain for lawyers\",\"parentId\":\"d79f5edcd2e445e8b085416227a36a6d\",\"path\":\"/Blockchain/Books/Blockchain for lawyers\"},{\"id\":\"9534c8980fab489fb760cfe563a99cbf\",\"title\":\"Chapter\",\"parentId\":\"d79f5edcd2e445e8b085416227a36a6d\",\"path\":\"/Blockchain/Books/Chapter\"},{\"id\":\"23286c24613047228e882c90e75bf6e3\",\"title\":\"Cross blockchain protocol\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/Cross blockchain protocol\"},{\"id\":\"3d2b45a7610045bfac86233fb47de9d2\",\"title\":\"CryptoVault\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/CryptoVault\"},{\"id\":\"674a2fc4c6b14e71a01b0e5a8063c4d0\",\"title\":\"Digital ID\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/Digital ID\"},{\"id\":\"e202324b640842439b0cd4ac7fd508bf\",\"title\":\"EBSI\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/EBSI\"},{\"id\":\"5f8d398e62da41e0b3de2c3cbb8a6655\",\"title\":\"Fintech Edu\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/Fintech Edu\"},{\"id\":\"a46473173a6348298a50e303e7cae007\",\"title\":\"Macquarie Uni\",\"parentId\":\"5f8d398e62da41e0b3de2c3cbb8a6655\",\"path\":\"/Blockchain/Fintech Edu/Macquarie Uni\"},{\"id\":\"274963fa809a4b05a462fa59e9557b5a\",\"title\":\"Hardware wallets\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/Hardware wallets\"},{\"id\":\"7725428bcec6420aa62fc11e8c0d59d8\",\"title\":\"Mining\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/Mining\"},{\"id\":\"f4364bb147e948079e3dfefdac1c2b9f\",\"title\":\"Gas\",\"parentId\":\"7725428bcec6420aa62fc11e8c0d59d8\",\"path\":\"/Blockchain/Mining/Gas\"},{\"id\":\"0ebe0f893e04456aa628b0836b1afe72\",\"title\":\"SEC\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/SEC\"},{\"id\":\"0fcbf60ca0464454af1fed4f40ef32f6\",\"title\":\"SMSF CrytpoAudit\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/SMSF CrytpoAudit\"},{\"id\":\"c46297591c404df78cfc52ca22b2d497\",\"title\":\"T-Rex on Bubble\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/T-Rex on Bubble\"},{\"id\":\"b703a13fc6184194a94f7f5e3b8027c0\",\"title\":\"Treasury\",\"parentId\":\"f4e2a6663bb24b119a485764ea4ea441\",\"path\":\"/Blockchain/Treasury\"},{\"id\":\"c64ac17e8ad9438fb177b0715cb6de0a\",\"title\":\"Statement\",\"parentId\":\"b703a13fc6184194a94f7f5e3b8027c0\",\"path\":\"/Blockchain/Treasury/Statement\"},{\"id\":\"7c9319a8c9544045b8af0f58eba28d9a\",\"title\":\"Crisis AI\",\"parentId\":\"\",\"path\":\"/Crisis AI\"},{\"id\":\"c4fe381257924373ac54497ec901e706\",\"title\":\"DataBanksia\",\"parentId\":\"\",\"path\":\"/DataBanksia\"},{\"id\":\"27f74eee1a2c49799b70189e5fe8e67d\",\"title\":\"Dev DataBanksia\",\"parentId\":\"c4fe381257924373ac54497ec901e706\",\"path\":\"/DataBanksia/Dev DataBanksia\"},{\"id\":\"73c6c67c9a6249579b7416006407b3c9\",\"title\":\"Domain DataBanksia\",\"parentId\":\"c4fe381257924373ac54497ec901e706\",\"path\":\"/DataBanksia/Domain DataBanksia\"},{\"id\":\"4ee03abbe5c546af87459e143d6b5020\",\"title\":\"Map DataSets\",\"parentId\":\"c4fe381257924373ac54497ec901e706\",\"path\":\"/DataBanksia/Map DataSets\"},{\"id\":\"5a2280ed6094491d82bbfd97e60d5a9b\",\"title\":\"PropStat\",\"parentId\":\"4ee03abbe5c546af87459e143d6b5020\",\"path\":\"/DataBanksia/Map DataSets/PropStat\"},{\"id\":\"d96057f081174b21955abc48783b66f1\",\"title\":\"Map Tech\",\"parentId\":\"c4fe381257924373ac54497ec901e706\",\"path\":\"/DataBanksia/Map Tech\"},{\"id\":\"ee3068a1783a4770bd820bb5f70357cd\",\"title\":\"DevTechs\",\"parentId\":\"\",\"path\":\"/DevTechs\"},{\"id\":\"188a81db14e74da0b479af947c5fcff4\",\"title\":\"3D Modelling\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/3D Modelling\"},{\"id\":\"f89644a85a7845e69ad986e21b91080f\",\"title\":\"Bambulab\",\"parentId\":\"188a81db14e74da0b479af947c5fcff4\",\"path\":\"/DevTechs/3D Modelling/Bambulab\"},{\"id\":\"d0d4e1841e1749d6b01c2bd5c7d83efe\",\"title\":\"Aliexpress\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/Aliexpress\"},{\"id\":\"c27da84792994866a2536aa74160b88a\",\"title\":\"CS50 Web\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/CS50 Web\"},{\"id\":\"c6947c84fa6e4238b4f45d6495dc23de\",\"title\":\"CSS Grid\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/CSS Grid\"},{\"id\":\"234a6ec902894ddf85c42b849d8d0a6c\",\"title\":\"DB\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/DB\"},{\"id\":\"c09128ece1a849f98c8ae68f3549ac89\",\"title\":\"DIY\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/DIY\"},{\"id\":\"0018cd4b1d2a4488ae6eda01e2fced6f\",\"title\":\"Drone\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/Drone\"},{\"id\":\"7023bb3bf1dc4f03b66eb5adab2808af\",\"title\":\"Hi-Fli Drone \",\"parentId\":\"0018cd4b1d2a4488ae6eda01e2fced6f\",\"path\":\"/DevTechs/Drone/Hi-Fli Drone\"},{\"id\":\"6e3ed2100e0d410ea0cae0e50cce0932\",\"title\":\"QWERTY Drone\",\"parentId\":\"0018cd4b1d2a4488ae6eda01e2fced6f\",\"path\":\"/DevTechs/Drone/QWERTY Drone\"},{\"id\":\"e1b0d79b1daa47f69b01cf72b9832a26\",\"title\":\"eMokie\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/eMokie\"},{\"id\":\"e9918ffd86cb4bec8f75e99f2117f8e4\",\"title\":\"Impersonation Alert\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/Impersonation Alert\"},{\"id\":\"97b0ea3578204c6c8dc0e1746e441963\",\"title\":\"MongoDB Notes\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/MongoDB Notes\"},{\"id\":\"ae7f221791bb4d85996ffe20e826961b\",\"title\":\"NoCode\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/NoCode\"},{\"id\":\"0931481ead544cec95c53a97b0ef9f40\",\"title\":\"Node.js\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/Node.js\"},{\"id\":\"563a65fecb7045fe8119c338c4e6bb70\",\"title\":\"Plab\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/Plab\"},{\"id\":\"f8251bae863d45ddb581f154a981c3f1\",\"title\":\"Python\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/Python\"},{\"id\":\"aeb39536fbe3490095311a5d0af517e9\",\"title\":\"RC Boats\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/RC Boats\"},{\"id\":\"08f6c5d18bf44018b83767ee49f671e1\",\"title\":\"Robots\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/Robots\"},{\"id\":\"5268eee1244146f69eab5ceaca420dc2\",\"title\":\"Self-Driving Cars\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/Self-Driving Cars\"},{\"id\":\"33ae50129ed54183a6f332a9c7de6e02\",\"title\":\"RFID\",\"parentId\":\"5268eee1244146f69eab5ceaca420dc2\",\"path\":\"/DevTechs/Self-Driving Cars/RFID\"},{\"id\":\"08d3a0faef6540f295057797c3a4e72c\",\"title\":\"Website builder\",\"parentId\":\"ee3068a1783a4770bd820bb5f70357cd\",\"path\":\"/DevTechs/Website builder\"},{\"id\":\"3a0a4b07681f416f98fc9f24cf8fa042\",\"title\":\"IV VIA\",\"parentId\":\"\",\"path\":\"/IV VIA\"},{\"id\":\"3ee6378192694c70bcb681d71600191b\",\"title\":\"AU Stat\",\"parentId\":\"3a0a4b07681f416f98fc9f24cf8fa042\",\"path\":\"/IV VIA/AU Stat\"},{\"id\":\"90a4dd9df6df4480b4e9b73ed15f68e0\",\"title\":\"other stat\",\"parentId\":\"3ee6378192694c70bcb681d71600191b\",\"path\":\"/IV VIA/AU Stat/other stat\"},{\"id\":\"b38756be494b41ba88706097fec10386\",\"title\":\"old ivvia\",\"parentId\":\"3a0a4b07681f416f98fc9f24cf8fa042\",\"path\":\"/IV VIA/old ivvia\"},{\"id\":\"7a498218d7cc4e6e89426c582d9b8a33\",\"title\":\"Project Ivvia\",\"parentId\":\"3a0a4b07681f416f98fc9f24cf8fa042\",\"path\":\"/IV VIA/Project Ivvia\"},{\"id\":\"54b7c5834aaa4340a566aaab0d207a69\",\"title\":\"Spark Tokenization Grand Prix\",\"parentId\":\"7a498218d7cc4e6e89426c582d9b8a33\",\"path\":\"/IV VIA/Project Ivvia/Spark Tokenization Grand Prix\"},{\"id\":\"7691105757e54503b9fabe846ca0db7b\",\"title\":\"Listen&Polish\",\"parentId\":\"\",\"path\":\"/Listen&Polish\"},{\"id\":\"f9b2d89479cc4ad3848b5a291b27ccb1\",\"title\":\"MED\",\"parentId\":\"\",\"path\":\"/MED\"},{\"id\":\"efa1c32d0d5d4b29979e27c1effd2d5f\",\"title\":\"MyPC\",\"parentId\":\"\",\"path\":\"/MyPC\"},{\"id\":\"8eac49bc13644fc1aff703313a331e26\",\"title\":\"🗂Apps\",\"parentId\":\"efa1c32d0d5d4b29979e27c1effd2d5f\",\"path\":\"/MyPC/🗂Apps\"},{\"id\":\"046678408a254dc9acc8c11891961edf\",\"title\":\"Android\",\"parentId\":\"efa1c32d0d5d4b29979e27c1effd2d5f\",\"path\":\"/MyPC/Android\"},{\"id\":\"241a4c6a12ca47e5bdcc54c2e2cdb19e\",\"title\":\"Farm\",\"parentId\":\"efa1c32d0d5d4b29979e27c1effd2d5f\",\"path\":\"/MyPC/Farm\"},{\"id\":\"65f219de0c24459badbeccd38d87b8b3\",\"title\":\"FriendlyELEC\",\"parentId\":\"efa1c32d0d5d4b29979e27c1effd2d5f\",\"path\":\"/MyPC/FriendlyELEC\"},{\"id\":\"7b37507759a64a668d92acfb0f623564\",\"title\":\"Note apps\",\"parentId\":\"efa1c32d0d5d4b29979e27c1effd2d5f\",\"path\":\"/MyPC/Note apps\"},{\"id\":\"0fce39daa659445eaba20e28191b7e46\",\"title\":\"NUC\",\"parentId\":\"efa1c32d0d5d4b29979e27c1effd2d5f\",\"path\":\"/MyPC/NUC\"},{\"id\":\"f8665a7a281a49fb9f36f10ba5b3ffd9\",\"title\":\"Radxa\",\"parentId\":\"efa1c32d0d5d4b29979e27c1effd2d5f\",\"path\":\"/MyPC/Radxa\"},{\"id\":\"48038920f6c94e358729d5a2ffaefcbf\",\"title\":\"Takeout\",\"parentId\":\"efa1c32d0d5d4b29979e27c1effd2d5f\",\"path\":\"/MyPC/Takeout\"},{\"id\":\"ab3571cc24d34bfb9354fe38d8ba948d\",\"title\":\"NAATI\",\"parentId\":\"\",\"path\":\"/NAATI\"},{\"id\":\"39304715120441e5a5605fdf95099c3d\",\"title\":\"Real Estate\",\"parentId\":\"\",\"path\":\"/Real Estate\"},{\"id\":\"226beea069ed4d4780fe673fb0bbbdc5\",\"title\":\"BER Systems\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/BER Systems\"},{\"id\":\"5c11a27e5e084e13aece31117d6ce054\",\"title\":\"Danish Land Register\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/Danish Land Register\"},{\"id\":\"8b73dbcbb2b54542b290d6ac6b28678b\",\"title\":\"ELNO\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/ELNO\"},{\"id\":\"7910586b85ce4ce39781283f9ad7a84c\",\"title\":\"Hidden reason\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/Hidden reason\"},{\"id\":\"f3cd1649cff14891ae2a3a4e56e0b048\",\"title\":\"Hlibivka\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/Hlibivka\"},{\"id\":\"97dd45a3d60c43d09f2051d8bba46c1b\",\"title\":\"Land registry\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/Land registry\"},{\"id\":\"7bdc983d22224be8aa97e36ccddbdbe7\",\"title\":\"Land systems\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/Land systems\"},{\"id\":\"c085845c8b38471a99220e88c13259ac\",\"title\":\"Pangeos Turtle\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/Pangeos Turtle\"},{\"id\":\"c196a4f854634c7ab2bddaab4b793df7\",\"title\":\"Price Forecast\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/Price Forecast\"},{\"id\":\"23ea98e778d94da290f0d0ce1718555b\",\"title\":\"Real Estate Economy\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/Real Estate Economy\"},{\"id\":\"ec2b47621a764bcbb54524b68a32b5fa\",\"title\":\"SEEKBLOCKS\",\"parentId\":\"39304715120441e5a5605fdf95099c3d\",\"path\":\"/Real Estate/SEEKBLOCKS\"},{\"id\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"title\":\"Renault\",\"parentId\":\"\",\"path\":\"/Renault\"},{\"id\":\"76a852503145464290750d28d05ce0fb\",\"title\":\"Archive\",\"parentId\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"path\":\"/Renault/Archive\"},{\"id\":\"1a764d2fce67418d9a271259c94deb3d\",\"title\":\"Cruise control\",\"parentId\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"path\":\"/Renault/Cruise control\"},{\"id\":\"b3e34535c3b34d449af7436dfe88449e\",\"title\":\"GPS\",\"parentId\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"path\":\"/Renault/GPS\"},{\"id\":\"6c7e199515a84c8b84ab66a0e081e08e\",\"title\":\"Head unit \",\"parentId\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"path\":\"/Renault/Head unit\"},{\"id\":\"6c7b2115b9b443eeaabc1ad70cc04068\",\"title\":\"Kitchen redesign\",\"parentId\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"path\":\"/Renault/Kitchen redesign\"},{\"id\":\"1e3c72c143f64537a861eb836505f73f\",\"title\":\"Plumbing\",\"parentId\":\"6c7b2115b9b443eeaabc1ad70cc04068\",\"path\":\"/Renault/Kitchen redesign/Plumbing\"},{\"id\":\"4798e24e4e05405ea940ab353f5f0851\",\"title\":\"Manuals\",\"parentId\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"path\":\"/Renault/Manuals\"},{\"id\":\"e4636067eb354ac0b795f7847ea95f6d\",\"title\":\"TOMZ\",\"parentId\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"path\":\"/Renault/TOMZ\"},{\"id\":\"959aa4b0167a440eae11e10f527a9752\",\"title\":\"Ultrasonic sensor\",\"parentId\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"path\":\"/Renault/Ultrasonic sensor\"},{\"id\":\"a1435e1dbd384318b30714d18eed2a98\",\"title\":\"Wireless monitor\",\"parentId\":\"50fbff9ce4334abab22cd17bbaa5104d\",\"path\":\"/Renault/Wireless monitor\"},{\"id\":\"2b996fa066704d5a9f24a122c63d50db\",\"title\":\"Testnotebook1\",\"parentId\":\"\",\"path\":\"/Testnotebook1\"},{\"id\":\"25f420fa11c94c65a70216819382aa53\",\"title\":\"Subnotebook\",\"parentId\":\"2b996fa066704d5a9f24a122c63d50db\",\"path\":\"/Testnotebook1/Subnotebook\"},{\"id\":\"10588ff3d7174d21827f106d1a72f2f9\",\"title\":\"Vocolibri\",\"parentId\":\"\",\"path\":\"/Vocolibri\"},{\"id\":\"7b586295c7f54c82ac590411719cde5d\",\"title\":\"!Project Vocolibri\",\"parentId\":\"10588ff3d7174d21827f106d1a72f2f9\",\"path\":\"/Vocolibri/!Project Vocolibri\"},{\"id\":\"8025d10e1af94d568dd9faec91b3b98c\",\"title\":\"Choice of TTS\",\"parentId\":\"10588ff3d7174d21827f106d1a72f2f9\",\"path\":\"/Vocolibri/Choice of TTS\"},{\"id\":\"8677555ce1354b228028aebaba1785e4\",\"title\":\"Dev Vocolibri\",\"parentId\":\"10588ff3d7174d21827f106d1a72f2f9\",\"path\":\"/Vocolibri/Dev Vocolibri\"},{\"id\":\"7fceac876df24fdd82560742db625743\",\"title\":\"DevTech Vocolibri\",\"parentId\":\"10588ff3d7174d21827f106d1a72f2f9\",\"path\":\"/Vocolibri/DevTech Vocolibri\"},{\"id\":\"10a7b38ea3024d08a0f85f67e76944d1\",\"title\":\"Setup Vocolibri\",\"parentId\":\"10588ff3d7174d21827f106d1a72f2f9\",\"path\":\"/Vocolibri/Setup Vocolibri\"},{\"id\":\"770216d594bc4088885987b9e51e7628\",\"title\":\"WEB3AU\",\"parentId\":\"\",\"path\":\"/WEB3AU\"},{\"id\":\"eb0ab1e4f1b7461fac6995baffa50da2\",\"title\":\"Ecosystem\",\"parentId\":\"770216d594bc4088885987b9e51e7628\",\"path\":\"/WEB3AU/Ecosystem\"},{\"id\":\"a8f17c720f434d8297449788908dcb38\",\"title\":\"Events\",\"parentId\":\"770216d594bc4088885987b9e51e7628\",\"path\":\"/WEB3AU/Events\"},{\"id\":\"24f51fe37447484087ff547b53cac3d0\",\"title\":\"Setup WEB3AU\",\"parentId\":\"770216d594bc4088885987b9e51e7628\",\"path\":\"/WEB3AU/Setup WEB3AU\"},{\"id\":\"61e7beaf37674328b840b8b9edae7508\",\"title\":\"Sources\",\"parentId\":\"770216d594bc4088885987b9e51e7628\",\"path\":\"/WEB3AU/Sources\"},{\"id\":\"8bfe7333796c4eea9faf9d4f3612690f\",\"title\":\"Team WEB3AU\",\"parentId\":\"770216d594bc4088885987b9e51e7628\",\"path\":\"/WEB3AU/Team WEB3AU\"},{\"id\":\"5f66f84aa8814d8b9602f05ab1975aca\",\"title\":\"Topics on WEB3AU\",\"parentId\":\"770216d594bc4088885987b9e51e7628\",\"path\":\"/WEB3AU/Topics on WEB3AU\"},{\"id\":\"c2e1c697a1544384b06822e4cc77df57\",\"title\":\"YoutubePlus\",\"parentId\":\"\",\"path\":\"/YoutubePlus\"}]}"
+                }
+              ]
+            },
+            "tooluse_HHfI9LGAQWqPzAn7AJe62A__vscode-1765337830292": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "{\"items\":[]}"
+                }
+              ]
+            },
+            "tooluse_kA02AKfySgGS1qs9CZvTkw__vscode-1765337830293": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "{\"items\":[{\"id\":\"0e2c31c6d65342c49b59241caf6f68d9\",\"title\":\"MarkItDown: Microsoft’s open-source tool for Markdown conversion | InfoWorld\",\"parentId\":\"f19d4c92b06049649f11f700fd797df6\",\"uri\":\"joplin:/__by_id/0e2c31c6d65342c49b59241caf6f68d9.md\"}]}"
+                }
+              ]
+            },
+            "tooluse_yaoKgC3cSs2wkrl5Ocby9w__vscode-1765337830294": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "{\"success\":true,\"id\":\"0e2c31c6d65342c49b59241caf6f68d9\",\"title\":\"MarkItDown: Microsoft’s open-source tool for Markdown conversion | InfoWorld\",\"body\":\"https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html\",\"parentId\":\"f19d4c92b06049649f11f700fd797df6\",\"uri\":\"joplin:/__by_id/0e2c31c6d65342c49b59241caf6f68d9.md\"}"
+                }
+              ]
+            }
+          },
+          "modelMessageId": "e9ee2ea1-d5f2-4879-96fd-e7e57b5dc27f",
+          "responseId": "88ef0acb-3cf2-4578-853d-521590f6eb4d",
+          "sessionId": "669e8880-9079-4a88-9683-e14514fef81e",
+          "agentId": "github.copilot.editsAgent"
+        },
+        "details": "Claude Sonnet 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.33.5",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "list"
+          }
+        ],
+        "disambiguation": []
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1765338181795,
+      "modelId": "copilot/claude-sonnet-4.5"
+    },
+    {
+      "requestId": "request_deea9c34-ef0f-4521-b7a4-fb3b32438a5b",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 16
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 17
+            },
+            "text": "ok get it opened",
+            "kind": "text"
+          }
+        ],
+        "text": "ok get it opened"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "I'll open the InfoWorld article about MarkItDown in your browser: ",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "copilot_openSimpleBrowser"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Opening Simple Browser at https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html": {
+                "$mid": 1,
+                "path": "/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html",
+                "scheme": "https",
+                "authority": "www.infoworld.com"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Opened Simple Browser at https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false,
+            "uris": {
+              "https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html": {
+                "$mid": 1,
+                "path": "/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html",
+                "scheme": "https",
+                "authority": "www.infoworld.com"
+              }
+            }
+          },
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "c77ea043-609b-4668-984e-a7a526c3be0c",
+          "toolId": "copilot_openSimpleBrowser"
+        },
+        {
+          "value": "The article about MarkItDown is now open in the browser.",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "responseId": "response_37ebd80e-f0f0-4a30-b933-908940ef8787",
+      "result": {
+        "timings": {
+          "firstProgress": 4179,
+          "totalElapsed": 8563
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "renderedUserMessage": [
+            {
+              "type": 1,
+              "text": "<context>\nThe current date is 10 December 2025.\nTerminals:\nTerminal: bash\n\n</context>\n<reminderInstructions>\nWhen using the replace_string_in_file tool, include 3-5 lines of unchanged code before and after the string you want to replace, to make it unambiguous which part of the file should be edited.\nFor maximum efficiency, whenever you plan to perform multiple independent edit operations, invoke them simultaneously using multi_replace_string_in_file tool rather than sequentially. This will greatly improve user's cost and time efficiency leading to a better user experience. Do not announce which tool you're using (for example, avoid saying \"I'll implement all the changes using multi_replace_string_in_file\").\nDo NOT create a new markdown file to document each change or summarize your work unless specifically requested by the user.\n\n</reminderInstructions>\n<userRequest>\nok get it opened\n</userRequest>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "I'll open the InfoWorld article about MarkItDown in your browser: ",
+              "toolCalls": [
+                {
+                  "name": "open_simple_browser",
+                  "arguments": "{\"url\": \"https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html\"}",
+                  "id": "tooluse_epkka5vlQgSlVzt4dZpd4w__vscode-1765337830295"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "59602c84-930c-4161-8c3b-ac8c8fcae88c"
+            },
+            {
+              "response": "The article about MarkItDown is now open in the browser.",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "c2e5ced1-59f3-4e1f-b063-c252f41bb8b8"
+            }
+          ],
+          "toolCallResults": {
+            "tooluse_epkka5vlQgSlVzt4dZpd4w__vscode-1765337830295": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Simple Browser opened at https://www.infoworld.com/article/3963991/markitdown-microsofts-open-source-tool-for-markdown-conversion.html"
+                }
+              ]
+            }
+          },
+          "modelMessageId": "09e00684-3fe1-4e37-992d-9d0f0f76033a",
+          "responseId": "5a07d945-6780-4d71-a387-2070f9810fce",
+          "sessionId": "669e8880-9079-4a88-9683-e14514fef81e",
+          "agentId": "github.copilot.editsAgent"
+        },
+        "details": "Claude Sonnet 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.33.5",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "list"
+          }
+        ],
+        "disambiguation": []
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1765338280420,
+      "modelId": "copilot/claude-sonnet-4.5"
+    },
+    {
+      "requestId": "request_4ad29267-be52-4834-a417-191cfa1bd0fc",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 114
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 115
+            },
+            "text": "no, not the link, the note! the md file which you found in joplin, get it opened, you use the path/url to open it?",
+            "kind": "text"
+          }
+        ],
+        "text": "no, not the link, the note! the md file which you found in joplin, get it opened, you use the path/url to open it?"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "You're right! I'll open the Joplin note using its URI: ",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "copilot_openSimpleBrowser"
+        },
+        {
+          "value": "The simple browser only supports HTTP/HTTPS. Let me try opening it using a VS Code command to open the URI: ",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "copilot_runVscodeCommand"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Running command `Open Joplin note`",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolCallId": "6d692bb6-6c4d-4490-b710-1cfbe2c26059",
+          "toolId": "copilot_runVscodeCommand"
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "run_in_terminal"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": "Using \"Run in Terminal\"",
+          "isConfirmed": {
+            "type": 2,
+            "id": "chat.tools.global.autoApprove"
+          },
+          "isComplete": true,
+          "source": {
+            "type": "internal",
+            "label": "Built-In"
+          },
+          "toolSpecificData": {
+            "kind": "terminal",
+            "terminalToolSessionId": "3273bfa9-6137-4e58-adcf-153c7399b042",
+            "terminalCommandId": "tool-6fff217b-bb95-49ec-b013-5f9bf40f3e04",
+            "commandLine": {
+              "original": "xdg-open \"joplin:/__by_id/0e2c31c6d65342c49b59241caf6f68d9.md\""
+            },
+            "language": "sh"
+          },
+          "toolCallId": "ed4ea8e8-1884-4030-83f8-19a93d0582a5",
+          "toolId": "run_in_terminal"
+        },
+        {
+          "value": "The Joplin note should now be opened in your Joplin application!",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        }
+      ],
+      "responseId": "response_63489d4d-823c-433b-abce-cc368d2e26e0",
+      "result": {
+        "timings": {
+          "firstProgress": 3635,
+          "totalElapsed": 20905
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "renderedUserMessage": [
+            {
+              "type": 1,
+              "text": "<context>\nThe current date is 10 December 2025.\nTerminals:\nTerminal: bash\n\n</context>\n<reminderInstructions>\nWhen using the replace_string_in_file tool, include 3-5 lines of unchanged code before and after the string you want to replace, to make it unambiguous which part of the file should be edited.\nFor maximum efficiency, whenever you plan to perform multiple independent edit operations, invoke them simultaneously using multi_replace_string_in_file tool rather than sequentially. This will greatly improve user's cost and time efficiency leading to a better user experience. Do not announce which tool you're using (for example, avoid saying \"I'll implement all the changes using multi_replace_string_in_file\").\nDo NOT create a new markdown file to document each change or summarize your work unless specifically requested by the user.\n\n</reminderInstructions>\n<userRequest>\nno, not the link, the note! the md file which you found in joplin, get it opened, you use the path/url to open it?\n</userRequest>\n"
+            },
+            {
+              "type": 3,
+              "cacheType": "ephemeral"
+            }
+          ],
+          "toolCallRounds": [
+            {
+              "response": "You're right! I'll open the Joplin note using its URI: ",
+              "toolCalls": [
+                {
+                  "name": "open_simple_browser",
+                  "arguments": "{\"url\": \"joplin:/__by_id/0e2c31c6d65342c49b59241caf6f68d9.md\"}",
+                  "id": "tooluse_UEqgvEXmTpWgxhgxU4Q0WQ__vscode-1765337830296"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "8146937e-8aaf-4d27-94d2-7f4887f90d5f"
+            },
+            {
+              "response": "The simple browser only supports HTTP/HTTPS. Let me try opening it using a VS Code command to open the URI: ",
+              "toolCalls": [
+                {
+                  "name": "run_vscode_command",
+                  "arguments": "{\"commandId\": \"vscode.open\", \"name\": \"Open Joplin note\", \"args\": [\"joplin:/__by_id/0e2c31c6d65342c49b59241caf6f68d9.md\"]}",
+                  "id": "tooluse_nsRbXFMYSCSZjmSrRAotuA__vscode-1765337830297"
+                }
+              ],
+              "toolInputRetry": 1,
+              "id": "98062fc4-560e-45f0-a2f2-f8e6dc944e75"
+            },
+            {
+              "response": "",
+              "toolCalls": [
+                {
+                  "name": "run_in_terminal",
+                  "arguments": "{\"explanation\": \"Open the Joplin note URI\", \"command\": \"xdg-open \\\"joplin:/__by_id/0e2c31c6d65342c49b59241caf6f68d9.md\\\"\", \"isBackground\": false}",
+                  "id": "tooluse_nt5p3mBDQzSrAyndNVr5BA__vscode-1765337830298"
+                }
+              ],
+              "toolInputRetry": 0,
+              "id": "6c7b30bb-2a3a-46d0-b834-3e66ae3c7c4a"
+            },
+            {
+              "response": "The Joplin note should now be opened in your Joplin application!",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "c66e04f9-7f62-4ebc-abc1-bd4f80668611"
+            }
+          ],
+          "toolCallResults": {
+            "tooluse_UEqgvEXmTpWgxhgxU4Q0WQ__vscode-1765337830296": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "ERROR while calling tool: Invalid URL scheme. Only HTTP and HTTPS are supported.\nPlease check your input and try again."
+                }
+              ]
+            },
+            "tooluse_nsRbXFMYSCSZjmSrRAotuA__vscode-1765337830297": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "Failed to find command `Open Joplin note`."
+                }
+              ]
+            },
+            "tooluse_nt5p3mBDQzSrAyndNVr5BA__vscode-1765337830298": {
+              "$mid": 20,
+              "content": [
+                {
+                  "$mid": 21,
+                  "value": "pi@CM3588:~$ xdg-open \"joplin:/__by_id/0e2c31c6d65342c49b59241caf6f68d9.md\"\npi@CM3588:~$ "
+                }
+              ]
+            }
+          },
+          "modelMessageId": "c82e715b-4963-4c98-a947-4568bf3f64f4",
+          "responseId": "0fd641aa-9f5a-4781-9543-bc48e028848d",
+          "sessionId": "669e8880-9079-4a88-9683-e14514fef81e",
+          "agentId": "github.copilot.editsAgent"
+        },
+        "details": "Claude Sonnet 4.5 • 1x"
+      },
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.33.5",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "list"
+          }
+        ],
+        "disambiguation": []
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1765338322230,
+      "modelId": "copilot/claude-sonnet-4.5"
+    }
+  ]
+}

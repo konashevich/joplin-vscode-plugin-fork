@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.5.8
+
+- fix: Allow `joplinNote.openNote` command to accept note ID string for easier AI agent integration
+- docs: Update Copilot instructions with explicit steps to open notes
+
 ## 0.5.7
 
 - fix: Improve extension initialization to avoid restart requirements

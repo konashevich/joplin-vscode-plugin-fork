@@ -160,29 +160,32 @@ export class JoplinNoteCommandService {
    * open note in vscode
    * @param item
    */
-  async openNote(item: Omit<FolderOrNote, 'item'> & { item: JoplinListNote }) {
+  async openNote(item: Omit<FolderOrNote, 'item'> & { item: JoplinListNote } | string) {
+    const noteId = typeof item === 'string' ? item : item.id
     // Try to open using the virtual file system first
-    const uri = await joplinFileSystemProvider.getNoteUri(item.id)
+    const uri = await joplinFileSystemProvider.getNoteUri(noteId)
     if (uri) {
       await vscode.window.showTextDocument(uri)
     } else {
       // Fallback to old method if URI cannot be constructed
-      await noteActionApi.openAndWatch(item.id)
-      console.log('openNote: ', item.id, await noteActionApi.isWatch(item.id))
+      await noteActionApi.openAndWatch(noteId)
+      console.log('openNote: ', noteId, await noteActionApi.isWatch(noteId))
     }
 
-    const interval = setInterval(() => {
-      this.config.noteListTreeView.reveal(item, {
-        select: true,
-        focus: true,
-      })
-    }, 17)
-    await new Promise<void>((resolve) =>
-      setTimeout(() => {
-        clearInterval(interval)
-        resolve()
-      }, 500),
-    )
+    if (typeof item !== 'string') {
+      const interval = setInterval(() => {
+        this.config.noteListTreeView.reveal(item, {
+          select: true,
+          focus: true,
+        })
+      }, 17)
+      await new Promise<void>((resolve) =>
+        setTimeout(() => {
+          clearInterval(interval)
+          resolve()
+        }, 500),
+      )
+    }
   }
 
   /**

@@ -22,3 +22,10 @@ Prompt the user to provide the Joplin Web Clipper token and port (default 41184)
 - `joplin_search_notes` with query "rockchip NAS", notebook "MyPC"
 - `joplin_get_note` for the match
 - Return a short summary + note link/ID
+
+## Opening Notes
+To open a note in the VS Code editor:
+- Use the `joplinNote.openNote` command with the note ID.
+- OR use `vscode.open` command with the `joplin:/...` URI returned by `joplin_get_note` or `joplin_search_notes`.
+- DO NOT use `xdg-open` or `open` in the terminal.
+
