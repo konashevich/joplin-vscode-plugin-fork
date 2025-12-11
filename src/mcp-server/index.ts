@@ -2,6 +2,7 @@ import { config, folderApi, noteApi, searchApi, TypeEnum } from 'joplin-api'
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod'
+import open from 'open'
 
 config.token = process.env.JOPLIN_TOKEN || ''
 config.port = process.env.JOPLIN_PORT ? Number(process.env.JOPLIN_PORT) : 41184
@@ -262,6 +263,44 @@ server.registerTool(
           uri: `joplin:/__by_id/${n.id}.md`,
         })),
       },
+    }
+  },
+)
+
+const openNoteInput = z.object({ noteId: z.string() })
+
+server.registerTool(
+  'joplin_open_note',
+  {
+    description: 'Open a note in the VS Code editor',
+    inputSchema: openNoteInput,
+    outputSchema: z.object({ success: z.boolean(), message: z.string() }),
+  },
+  async (input: z.infer<typeof openNoteInput>) => {
+    const parsed = openNoteInput.parse(input)
+    // URI format: vscode://<publisher>.<extension>/open?id=<noteId>
+    // Publisher: local, Name: joplin-vscode-plugin-ai
+    // Note: The publisher is 'local' in package.json, so the ID is 'local.joplin-vscode-plugin-ai'
+    const uri = `vscode://local.joplin-vscode-plugin-ai/open?id=${parsed.noteId}`
+
+    try {
+      await open(uri)
+      return {
+        content: [],
+        structuredContent: {
+          success: true,
+          message: `Opened note ${parsed.noteId} in editor via URI handler.`,
+        },
+      }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err)
+      return {
+        content: [],
+        structuredContent: {
+          success: false,
+          message: `Failed to open note: ${message}`,
+        },
+      }
     }
   },
 )

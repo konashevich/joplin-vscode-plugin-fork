@@ -25,7 +25,7 @@ Prompt the user to provide the Joplin Web Clipper token and port (default 41184)
 
 ## Opening Notes
 To open a note in the VS Code editor:
-- Use the `joplinNote.openNote` command with the note ID.
-- OR use `vscode.open` command with the `joplin:/...` URI returned by `joplin_get_note` or `joplin_search_notes`.
-- DO NOT use `xdg-open` or `open` in the terminal.
+To open a note in the VS Code editor:
+- Use the `joplin_open_note` tool with the note ID.
+- DO NOT use `joplinNote.openNote` or `vscode.open` directly.
 
