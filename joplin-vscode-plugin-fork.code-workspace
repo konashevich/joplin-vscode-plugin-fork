@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "Joplin Notebooks",
+			"uri": "joplin:/"
+		}
+	]
+}
