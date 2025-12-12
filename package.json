@@ -2,7 +2,7 @@
   "name": "joplin-vscode-plugin-ai",
   "displayName": "Joplin AI Enhanced",
   "description": "%package.description%",
-  "version": "0.5.9",
+  "version": "0.5.10",
   "publisher": "local",
   "engines": {
     "vscode": "^1.45.0"
@@ -30,7 +30,8 @@
   },
   "activationEvents": [
     "onView:joplin-note",
-    "onUri"
+    "onUri",
+    "onFileSystem:joplin"
   ],
   "main": "./out/extension.js",
   "jest": {
